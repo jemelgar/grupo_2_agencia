@@ -4,9 +4,9 @@
 
 ## TEMÁTICA DEL SITIO Y PÚBLICO OBJETIVO
 
-Somos Focus Travel, una agencia de viajes mexicana que ofrece lo que usted necesita para las mejores vacaciones, incluyendo descuentos de avión,las mejores tarifas y ofertas en hoteles en puntos de interés como Cancún, Playa del Carmen, Riviera Maya, Acapulco, Puerto Vallarta, entre otros.
+Somos Focus Travel, una agencia de viajes mexicana que ofrece lo que usted necesita para las mejores vacaciones de su vida, incluyendo descuentos de avión,las mejores tarifas y ofertas en hoteles en puntos de interés como Cancún, Playa del Carmen, Riviera Maya, Acapulco, Puerto Vallarta, entre otros.
 
-Focus Travel va dirigida a personas que quieren reservar paquetes turísticos en internet y que requieran un servicio personalizado y facilidades de pago.
+Los servicios de Focus Travel están dirigidos a personas que quieren reservar paquetes turísticos en internet y que requieran un servicio personalizado y facilidades de pago.
 
 ## DESCRIPCIÓN DE LOS INTEGRANTES DEL EQUIPO
 
@@ -16,7 +16,7 @@ Agregar descripción
 
 ## Enrique Melgar
 
-Agregar Descripción
+Egresado del Instituto Tecnológico de Tuxtla Gutiérrez como Ingeniero en Sistemas Computacionales 💻. Maestro en Didáctica de Lenguas por la Universidad Autónoma de Chiapas 💬. Docente de licenciatura y maestría en la UPGCH y UNACH 👨‍🏫.
 
 ## Mariana Elizabeth Rubio
 
