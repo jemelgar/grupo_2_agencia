@@ -11,8 +11,7 @@ Los servicios de Focus Travel están dirigidos a personas que quieren reservar p
 ## DESCRIPCIÓN DE LOS INTEGRANTES DEL EQUIPO
 
 ## Andrea Cazares
-
-Agregar descripción
+En proceso de egresar de la Lic. en Mercadotecnia y Medios Digitales. Actualmente me encuento colaborando en un proyecto de Marketing Político como Coordinadora de Campaña Digital y Gestión de Imagen Política. 
 
 ## Enrique Melgar
 
