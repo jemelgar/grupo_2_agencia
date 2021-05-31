@@ -11,7 +11,8 @@ Los servicios de Focus Travel están dirigidos a personas que quieren reservar p
 ## DESCRIPCIÓN DE LOS INTEGRANTES DEL EQUIPO
 
 ## Andrea Cazares
-En proceso de egresar de la Lic. en Mercadotecnia y Medios Digitales. Actualmente me encuento colaborando en un proyecto de Marketing Político como Coordinadora de Campaña Digital y Gestión de Imagen Política. 
+
+En proceso de egresar de la Lic. en Mercadotecnia y Medios Digitales. Actualmente me encuento colaborando en un proyecto de Marketing Político como Coordinadora de Campaña Digital y Gestión de Imagen Política.
 
 ## Enrique Melgar
 
@@ -19,7 +20,7 @@ Egresado del Instituto Tecnológico de Tuxtla Gutiérrez como Ingeniero en Siste
 
 ## Mariana Elizabeth Rubio
 
-Soy egresada de ingeniería biomédica y actualmente me encuentro trabajando en el área de diseño y desarrollo en una empresa llamada inmateriis responzábilizandome en diseños CAD de productos biomédicos realizados en OpenSCAD.
+Soy egresada de ingeniería biomédica 🦾 y actualmente me encuentro trabajando en el área de diseño y desarrollo 💻 en una empresa llamada inmateriis responzábilizandome en diseños CAD de productos biomédicos realizados en OpenSCAD.
 
 ## SITIOS DE REFERENCIA
 
