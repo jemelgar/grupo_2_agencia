@@ -4,11 +4,14 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:sass": "node-sass sass/main.scss public/css/styles.css -w",
+    "start": "start http://localhost:3000 & nodemon app.js ",
+    "open": "open http://localhost:3000 & nodemon app.js "
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "node-sass": "^6.0.0"
   }
 }
