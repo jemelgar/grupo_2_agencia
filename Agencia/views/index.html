@@ -5,26 +5,205 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/styles_index.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Document</title>
-    <style>
-      body {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        background: linear-gradient(to top left, #28b487, #7dd56f);
-      }
-      h1 {
-        font-family: sans-serif;
-        font-size: 50px;
-        line-height: 1.3;
-        width: 100%;
-        padding: 30px;
-        text-align: center;
-        color: white;
-      }
-    </style>
   </head>
   <body>
-    <h1>Index Funcionando</h1>
+    <div class="container">
+      <header class="header">
+        <div class="header__hamburger">
+          <svg class="header__hamburger-icon">
+            <use xlink:href="img/sprite.svg#icon-menu"></use>
+          </svg>
+        </div>
+        <div class="header__brand">
+          <img src="img/Logo.png" alt="logo" class="header__brand-logo" />
+          <p class="header__brand-name">Focus Travel</p>
+        </div>
+        <div class="socialnet">
+          <div class="header__social">
+            <svg class="header__social-icon">
+              <use xlink:href="img/sprite.svg#icon-facebook"></use>
+            </svg>
+          </div>
+          <div class="header__social">
+            <svg class="header__social-icon">
+              <use xlink:href="img/sprite.svg#icon-twitter"></use>
+            </svg>
+          </div>
+          <div class="header__social">
+            <svg class="header__social-icon">
+              <use xlink:href="img/sprite.svg#icon-instagram"></use>
+            </svg>
+          </div>
+          <div class="header__social">
+            <svg class="header__social-icon">
+              <use xlink:href="img/sprite.svg#icon-youtube"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="nav-left">
+          <div class="header__user">
+            <p class="header__user-login"><a href="/login"> Login</a></p>
+            <p class="header__user-signup"><a href="/signup">Sign up</a></p>
+          </div>
+          <div class="header__cart">
+            <a href="/productCart">
+              <svg class="header__cart-icon">
+                <use xlink:href="img/sprite.svg#icon-shopping-cart"></use>
+              </svg>
+            </a>
+            <span class="header__cart-notification">2</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="container-destination">
+          <div class="form-container">
+            <form action="#" class="find">
+              <span class="form-title">Encuentra tu próxima aventura</span>
+              <input
+                type="text"
+                class="find-place"
+                placeholder="Elige tu destino"
+              />
+              <input type="date" class="find-date" />
+              <a href="" class="btn find-btn">Buscar</a>
+            </form>
+          </div>
+          <section class="destination">
+            <article class="destination__promoted">
+              <div class="destination__info-container">
+                <p class="destination-promotion">Destino Destacado</p>
+                <img src="img/dest-1.jpg" alt="" class="destination-picture" />
+                <ul class="destination-description">
+                  <li class="destination-name">Popocatépetl, Mex.</li>
+                  <li class="destination-price">Desde: $500.00 p/persona</li>
+                  <li class="destination-date">
+                    Reserva antes del 05 septiembre 2021
+                  </li>
+                </ul>
+              </div>
+              <a href="/productDetail" class="btn btn-reservar">Reservar</a>
+            </article>
+          </section>
+
+          <section class="destination destination__normal">
+            <article class="destination__promoted">
+              <div class="destination__info-container">
+                <p class="destination-normal">Destino Normal</p>
+                <img src="img/dest-2.jpg" alt="" class="destination-picture" />
+                <ul class="destination-description">
+                  <li class="destination-name">Montebello, Chis.</li>
+                  <li class="destination-price">Desde: $500.00 p/persona</li>
+                  <li class="destination-date">
+                    Reserva antes del 05 septiembre 2021
+                  </li>
+                </ul>
+              </div>
+              <a href="/productDetail" class="btn btn-reservar btn--normal"
+                >Reservar</a
+              >
+            </article>
+          </section>
+
+          <section class="destination destination__normal">
+            <article class="destination__promoted">
+              <div class="destination__info-container">
+                <p class="destination-normal">Destino Normal</p>
+                <img src="img/dest-3.jpg" alt="" class="destination-picture" />
+                <ul class="destination-description">
+                  <li class="destination-name">Tequesquitengo, Mor.</li>
+                  <li class="destination-price">Desde: $500.00 p/persona</li>
+                  <li class="destination-date">
+                    Reserva antes del 05 septiembre 2021
+                  </li>
+                </ul>
+              </div>
+              <a href="/productDetail" class="btn btn-reservar btn--normal"
+                >Reservar</a
+              >
+            </article>
+          </section>
+          <section class="destination destination__normal">
+            <article class="destination__promoted">
+              <div class="destination__info-container">
+                <p class="destination-normal">Destino Normal</p>
+                <img src="img/dest-4.jpg" alt="" class="destination-picture" />
+                <ul class="destination-description">
+                  <li class="destination-name">Mazamitla, Jal.</li>
+                  <li class="destination-price">Desde: $500.00 p/persona</li>
+                  <li class="destination-date">
+                    Reserva antes del 05 septiembre 2021
+                  </li>
+                </ul>
+              </div>
+              <a href="/productDetail" class="btn btn-reservar btn--normal"
+                >Reservar</a
+              >
+            </article>
+          </section>
+          <section class="destination destination__normal">
+            <article class="destination__promoted">
+              <div class="destination__info-container">
+                <p class="destination-normal">Destino Normal</p>
+                <img src="img/dest-5.jpg" alt="" class="destination-picture" />
+                <ul class="destination-description">
+                  <li class="destination-name">CDMX</li>
+                  <li class="destination-price">Desde: $500.00 p/persona</li>
+                  <li class="destination-date">
+                    Reserva antes del 05 septiembre 2021
+                  </li>
+                </ul>
+              </div>
+              <a href="/productDetail" class="btn btn-reservar btn--normal"
+                >Reservar</a
+              >
+            </article>
+          </section>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer-col-1">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-aircraft-take-off"></use>
+          </svg>
+          <span class="footer-title"> Consigue tu vuelo al mejor precio </span
+          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam
+          reprehenderit beatae dicta doloribus explicabo vero, dolorum error
+          accusantium obcaecati quia ipsa. Inventore ad eum ut corporis fuga
+          voluptatem facilis? In.
+        </div>
+        <div class="footer-col-2">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-map"></use>
+          </svg>
+          <span class="footer-title"> Visita las principales atracciones</span>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos maiores,
+          at, officia nisi doloribus laboriosam incidunt veritatis reiciendis
+          dolorum libero, quis vero quidem distinctio rerum vel tempore
+          excepturi! Excepturi, odit!
+        </div>
+        <div class="footer-col-3">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-key"></use>
+          </svg>
+          <span class="footer-title"> Hospédate en los mejores lugares </span
+          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem at
+          animi exercitationem ipsam officiis, sit cupiditate, odit, quisquam et
+          nostrum a quas accusamus labore ipsum tempore nemo? Quis, fugiat rem!
+        </div>
+      </footer>
+      <div class="copyright">
+        © Todos los derechos reservados. Focus Travel 2021
+      </div>
+    </div>
   </body>
 </html>
