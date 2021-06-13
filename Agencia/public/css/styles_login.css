@@ -1,0 +1,71 @@
+
+* {
+    box-sizing: border-box;
+} 
+
+.welcome-title {
+font-family: 'Lato';
+text-align: center;
+margin-bottom: 5px;
+}
+
+.email-title{
+    font-family: 'Lato';
+    text-align: center;
+    margin-top: 5px;
+}
+
+
+.contenedor01 {
+    border: solid 2px rgb(206, 201, 201);
+    border-radius: 15px;
+    height: 360px;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    
+}
+
+.login-icon{
+    border: solid 1px rgb(180, 175, 175);
+    background-color: rgb(180, 175, 175);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    margin: auto;
+    font-size: 20px;
+    
+}
+
+.label-design{
+    font-family: 'Lato';
+    display:block;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+
+.input {
+    border-radius: 15px;
+    height: 30px;
+    width: 200px;
+}
+
+.button {
+    background-color: rgb(16, 154, 247);
+    border: rgb(16, 154, 247);
+    color: white;
+    border-radius: 15px;
+    height: 35px;
+    width: 130px;  
+    font-family: 'Lato';
+}
+.forgot-password{
+    color: rgb(16, 154, 247);
+    font-family: 'Lato';
+    margin-top: 0px;
+}
