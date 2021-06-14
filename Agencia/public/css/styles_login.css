@@ -3,6 +3,16 @@
     box-sizing: border-box;
 } 
 
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: var(--color-grey-dark-2);
+    background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%); 
+}
+
 .welcome-title {
 font-family: 'Lato';
 text-align: center;
@@ -17,6 +27,7 @@ margin-bottom: 5px;
 
 
 .contenedor01 {
+    background-color: white;
     border: solid 2px rgb(206, 201, 201);
     border-radius: 15px;
     height: 360px;
@@ -42,22 +53,22 @@ margin-bottom: 5px;
 
 .label-design{
     font-family: 'Lato';
-    display:block;
-    text-align: left;
-    margin-left: 20px;
-    margin-right: 20px;
+    display:flex;
+    margin-left: 40px;
+    margin-right: 40px;
     
 }
 
 .input {
     border-radius: 15px;
     height: 30px;
-    width: 200px;
+    width: 200px;  
+    text-align: center;
 }
 
 .button {
-    background-color: rgb(16, 154, 247);
-    border: rgb(16, 154, 247);
+    background-color: #ff449f;
+    border: #ff449f;
     color: white;
     border-radius: 15px;
     height: 35px;
@@ -65,7 +76,58 @@ margin-bottom: 5px;
     font-family: 'Lato';
 }
 .forgot-password{
-    color: rgb(16, 154, 247);
+    color:#ff449f;
     font-family: 'Lato';
     margin-top: 0px;
 }
+
+@media (min-width: 576px) {
+    .contenedor01 {
+    display: block;
+    width: 40%;
+    text-align: center;
+      }
+    .label-design{
+        margin-left: 15px;
+        margin-right: 15px;
+        
+    }
+    .input {
+        width: 200px;  
+    }
+      
+ }
+  
+  @media (min-width: 680px) {
+
+    .contenedor01 {
+        display: block;
+        width: 40%;
+        text-align: center;
+          }
+    .label-design{
+        margin-left: 20px;            
+        }
+    .input {
+        width: 225px;  
+        }
+
+   }
+
+   @media (min-width: 769px) {
+
+    .contenedor01 {
+        display: block;
+        width: 40%;
+        text-align: center;
+          }
+    .label-design{
+        margin-left: 30px;            
+        }
+    .input {
+        width: 250px;  
+        }
+
+   }
+    
+  
