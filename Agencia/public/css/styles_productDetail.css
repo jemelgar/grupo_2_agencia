@@ -46,7 +46,7 @@ body {
 	border: solid red;
 } */
 
-.paquete {
+div.paquete {
 	/* border: solid 1px var(--color-grey-dark); */
 	border: none;
 	/* max-width: 370px; */
@@ -71,7 +71,7 @@ body {
 
 /* bien para 600 px */
 .paquete .descripcion-paquete {
-	font-size: 22px;
+	font-size: 16px;
 	text-align: center;
 	margin: auto;
 	/* align-content: center; */
@@ -82,54 +82,91 @@ body {
 .paquete .paquete-imagen {
 	border-radius: 20%;
 	padding: 20px;
-	/* margin-top: 30px; */
-	/* margin-top: 30px; */
-	/* margin-top: 30px;
-	margin-left: 30px;
-	margin-right: 30px;
-	padding: 20px; */
-	/* padding: -30px; */
-	/* padding: 20px; */
-	/* display: flex;
-	justify-content: center; */
+	width: 60%;
+	/* width: auto; */
+}
+
+div.paquete-descripcion-botones {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	justify-items: center;
+}
+div.division-boton {
+	/* flex-direction: row; */
+	align-content: center;
+	text-align: center;
+	justify-content: space-evenly;
+	margin-top: 5%;
+
+	/* align-content: space-between; */
 }
 
 .btn:link,
 .btn:visited {
 	text-transform: uppercase;
 	text-decoration: none;
-	padding: 10px 40px;
+	padding: 10px 20px;
+	margin: 5px;
 	/* padding: 15px 40px; */
 	display: inline-block;
 	border-radius: 3px;
 	align-items: flex-end;
-	font-size: 16px;
+	font-size: 15px;
 }
 
 .btn-color {
 	background-color: var(--color-alert);
 	color: #fff;
 	margin-bottom: 5px;
+	/* display: inline-block;
+	margin-left: 5px; */
 }
 
 /* Media Queries */
-@media (min-width: 700px) {
-	.paquete {
+@media (min-width: 768px) {
+	div.paquete {
 		display: flex;
-		/* flex-direction: row; */
+		flex-direction: row;
+		width: 80%;
+
 		/* flex-wrap: wrap; */
+	}
+
+	.paquete-descripcion-botones {
+		display: flex;
+		flex: column;
+		/* margin: auto; */
+	}
+
+	.division-boton {
+		display: flex;
+		flex: row;
 	}
 }
 
 @media (min-width: 1200px) {
-	.paquete {
+	div.paquete {
 		display: flex;
-		/* flex-direction: row; */
-		width: 50%;
+		flex-direction: row;
+		width: 48%;
+
 		/* flex-wrap: wrap; */
 	}
 
-	.paquete .paquete-imagen {
-		width: 30%;
+	.paquete-descripcion-botones {
+		display: flex;
+		flex: column;
+		margin: auto;
+	}
+
+	div.paquete img {
+		max-width: 400px;
+	}
+
+	.division-boton {
+		display: flex;
+		flex: row;
 	}
 }
