@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/styles_index.css" />
-    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
+    <link rel="icon" href="/img/logo.png" type="image/png" />
+    1
+    <link rel="icon" href="imagenes/favicon.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
@@ -26,43 +30,46 @@
           </svg>
         </div>
         <div class="header__brand">
-          <img src="img/Logo.png" alt="logo" class="header__brand-logo" />
-          <p class="header__brand-name">Focus Travel</p>
+          <a href="/">
+            <img src="img/Logo.png" alt="logo" class="header__brand-logo"
+          /></a>
+          <a href="/"> <p class="header__brand-name">Focus Travel</p></a>
         </div>
         <div class="socialnet">
           <div class="header__social">
             <a href="/fb">
-            <svg class="header__social-icon">
-              <use xlink:href="img/sprite.svg#icon-facebook"></use>
-            </svg>
-          </a>
+              <svg class="header__social-icon">
+                <use xlink:href="img/sprite.svg#icon-facebook"></use>
+              </svg>
+            </a>
           </div>
           <div class="header__social">
             <a href="/twi">
-            <svg class="header__social-icon">
-              <use xlink:href="img/sprite.svg#icon-twitter"></use>
-            </svg>
-          </a>
+              <svg class="header__social-icon">
+                <use xlink:href="img/sprite.svg#icon-twitter"></use>
+              </svg>
+            </a>
           </div>
           <div class="header__social">
-            <svg class="header__social-icon">
-              <a href="/ins">
-              <use xlink:href="img/sprite.svg#icon-instagram"></use>
-            </svg>
-          </a>
+            <a href="/ins">
+              <svg class="header__social-icon">
+                <use xlink:href="img/sprite.svg#icon-instagram"></use>
+              </svg>
+            </a>
           </div>
           <div class="header__social">
             <a href="/you">
-            <svg class="header__social-icon">
-              <use xlink:href="img/sprite.svg#icon-youtube"></use>
-            </svg>
-          </a>
+              <svg class="header__social-icon">
+                <use xlink:href="img/sprite.svg#icon-youtube"></use>
+              </svg>
+            </a>
           </div>
         </div>
         <div class="nav-left">
           <div class="header__user">
-            <p class="header__user-login"><a href="/login"> Login</a></p>
-            <p class="header__user-signup"><a href="/signup">Sign up</a></p>
+            <p class="header__user-inicio"><a href="/"> Inicio</a></p>
+            <p class="header__user-login"><a href="/login"> Ingresa</a></p>
+            <p class="header__user-signup"><a href="/signup">Registrate</a></p>
           </div>
           <div class="header__cart">
             <a href="/productCart">
@@ -81,9 +88,13 @@
             <form action="#" class="find">
               <span class="form-title">Encuentra tu próxima</span>
               <div class="flip">
-                <div class="contanim"><div class="contword cont1">aventura</div></div>
+                <div class="contanim">
+                  <div class="contword cont1">aventura</div>
+                </div>
                 <div><div class="contword cont2">anécdota</div></div>
-                <div><div class="contword cont3">razón para ser feliz</div></div>
+                <div>
+                  <div class="contword cont3">razón para ser feliz</div>
+                </div>
               </div>
               <input
                 type="text"
@@ -91,7 +102,7 @@
                 placeholder="Elige tu destino"
               />
               <input type="date" class="find-date" />
-              <a href="" class="btn find-btn">Buscar</a>
+              <a href="" class="btn find-btn" id="find-btn">Buscar</a>
             </form>
           </div>
 
@@ -125,7 +136,10 @@
                   </li>
                 </ul>
               </div>
-              <a href="/productDetail" class="btn btn-reservar btn--normal"
+              <a
+                href="/productDetail"
+                class="btn btn-reservar btn--normal"
+                id="btn--normal"
                 >Reservar</a
               >
             </article>
@@ -144,7 +158,10 @@
                   </li>
                 </ul>
               </div>
-              <a href="/productDetail" class="btn btn-reservar btn--normal"
+              <a
+                href="/productDetail"
+                class="btn btn-reservar btn--normal"
+                id="btn--normal"
                 >Reservar</a
               >
             </article>
@@ -162,7 +179,10 @@
                   </li>
                 </ul>
               </div>
-              <a href="/productDetail" class="btn btn-reservar btn--normal"
+              <a
+                href="/productDetail"
+                class="btn btn-reservar btn--normal"
+                id="btn--normal"
                 >Reservar</a
               >
             </article>
@@ -180,7 +200,10 @@
                   </li>
                 </ul>
               </div>
-              <a href="/productDetail" class="btn btn-reservar btn--normal"
+              <a
+                href="/productDetail"
+                class="btn btn-reservar btn--normal"
+                id="btn--normal"
                 >Reservar</a
               >
             </article>

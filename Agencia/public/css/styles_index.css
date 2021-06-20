@@ -16,6 +16,9 @@
   margin: 0;
   padding: 0;
   list-style: none; }
+  * a:visited, * a:link, * a:focus {
+    color: var(--color-alert);
+    text-decoration: none; }
 
 *,
 *::after,
@@ -93,7 +96,11 @@ h1 {
       display: none;
       height: 4rem;
       margin-right: 2rem;
-      width: 4rem; }
+      width: 4rem;
+      transition: transform 0.3s; }
+      .header__brand-logo:hover {
+        transform: scale(1.1, 1.1);
+        cursor: pointer; }
   .header__social svg {
     display: block;
     fill: var(--color-secondary);
@@ -110,9 +117,9 @@ h1 {
     font-weight: 700; }
     .header__user > * {
       cursor: pointer; }
-    .header__user-login, .header__user-signup {
+    .header__user-login, .header__user-signup, .header__user-inicio {
       position: relative; }
-      .header__user-login::before, .header__user-signup::before {
+      .header__user-login::before, .header__user-signup::before, .header__user-inicio::before {
         background-color: var(--color-alert);
         bottom: 0;
         content: "";
@@ -122,11 +129,8 @@ h1 {
         transition: transform 0.2s;
         transform: scaleX(0);
         width: 100%; }
-      .header__user-login:hover::before, .header__user-signup:hover::before {
+      .header__user-login:hover::before, .header__user-signup:hover::before, .header__user-inicio:hover::before {
         transform: scaleX(1); }
-      .header__user-login > *:visited, .header__user-login > *:link, .header__user-login > *:focus, .header__user-signup > *:visited, .header__user-signup > *:link, .header__user-signup > *:focus {
-        color: var(--color-alert);
-        text-decoration: none; }
   .header__cart {
     align-items: center;
     cursor: pointer;
@@ -344,11 +348,12 @@ h1 {
   .btn:active {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     transform: translateY(-1px); }
-  .btn--normal {
-    border: solid 2px var(--color-green);
-    color: var(--color-green); }
 
-.find-btn {
+#btn--normal {
+  border: solid 2px var(--color-green);
+  color: var(--color-green); }
+
+#find-btn {
   border: solid 2px var(--color-secondary);
   color: var(--color-secondary); }
 
@@ -402,20 +407,8 @@ h1 {
     margin-top: -15rem; } }
 
 @media (min-width: 576px) {
-  .header__hamburger {
-    display: none; }
   .header__brand-logo {
     display: block; }
-  .header__user {
-    align-items: center;
-    align-self: stretch;
-    display: flex;
-    justify-content: flex-end; }
-    .header__user > * {
-      align-items: center;
-      align-self: stretch;
-      display: flex;
-      margin: 0 1rem; }
   .container-destination {
     align-content: center;
     display: flex;
