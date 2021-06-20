@@ -24,3 +24,19 @@ app.get("/register", (req, res) => {
 app.get("/signup", (req, res) => {
   res.sendFile(path.resolve("views/signup.html"));
 });
+
+app.get("/fb", (req, res) => {
+  res.redirect("https://www.facebook.com");
+});
+app.get("/ins", (req, res) => {
+  res.redirect("https://www.instagram.com/");
+});
+app.get("/twi", (req, res) => {
+  res.redirect("https://twitter.com/home");
+});
+app.get("/you", (req, res) => {
+  res.redirect("https://www.youtube.com/");
+});
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve("views/error.html"));
+});
