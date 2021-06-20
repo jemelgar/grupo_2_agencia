@@ -158,8 +158,7 @@ h1 {
       width: 1.75rem; }
 
 .socialnet {
-  display: flex;
-  flex-wrap: wrap-reverse; }
+  display: none; }
 
 .form-title {
   color: var(--color-secondary);
@@ -442,6 +441,9 @@ h1 {
       align-self: stretch;
       display: flex;
       margin: 0 1rem; }
+  .socialnet {
+    display: flex;
+    flex-wrap: wrap-reverse; }
   .container-destination > * {
     width: 30%; }
   .container-destination .destination {
