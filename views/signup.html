@@ -4,26 +4,90 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      body {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        background: linear-gradient(to top left, #28b487, #7dd56f);
-      }
-      h1 {
-        font-family: sans-serif;
-        font-size: 50px;
-        line-height: 1.3;
-        width: 100%;
-        padding: 30px;
-        text-align: center;
-        color: white;
-      }
-    </style>
+    <title> Login </title>
+    <link rel="stylesheet" href="/css/styles_index.css">
+    <link rel="stylesheet" href="/css/styles_register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/165b3be4bf.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <h1>Sign-up Funcionando</h1>
+    <header class="header">
+      <div class="header__hamburger">
+        <svg class="header__hamburger-icon">
+          <use xlink:href="img/sprite.svg#icon-menu"></use>
+        </svg>
+      </div>
+      <div class="header__brand">
+        <a href="/">
+          <img src="img/Logo.png" alt="logo" class="header__brand-logo"
+        /></a>
+        <a href="/"> <p class="header__brand-name">Focus Travel</p></a>
+      </div>
+      <div class="socialnet">
+        <div class="header__social">
+          <a href="/fb">
+            <svg class="header__social-icon">
+              <use xlink:href="img/sprite.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="header__social">
+          <a href="/twi">
+            <svg class="header__social-icon">
+              <use xlink:href="img/sprite.svg#icon-twitter"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="header__social">
+          <a href="/ins">
+            <svg class="header__social-icon">
+              <use xlink:href="img/sprite.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="header__social">
+          <a href="/you">
+            <svg class="header__social-icon">
+              <use xlink:href="img/sprite.svg#icon-youtube"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="nav-left">
+        <div class="header__user">
+          <p class="header__user-inicio"><a href="/"> Inicio</a></p>
+          <p class="header__user-login"><a href="/login"> Ingresa</a></p>
+        </div>
+        <div class="header__cart">
+          <a href="/productCart">
+            <svg class="header__cart-icon">
+              <use xlink:href="img/sprite.svg#icon-shopping-cart"></use>
+            </svg>
+          </a>
+          <span class="header__cart-notification">2</span>
+        </div>
+      </div>
+    </header>
+    
+    <section class = "contenedor01">
+      <h1 class= "create-account"> Crea tu cuenta</h1>
+      <form action="/login" method="POST">
+        <p>
+          <label class ="label-design" for="email"> Email </label> 
+          <input class="input"  type="text" name= "usuario" id="email" placeholder="email@ejemplo.com" > 
+        </p>
+        <p>
+          <label class ="label-design" for="contraseña"> Contraseña </label>
+          <input class="input" type="text" name="email" id="contraseña" placeholder="ejemplo123">
+        </p>
+        <div class= "terms-use">
+          <input type="checkbox" name= "terminosYCondiciones">
+          <label for="">Acepto términos y condiciones de uso</label>
+        </div>
+        <p> 
+          <button class = "button" type= "submit"> Crear cuenta </button>
+        </p>
+      </form>
+    </section>
   </body>
 </html>
