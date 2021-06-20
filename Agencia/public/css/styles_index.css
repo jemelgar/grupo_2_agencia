@@ -452,15 +452,10 @@ h1 {
   .container-destination > * {
     width: 30%; }
   .container-destination .destination {
-    transition: background-image 10s;
     position: relative;
     /*Pruebas de animación ascendente*/ }
-    .container-destination .destination-description:after {
-      top: 90%; }
-    .container-destination .destination:hover:after {
-      content: ""; }
-      .container-destination .destination:hover:after .destination-description {
-        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%); }
+    .container-destination .destination:hover .destination-description {
+      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%); }
     .container-destination .destination__promo::before {
       background-color: var(--color-alert);
       content: "";
