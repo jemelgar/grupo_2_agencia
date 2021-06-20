@@ -1,0 +1,18 @@
+{
+  "name": "agencia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "compile:sass": "node-sass sass/main.scss public/css/styles_index.css -w",
+    "start2": "start http://localhost:3000 & nodemon app.js ",
+    "open": "open http://localhost:3000 & nodemon app.js "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-sass": "^6.0.0"
+  }
+}
