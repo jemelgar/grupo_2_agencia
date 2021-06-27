@@ -7,11 +7,14 @@ body {
   font-weight: 400;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   color: var(--color-grey-dark-2);
   background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 }
-
+.container-destination {
+  margin-top: 2rem;
+  margin-bottom: 14rem;
+}
 .welcome-title {
   font-family: "Lato";
   text-align: center;
@@ -31,7 +34,7 @@ body {
 .contenedor01 {
   margin: 2rem auto;
   background-color: white;
-  border: solid 2px rgb(206, 201, 201);
+  /* border: solid 2px rgb(206, 201, 201); */
   border-radius: 15px;
   height: 360px;
   margin: auto;
@@ -78,6 +81,7 @@ body {
 .button {
   margin: 2rem auto 1rem auto;
   font-size: 1.2rem;
+  font-weight: 700;
   background-color: #ff449f;
   border: #ff449f;
   color: white;
@@ -116,11 +120,6 @@ body {
 }
 
 @media (min-width: 680px) {
-  .contenedor01 {
-    display: block;
-    width: 40%;
-    text-align: center;
-  }
   .label-design {
     margin-left: 20px;
   }
@@ -130,11 +129,6 @@ body {
 }
 
 @media (min-width: 769px) {
-  .contenedor01 {
-    display: block;
-    width: 40%;
-    text-align: center;
-  }
   .label-design {
     margin-left: 30px;
   }
@@ -144,11 +138,6 @@ body {
 }
 
 @media (min-width: 1200px) {
-  .contenedor01 {
-    display: block;
-    width: 40%;
-    text-align: center;
-  }
   .label-design {
     margin-left: 90px;
   }

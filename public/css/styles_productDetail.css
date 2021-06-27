@@ -47,32 +47,28 @@ body {
 } */
 
 div.paquete {
-  /* border: solid 1px var(--color-grey-dark); */
+  margin: 5rem auto;
   border: none;
-  /* max-width: 370px; */
-  box-shadow: var(--shadow-dark);
-  position: absolute;
-
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* display: flex; ---- es para web y tabletas*/
-  /* justify-content: space-between; */
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
-
-  background-color: var(--color-primary);
-  margin: auto;
   width: 60%;
-  /* height: auto; */
+}
+.destino-nombre {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 0rem;
+  margin-bottom: 3rem;
+}
+.rating {
+  font-size: 1.5rem;
 }
 
 /* bien para 600 px */
 .paquete .descripcion-paquete {
-  font-size: 16px;
-  text-align: center;
+  font-size: 2rem;
+  text-align: justify;
   margin: auto;
   /* align-content: center; */
   /* padding: -30px; */
@@ -80,18 +76,19 @@ div.paquete {
 }
 
 .paquete .paquete-imagen {
-  border-radius: 20%;
   padding: 20px;
   width: 60%;
   /* width: auto; */
 }
 
 div.paquete-descripcion-botones {
+  height: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
-  justify-items: center;
+  /* justify-content: center; */
+  justify-items: flex-start;
+  align-content: stretch;
 }
 div.division-boton {
   /* flex-direction: row; */
@@ -121,8 +118,6 @@ div.division-boton {
   background-color: var(--color-alert);
   color: #fff;
   margin-bottom: 5px;
-  /* display: inline-block;
-	margin-left: 5px; */
 }
 
 /* Media Queries */
@@ -151,15 +146,13 @@ div.division-boton {
   div.paquete {
     display: flex;
     flex-direction: row;
-    width: 48%;
-
-    /* flex-wrap: wrap; */
+    width: 90%;
   }
 
   .paquete-descripcion-botones {
     display: flex;
     flex: column;
-    margin: auto;
+    margin: 2rem auto;
   }
 
   div.paquete img {
@@ -170,4 +163,7 @@ div.division-boton {
     display: flex;
     flex: row;
   }
+  /* .container {
+    max-height: 40vh;
+  } */
 }

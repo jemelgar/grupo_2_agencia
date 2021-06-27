@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles_pruebas.css" />
+    <title>pruebas</title>
+  </head>
+  <body>
+    <div class="container">
+        <!-- INCLUIR EL HEADER -->
+
+        <%- include('partials/header') %>
+        
+        <!-- FIN DEL HEADER -->
+
+    <main class="main">
+      <div class="container-destination">
+        <% for (let elemen of destinos) {%>
+
+        <section class="destination destination__<%=elemen.tipo%>">
+          <article class="destination__promoted">
+            <div class="destination__info-container">
+              <p class="destination-<%=elemen.tipo%>">Destino <%= elemen.tipo %></p>
+              <img src="<%= elemen.img%>" alt="" class="destination-picture" />
+              <ul class="destination-description">
+                <li class="destination-name"><%= elemen.nombre %></li>
+                <li class="destination-price">
+                  Desde: <%= elemen.precio%> p/persona
+                </li>
+                <li class="destination-date">
+                  Reserva antes del <%= elemen.fecha %> 
+                </li>
+              </ul>
+            </div>
+            <a
+              href="/productDetail"
+              class="btn btn-reservar btn--normal"
+              id="btn--<%=elemen.tipo%>"
+              >Reservar</a
+            >
+          </article>
+        </section>
+
+        <% } %>
+      </div>
+    </main>
+    <%- include('partials/footer') %> 
+    
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles_index.css" />
+    <link rel="stylesheet" href="/css/styles_productDetail.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Detalle de producto</title>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('partials/header') %>
+
+      <main class="main">
+        <div class="container-destination">
+          <!-- Descripcion producto -->
+
+          <div class="paquete">
+            <img src="<%=img%>" class="paquete-imagen" alt="" width="320px" />
+            <div class="paquete-descripcion-botones">
+              <div class="destino-nombre">
+                <%= nombre %>
+                <p class="rating"><%=rating%></p>
+              </div>
+              <p class="descripcion-paquete"><%= descripcion %></p>
+
+              <div class="division-boton">
+                <a href="/productCart" class="btn btn-color">Reservar</a>
+
+                <a href="/" class="btn btn-color">Cancelar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <%- include('partials/footer') %>
+    </div>
+  </body>
+</html>

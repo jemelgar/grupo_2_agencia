@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles_index.css" />
+    <link rel="stylesheet" href="/css/styles_productDetail.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Detalle de producto</title>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('partials/header') %>
+
+      <main class="main">
+        <div class="container-destination">
+          <!-- Descripcion producto -->
+          <% for (let elemento of destinos){ %>
+
+          <div class="paquete">
+            <img
+              src="<%=elemento.img%>"
+              class="paquete-imagen"
+              alt=""
+              width="320px"
+            />
+            <div class="paquete-descripcion-botones">
+              <p class="descripcion-paquete">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Debitis, consectetur, nam id fuga necessitatibus culpa aliquam
+                incidunt doloribus eius quis possimus voluptas expedita
+                perferendis minima qui optio. Quisquam, alias consequatur!
+              </p>
+
+              <div class="division-boton">
+                <a href="/productCart" class="btn btn-color">Reservar</a>
+
+                <a href="/" class="btn btn-color">Cancelar</a>
+              </div>
+            </div>
+          </div>
+
+          <%}%>
+        </div>
+      </main>
+    </div>
+    <%- include('partials/footer') %>
+  </body>
+</html>
