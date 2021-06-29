@@ -1,65 +1,48 @@
-const express = require("express");
-const path = require("path");
+const express = require('express');
+const path = require('path');
 const app = express();
-const destinodata = require("./data.json");
+const destinodata = require('./database/data.json');
 const port = 3000;
 
-app.use(express.static("public"));
+// Rutas
+const indexRouter = require('./routes/index');
+const loginRouter = require('./routes/login');
+const productDetailRouter = require('./routes/productDetail');
+const productCarRouter = require('./routes/productCart');
+const registerRouter = require('./routes/register');
+const signupRouter = require('./routes/signup');
+app.use(express.static('public'));
 
 app.listen(process.env.PORT || port, () =>
-  console.log(`Servidor corriendo en puerto ${port}`)
+	console.log(`Servidor corriendo en puerto ${port}`)
 );
 
-app.set("view engine", "ejs");
+app.set('view engine', 'ejs');
 
-app.get("/", (req, res) => {
-  res.render("index", { ...destinodata });
-});
+app.use('/', indexRouter);
 
-app.get("/login", (req, res) => {
-  res.render("login");
-});
+app.use('/login', loginRouter);
 
-app.get("/productCart", (req, res) => {
-  res.render("productCart");
-});
-app.get("/productDetail", (req, res) => {
-  res.render("productDetail", { ...destinodata });
-});
+app.use('/productCart', productCarRouter);
 
-app.get("/productDetail/:id", (req, res) => {
-  //guardamos la dirección del navegador en una variable para compararla con la propiedad tag de cada destino
-  const productbyid = req.params.id;
-  //iteramos sobre la colección de destinos, la información de cada uno se guarda temporalmente en la variable destino
-  for (let destino of destinodata.destinos) {
-    //recorremos la colección guardada en la variable destinodata con KEY destinos
-    //Si lo que se escriba en la dirección coincide con el tag de algún destino...
-    if (destino.tag === productbyid) {
-      //Mandamos la información de ese objeto a la vista renderizada para su uso
-      res.render("productid", { ...destino });
-    }
-  }
-});
+app.use('/productDetail', productDetailRouter);
 
-app.get("/register", (req, res) => {
-  res.render("register");
-});
-app.get("/signup", (req, res) => {
-  res.render("signup");
-});
+app.use('/register', registerRouter);
 
-app.get("/fb", (req, res) => {
-  res.redirect("https://www.facebook.com");
+app.use('/signup', signupRouter);
+
+app.get('/fb', (req, res) => {
+	res.redirect('https://www.facebook.com');
 });
-app.get("/ins", (req, res) => {
-  res.redirect("https://www.instagram.com/");
+app.get('/ins', (req, res) => {
+	res.redirect('https://www.instagram.com/');
 });
-app.get("/twi", (req, res) => {
-  res.redirect("https://twitter.com/home");
+app.get('/twi', (req, res) => {
+	res.redirect('https://twitter.com/home');
 });
-app.get("/you", (req, res) => {
-  res.redirect("https://www.youtube.com/");
+app.get('/you', (req, res) => {
+	res.redirect('https://www.youtube.com/');
 });
-app.get("*", (req, res) => {
-  res.render("error");
+app.get('*', (req, res) => {
+	res.render('error');
 });
