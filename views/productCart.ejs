@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/styles_index.css" />
+		<link rel="stylesheet" href="/css/styles_productCart.css" />
+		<!-- <link rel="stylesheet" href="/styles_productDetail.css" /> -->
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/4b999df772.js"
+			crossorigin="anonymous"
+		></script>
+
+		<title>Compra</title>
+	</head>
+	<body> 
+		<div class="container">
+		<%- include('partials/header') %>
+  
+		<main class="main">
+		  <div class="container-destination">
+	
+		<!-- Bloque padre -->
+		
+
+
+
+			<!-- Bloque padre -->
+			<div class="container-carrito">
+				
+				<!-- Icono carro -->
+				<div class="icon-carrito">
+					<i class="fas fa-shopping-cart"></i>
+					<h3>Mis Viajes</h3>
+				</div>
+				<!-- fin de icono carro -->
+				<!-- Inico Union Div con como deseas pagar y tarjeta de credito -->
+				<div class="contenedor-formaPago-detallesTarjeta">
+				<!-- Forma de pago -->
+				<div class="forma-pago">
+					<h3>¿Cómo deseas pagar?</h3>
+					<form action="" method="POST" class="inputs-formas-pago">
+
+						<p></p>	<input type="checkbox" id="tarjeta-debito">
+						<label for="tarjeta-debito">Tarjeta de Débito</label> </p>
+						
+						<p><input type="checkbox" id="tarjeta-credito">
+						<label for="tarjeta-credito">Tarjeta de Crédito</label></p>
+						
+						<p></p><input type="checkbox" id="transferencia">
+						<label for="transferencia">Transferencia</label></p>
+						
+					</form>
+
+					
+					
+				</div>
+
+				<!-- Fin forma de pago -->
+
+				<!-- Inicio Tarjeta de Crédito -->
+				<div class="detalles-tarjeta">
+					<h3>Ingresa los datos de tu tarjeta</h3>
+					
+					<label for="numero-tarjeta" >Número de Tarjeta    <i class="fas fa-credit-card"></i></label>
+					<!-- <i class="fas fa-credit-card"></i> -->
+					<input
+						type="text"
+						name="numero-tarjeta"
+						id="numero-tarjeta"
+						placeholder="Ingresa número de tarjeta"
+						maxlength="16"
+					/>
+					
+				
+					<label for="numero-tarjeta" >Nombre del Titular</label>
+					<input
+						type="text"
+						name="nombre-titular"
+						id="nombre-titular"
+						placeholder="Como figura en la tarjeta"
+						maxlength="16"
+					/>
+					<label for="vencimiento-mes">Vencimiento</label>
+					<input
+						type="text"
+						name="vencimiento-mes"
+						id="vencimiento-mes"
+						placeholder="MM"
+                 maxlength="2"
+            					/>
+						<input
+						type="text"
+						name="vencimiento-year"
+						id="vencimiento-year"
+						placeholder="YYYY"
+                 maxlength="4"
+            					/>
+					<label for="CVV">Código de seguridad</label>
+					<input type="text" name="CVV" id="CVV" placeholder="123" 
+					maxlength="3" />
+				</div>
+				
+				<!-- Fin tarjeta de credito -->
+
+			</div>
+				<!-- fin Union Div con como deseas pagar y tarjeta de credito -->
+				
+				<!--Inicio Div Union pago y compras -->
+				<div class="contenedor-detalle-pago-compra">
+					<!-- Inicio Detalle pago -->
+				
+					<div class="detalle-pago">
+						<div>
+							<h3>Detalle del pago</h3>
+						</div>
+
+						
+						<table>
+							<tr>
+							<th scope="row">Alojamiento 2 personas</th>
+							<td>$2000</td>
+												
+						</tr>
+						<tr>
+							<th scope="row">IVA</th>
+							<td>$140</td>
+												
+						</tr>
+
+						<tr>
+							<th scope="row">Total</th>
+							<td>$2140</td>
+												
+						</tr>
+
+
+
+						</table>
+								
+			
+								
+						
+							
+					</div>
+					
+					<!-- Fin detalle pago -->
+
+
+
+					<!-- Incio detalle compra -->
+					<div class="detalle-compra">
+						<h3>Detalle Compra</h3>
+						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti alias soluta placeat vel officiis molestiae ab, nemo blanditiis aspernatur iusto, </p>
+					</div>
+					<!-- Fin detalle compra -->
+				</div>
+				<!--Fin Div Union pago y compras -->
+
+				<!-- Fin bloque padre -->
+			</div>
+		</div>
+		</main>
+		<%- include('partials/footer') %> 
+		</div>
+	</body>
+</html>

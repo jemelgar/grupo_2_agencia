@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* min-height: 100vh; */
+  color: var(--color-grey-dark-2);
+  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+}
+.container-destination {
+  margin-top: 2rem;
+  margin-bottom: 14rem;
+}
+.welcome-title {
+  font-family: "Lato";
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 3rem;
+  color: var(--color-secondary);
+}
+.email-title {
+  font-family: "Lato";
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 1rem;
+  color: var(--color-grey-dark);
+}
+
+.contenedor01 {
+  margin: 2rem auto;
+  background-color: white;
+  /* border: solid 2px rgb(206, 201, 201); */
+  border-radius: 15px;
+  height: 360px;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+.login-icon {
+  /* border: solid 1px rgb(180, 175, 175); */
+  background-color: var(--color-secondary);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+  margin: auto;
+  font-size: 20px;
+  color: #fff;
+}
+
+.label-design {
+  font-family: "Lato";
+  font-size: 1.2rem;
+  display: flex;
+  margin-left: 40px;
+  margin-right: 40px;
+  color: var(--color-grey-dark);
+}
+
+.input {
+  border-radius: 15px;
+  height: 30px;
+  width: 200px;
+  text-align: center;
+  outline: none;
+  border: solid var(--color-grey-dark) 1px;
+  transition: all 0.2s;
+}
+.input:focus {
+  box-shadow: var(--shadow-light);
+}
+
+.button {
+  margin: 2rem auto 1rem auto;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: #ff449f;
+  border: #ff449f;
+  color: white;
+  border-radius: 15px;
+  height: 35px;
+  width: 130px;
+  font-family: "Lato";
+  box-shadow: var(--shadow-dark);
+  transition: all 0.2s;
+}
+.button:hover {
+  box-shadow: var(--shadow-light);
+  transform: scale(1.05, 1.05);
+  cursor: pointer;
+}
+.forgot-password {
+  color: #ff449f;
+  font-family: "Lato";
+  margin-top: 0px;
+  cursor: pointer;
+}
+
+@media (min-width: 576px) {
+  .contenedor01 {
+    display: block;
+    width: 40%;
+    text-align: center;
+  }
+  .label-design {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .input {
+    width: 200px;
+  }
+}
+
+@media (min-width: 680px) {
+  .label-design {
+    margin-left: 20px;
+  }
+  .input {
+    width: 225px;
+  }
+}
+
+@media (min-width: 769px) {
+  .label-design {
+    margin-left: 30px;
+  }
+  .input {
+    width: 250px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .label-design {
+    margin-left: 90px;
+  }
+  .input {
+    width: 300px;
+  }
+}
