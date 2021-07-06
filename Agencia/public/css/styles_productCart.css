@@ -1,51 +1,5 @@
 /* Paleta de colores */
-:root {
-  --color-primary: #e8e8e8;
-  --color-primary-light: #f4f4f2;
-  --color-primary-dark: #bbbfca;
-  --color-grey-dark: #495464;
-  --color-alert: #ff449f;
-  --color-green: #05e385;
-  --color-header: #27c5e3;
-  --color-grey-light-2: #fbfbfb;
-  --shadow-dark: 0 0.4rem 0.6rem 0 rgba(0, 0, 0, 0.2);
-  --shadow-light: 0 0.4rem 0.6rem 0 rgba(0, 0, 0, 0.1);
-  --line: 1px solid var(--color-grey-light-3);
-}
 
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-*,
-*::after,
-::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  /* border: solid green; */
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  color: var(--color-grey-dark-2);
-  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-}
-
-/* main {
-	width: 90%;
-	margin: auto;
-} */
 div.container-carrito {
   padding-top: 1rem;
   background-color: var(--color-primary-light);
