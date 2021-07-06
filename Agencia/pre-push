@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Nombre de el branch local
+local_branch=$(git rev-parse --abbrev-ref HEAD)
+if [[ "$local_branch" == "main" ]];then
+    echo "Estas en main. No puedes hacer push. Crea un Pull Request."
+    exit 1
+fi
+ exit 0
