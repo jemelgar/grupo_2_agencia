@@ -62,7 +62,7 @@ h1 {
   box-shadow: var(--shadow-dark);
   max-width: 120rem;
   margin: 7rem auto;
-  min-height: 80vh;
+  min-height: 100vh;
   position: relative;
 }
 
@@ -262,7 +262,7 @@ h1 {
 .destination > * {
   width: 80%;
 }
-.destination-destacado {
+.destination-Destacado {
   background-color: var(--color-alert);
   border-radius: 5px 0 0 5px;
   box-shadow: var(--shadow-light);
@@ -274,7 +274,7 @@ h1 {
   top: 2rem;
   right: 0;
 }
-.destination-normal {
+.destination-Normal {
   background-color: var(--color-green);
   border-radius: 5px 0 0 5px;
   box-shadow: var(--shadow-light);
@@ -428,7 +428,7 @@ h1 {
   transform: translateY(-1px);
 }
 
-#btn--normal {
+#btn--Normal {
   border: solid 2px var(--color-green);
   color: var(--color-green);
 }
@@ -569,7 +569,7 @@ h1 {
       rgba(0, 0, 0, 0) 100%
     );
   }
-  .container-destination .destination__destacado::before {
+  .container-destination .destination__Destacado::before {
     background-color: var(--color-alert);
     content: "";
     height: 3px;
@@ -580,10 +580,10 @@ h1 {
     transform: scaleX(0);
     width: 100%;
   }
-  .container-destination .destination__destacado:hover::before {
+  .container-destination .destination__Destacado:hover::before {
     transform: scaleX(1);
   }
-  .container-destination .destination__normal::before {
+  .container-destination .destination__Normal::before {
     background-color: var(--color-green);
     content: "";
     height: 3px;
@@ -594,7 +594,7 @@ h1 {
     transform: scaleX(0);
     width: 100%;
   }
-  .container-destination .destination__normal:hover::before {
+  .container-destination .destination__Normal:hover::before {
     transform: scaleX(1);
   }
   .form-container {
