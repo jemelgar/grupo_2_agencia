@@ -4,7 +4,7 @@ const app = express();
 const destinodata = require('./database/data.json');
 const port = 3000;
 
-// Rutas
+// rutas
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const productDetailRouter = require('./routes/productDetail');
