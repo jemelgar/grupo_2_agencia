@@ -1,16 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  color: var(--color-grey-dark-2);
-  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-}
 .container-destination {
   margin-top: 2rem;
   margin-bottom: 14rem;
