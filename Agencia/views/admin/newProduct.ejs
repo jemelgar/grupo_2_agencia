@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles_index.css" />
+
+    <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
+    <link rel="icon" href="/img/Logo.ico" type="image/ico" />
+
+    <!-- <link rel="icon" href="imagenes/favicon.png" type="image/png" /> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Focus Travel</title>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('../partials/header') %>
+
+      <main class="main">
+        <div class="container-destination">
+          <!-- Inicio del cuerpo de la vista -->
+          <!-- Inicio del formulario -->
+          <form action="/admin" method="POST">
+            <!-- Seleccionar tipo de destino -->
+            <label for="tipoDestino">Selecciona el tipo de destino</label>
+            <select name="tipo" id="tipoDestino">
+              <option value="normal">Normal</option>
+              <option value="destacado">Destacado</option>
+            </select>
+            <br />
+
+            <!-- Agregar nombre -->
+            <input
+              type="text"
+              name="nombre"
+              placeholder="Nombre del destino"
+              required
+              pattern="[a-zA-Z ]{2,254}"
+            />
+            <br />
+            <!-- Agregar Precio -->
+            <input type="text" name="precio" placeholder="Precio" required />
+            <br />
+            <!-- Agregar Fecha -->
+            <input
+              type="text"
+              name="fecha"
+              placeholder="Fecha de reservación"
+              required
+            />
+            <br />
+            <!-- Agregar Imagen -->
+            <!-- <label for="imgDestino">Subir Imagen del Destino</label>
+          <input type="file" name="img" id="imgDestino" required>
+          <br> -->
+            <!-- Agregar Tag -->
+            <input
+              type="text"
+              name="tag"
+              placeholder="Agregar Identificador"
+              required
+              pattern="[a-zA-Z ]{2,5}"
+            />
+            <br />
+            <!-- Agregar rating -->
+            <label for="ratingDestino">Calificación del Destino</label>
+            <select name="rating" id="ratingDestino">
+              <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+              <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+              <option value="⭐⭐⭐">⭐⭐⭐</option>
+              <option value="⭐⭐">⭐⭐</option>
+              <option value="⭐">⭐</option>
+            </select>
+            <br />
+            <!-- Agregar Descripcion -->
+            <textarea
+              name="descripcion"
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Descripción del Destino"
+              required
+            ></textarea>
+            <br />
+            <!-- BTN Guardar en JSON -->
+            <input type="submit" />
+            <!-- BTN Limpiar Campos -->
+            <input type="reset" />
+            <!-- FIN del Formulario -->
+          </form>
+
+          <!-- Fin cuerpo vista -->
+        </div>
+      </main>
+    </div>
+    <%- include('../partials/footer') %>
+  </body>
+</html>
