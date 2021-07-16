@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/styles_index.css" />
-
+    <link rel="stylesheet" href="/css/styles_newproduct.css" />
     <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
     <link rel="icon" href="/img/Logo.ico" type="image/ico" />
 
@@ -25,53 +25,68 @@
     <div class="container">
       <%- include('../partials/header') %>
 
-      <main class="main">
-        <div class="container-destination">
-          <!-- Inicio del cuerpo de la vista -->
-          <!-- Inicio del formulario -->
-          <form action="/admin" method="POST">
-            <!-- Seleccionar tipo de destino -->
-            <label for="tipoDestino">Selecciona el tipo de destino</label>
-            <select name="tipo" id="tipoDestino">
-              <option value="normal">Normal</option>
-              <option value="destacado">Destacado</option>
-            </select>
-            <br />
-
-            <!-- Agregar nombre -->
+      <main class="main main-new">
+        <!-- <div class="container-destination"> -->
+        <!-- Inicio del cuerpo de la vista -->
+        <!-- Inicio del formulario -->
+        <h1>Registro de nuevo destino</h1>
+        <form class="form-container-new" action="/admin" method="POST">
+          <!-- Agregar nombre -->
+          <section class="element-container">
             <input
+              autocomplete="off"
+              class="find-place"
               type="text"
               name="nombre"
               placeholder="Nombre del destino"
               required
               pattern="[a-zA-Z ]{2,254}"
             />
-            <br />
-            <!-- Agregar Precio -->
-            <input type="text" name="precio" placeholder="Precio" required />
-            <br />
-            <!-- Agregar Fecha -->
+          </section>
+          <!-- Agregar Precio -->
+          <section class="element-container">
             <input
+              autocomplete="off"
+              class="find-place"
               type="text"
+              name="precio"
+              placeholder="Precio"
+              required
+            />
+          </section>
+          <!-- Agregar Fecha -->
+          <section class="element-container">
+            <input
+              class="find-place"
+              type="date"
               name="fecha"
               placeholder="Fecha de reservación"
               required
             />
-            <br />
-            <!-- Agregar Imagen -->
-            <!-- <label for="imgDestino">Subir Imagen del Destino</label>
+          </section>
+          <!-- Agregar Imagen -->
+          <!-- <label for="imgDestino">Subir Imagen del Destino</label>
           <input type="file" name="img" id="imgDestino" required>
           <br> -->
-            <!-- Agregar Tag -->
+          <!-- Agregar Tag quitar esto
             <input
               type="text"
               name="tag"
               placeholder="Agregar Identificador"
               required
               pattern="[a-zA-Z ]{2,5}"
-            />
-            <br />
-            <!-- Agregar rating -->
+            /> -->
+
+          <!-- Seleccionar tipo de destino -->
+          <section class="element-container">
+            <label for="tipoDestino">Selecciona el tipo de destino</label>
+            <select name="tipo" id="tipoDestino">
+              <option value="normal">Normal</option>
+              <option value="destacado">Destacado</option>
+            </select>
+          </section>
+          <!-- Agregar rating -->
+          <section class="element-container">
             <label for="ratingDestino">Calificación del Destino</label>
             <select name="rating" id="ratingDestino">
               <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
@@ -80,9 +95,11 @@
               <option value="⭐⭐">⭐⭐</option>
               <option value="⭐">⭐</option>
             </select>
-            <br />
-            <!-- Agregar Descripcion -->
+          </section>
+          <!-- Agregar Descripcion -->
+          <section class="element-container">
             <textarea
+              autocomplete="off"
               name="descripcion"
               id=""
               cols="30"
@@ -90,16 +107,22 @@
               placeholder="Descripción del Destino"
               required
             ></textarea>
-            <br />
-            <!-- BTN Guardar en JSON -->
-            <input type="submit" />
+          </section>
+          <!-- BTN Guardar en JSON -->
+          <section class="btnform">
+            <button class="btn button" type="submit" id="btn--fill">
+              Enviar
+            </button>
             <!-- BTN Limpiar Campos -->
-            <input type="reset" />
-            <!-- FIN del Formulario -->
-          </form>
+            <button class="btn button" type="reset" id="btn--fill">
+              Cancelar
+            </button>
+          </section>
+          <!-- FIN del Formulario -->
+        </form>
 
-          <!-- Fin cuerpo vista -->
-        </div>
+        <!-- Fin cuerpo vista -->
+        <!-- </div> -->
       </main>
     </div>
     <%- include('../partials/footer') %>

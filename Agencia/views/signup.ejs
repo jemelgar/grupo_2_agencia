@@ -7,8 +7,8 @@
     <title>Resgistrate</title>
     <link rel="stylesheet" href="/css/styles_index.css" />
     <link rel="stylesheet" href="/css/styles_register.css" />
-     <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
-     <link rel="icon" href="/img/Logo.ico" type="image/ico" />
+    <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
+    <link rel="icon" href="/img/Logo.ico" type="image/ico" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
       rel="stylesheet"
@@ -28,33 +28,37 @@
             <h1 class="create-account">Crea tu cuenta</h1>
             <form action="/login" method="POST">
               <p>
-                <label class="label-design" for="email"> Email </label>
+                <!-- <label class="label-design" for="email"> Email </label> -->
                 <input
                   class="input"
                   type="text"
                   name="usuario"
                   id="email"
-                  placeholder="email@ejemplo.com"
+                  placeholder="Correo Electrónico"
+                  autocomplete="off"
                 />
               </p>
               <p>
-                <label class="label-design" for="contraseña">
-                  Contraseña
-                </label>
                 <input
                   class="input"
                   type="text"
                   name="email"
-                  id="contraseña"
-                  placeholder="ejemplo123"
+                  id="contrasenia"
+                  placeholder="Contraseña"
+                  autocomplete="off"
                 />
+                <label class="label-design" for="contrasenia">
+                  8 Caractéres, mínimo un número, mayuscúlas y minúsculas
+                </label>
               </p>
               <div class="terms-use">
                 <input type="checkbox" name="terminosYCondiciones" />
                 <label for="">Acepto términos y condiciones de uso</label>
               </div>
               <p>
-                <button class="button" type="submit">Crear cuenta</button>
+                <button class="btn button" type="submit" id="btn--fill">
+                  Crear cuenta
+                </button>
               </p>
             </form>
           </section>

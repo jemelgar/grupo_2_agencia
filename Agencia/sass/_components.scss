@@ -5,13 +5,13 @@
   font-size: 1.6rem;
   letter-spacing: 1.5px;
   padding: 1rem 4rem;
+  text-transform: uppercase;
   &:link,
-  &:visited,
-  &:focus {
+  &:visited {
     display: flex;
     justify-content: center;
     text-decoration: none;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     transition: all 0.2s;
   }
   &:hover {
@@ -25,6 +25,7 @@
   }
 }
 #btn--fill {
+  cursor: pointer;
   background-color: var(--color-alert);
   color: #fff;
 }
@@ -32,6 +33,7 @@
   border: solid 2px var(--color-green);
   color: var(--color-green);
 }
+
 #find-btn {
   border: solid 2px var(--color-secondary);
   color: var(--color-secondary);
@@ -72,6 +74,77 @@
 }
 .contanim {
   animation: show 5s linear infinite;
+}
+.hamburger {
+  position: relative;
+  display: block;
+  width: 35px;
+  height: 35px;
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.hamburger .bar,
+.hamburger::after,
+.hamburger::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.hamburger.is-active::before {
+  transform: rotate(-45deg) translate(-8px, 7px);
+}
+.hamburger.is-active .bar {
+  opacity: 0;
+}
+.hamburger.is-active::after {
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+.mobilemain {
+  position: relative;
+}
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  top: 4.8rem;
+  left: -100%;
+  z-index: 99;
+  width: 40%;
+  min-height: 100vh;
+  // background: var(--color-secondary);
+  background-image: linear-gradient(15deg, #80d0c7 0%, #18638f 100%);
+
+  transition: 0.4s;
+
+  a {
+    &:first-child {
+      margin-top: 2.2rem;
+    }
+    color: #fff;
+
+    font-size: 2rem;
+    display: block;
+    width: 100%;
+    // max-width: 200px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 12px 16px;
+    // background-color: #13547a;
+    &:hover {
+      background: #155c85;
+    }
+  }
+  &.is-active {
+    left: 0;
+  }
 }
 
 @keyframes show {
@@ -150,6 +223,14 @@
 }
 
 @media (min-width: 769px) {
+  .container {
+    margin: 7rem auto;
+  }
+  .mobile-nav,
+  .hamburger {
+    display: none;
+  }
+
   .header {
     &__hamburger {
       display: none;
