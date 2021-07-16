@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -67,4 +68,110 @@
       <%- include('partials/footer') %>
     </div>
   </body>
+=======
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Resgistrate</title>
+		<link rel="stylesheet" href="/css/styles_index.css" />
+		<link rel="stylesheet" href="/css/styles_register.css" />
+		<!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
+		<link rel="icon" href="/img/Logo.ico" type="image/ico" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/165b3be4bf.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<div class="container">
+			<%- include('partials/header') %>
+
+			<main class="main">
+				<div class="container-destination">
+					<section class="contenedor01">
+						<h1 class="create-account">Crea tu cuenta</h1>
+						<!-- <form action="/login" method="POST">  	action="/signup/newUser"-->
+						<form
+							action="/signup/newUser"
+							method="POST"
+							enctype="multipart/form-data"
+						>
+							<!-- Nombre -->
+							<p>
+								<label class="label-design" for="nombre"> Nombre </label>
+								<input
+									class="input"
+									type="text"
+									name="nombre"
+									id="nombre"
+									placeholder="Primer nombre"
+								/>
+							</p>
+							<!-- Apellido -->
+							<p>
+								<label class="label-design" for="apellido"> Apellido </label>
+								<input
+									class="input"
+									type="text"
+									name="apellido"
+									id="apellido"
+									placeholder="Apellido"
+								/>
+							</p>
+							<!-- Email -->
+							<p>
+								<label class="label-design" for="correo"> Email </label>
+								<input
+									class="input"
+									type="text"
+									name="correo"
+									id="correo"
+									placeholder="email@ejemplo.com"
+								/>
+							</p>
+							<!-- Contraseña -->
+							<p>
+								<label class="label-design" for="contrasena">
+									Contraseña
+								</label>
+								<input
+									class="input"
+									type="text"
+									name="contrasena"
+									id="contrasena"
+									placeholder="ejemplo123"
+								/>
+							</p>
+
+							<!-- Imagen -->
+							<p>
+								<label class="label-design" for="imagen">Imagen</label>
+								<input
+									class="input"
+									type="file"
+									name="imagen"
+									id="imagen"
+									placeholder="ejemplo123"
+								/>
+							</p>
+							<div class="terms-use">
+								<input type="checkbox" name="terminosYCondiciones" />
+								<label for="">Acepto términos y condiciones de uso</label>
+							</div>
+							<p>
+								<button class="button" type="submit">Crear cuenta</button>
+							</p>
+						</form>
+					</section>
+				</div>
+			</main>
+			<%- include('partials/footer') %>
+		</div>
+	</body>
+>>>>>>> usuarios
 </html>
