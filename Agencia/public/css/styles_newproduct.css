@@ -1,0 +1,47 @@
+h1 {
+  color: var(--color-grey-dark);
+  font-size: 2rem;
+}
+textarea {
+  width: 80%;
+  border: solid 1px var(--color-primary-dark);
+  outline: none;
+  resize: none;
+}
+select {
+  border: none;
+  outline: 0;
+  background: transparent;
+  border-image: none;
+  outline-offset: -2px;
+  border-color: transparent;
+  outline-color: transparent;
+  box-shadow: none;
+}
+.main-new {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+.form-container-new {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 95%;
+  margin: auto;
+}
+.element-container {
+  text-align: center;
+  margin: 1rem auto;
+  width: 100%;
+}
+/* #btn--fill {
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  border: none;
+  padding: 1rem 1.5rem;
+} */

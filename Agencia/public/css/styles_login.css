@@ -1,6 +1,6 @@
 .container-destination {
   margin-top: 2rem;
-  margin-bottom: 14rem;
+  margin-bottom: 4rem;
 }
 .welcome-title {
   font-family: "Lato";
@@ -8,6 +8,7 @@
   margin-bottom: 5px;
   font-size: 3rem;
   color: var(--color-secondary);
+  padding: 2px;
 }
 .email-title {
   font-family: "Lato";
@@ -21,16 +22,13 @@
 .contenedor01 {
   margin: 2rem auto;
   background-color: white;
-  /* border: solid 2px rgb(206, 201, 201); */
   border-radius: 15px;
   height: 360px;
   margin: auto;
-  width: 50%;
+  width: 90%;
   text-align: center;
 }
-
 .login-icon {
-  /* border: solid 1px rgb(180, 175, 175); */
   background-color: var(--color-secondary);
   border-radius: 50%;
   height: 40px;
@@ -38,81 +36,33 @@
   display: block;
   padding: 10px 0;
   text-align: center;
-  margin: auto;
+  margin: 0 auto 2rem auto;
   font-size: 20px;
   color: #fff;
 }
 
 .label-design {
-  font-family: "Lato";
-  font-size: 1.2rem;
-  display: flex;
-  margin-left: 40px;
-  margin-right: 40px;
-  color: var(--color-grey-dark);
-}
-
-.input {
-  border-radius: 15px;
-  height: 30px;
-  width: 200px;
   text-align: center;
-  outline: none;
-  border: solid var(--color-grey-dark) 1px;
-  transition: all 0.2s;
+  width: 100%;
+  font-size: 1.2rem;
+  margin: 2px auto 2rem auto;
+  color: var(--color-primary-dark);
 }
-.input:focus {
-  box-shadow: var(--shadow-light);
+form p {
+  font-family: "Lato";
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 
-.button {
-  margin: 2rem auto 1rem auto;
-  font-size: 1.2rem;
-  font-weight: 700;
-  background-color: #ff449f;
-  border: #ff449f;
-  color: white;
-  border-radius: 15px;
-  height: 35px;
-  width: 130px;
-  font-family: "Lato";
-  box-shadow: var(--shadow-dark);
-  transition: all 0.2s;
-}
-.button:hover {
-  box-shadow: var(--shadow-light);
-  transform: scale(1.05, 1.05);
-  cursor: pointer;
-}
 .forgot-password {
   color: #ff449f;
   font-family: "Lato";
   margin-top: 0px;
   cursor: pointer;
-}
-
-@media (min-width: 576px) {
-  .contenedor01 {
-    display: block;
-    width: 40%;
-    text-align: center;
-  }
-  .label-design {
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-  .input {
-    width: 200px;
-  }
-}
-
-@media (min-width: 680px) {
-  .label-design {
-    margin-left: 20px;
-  }
-  .input {
-    width: 225px;
-  }
+  font-size: 1.2rem;
 }
 
 @media (min-width: 769px) {
@@ -120,15 +70,6 @@
     margin-left: 30px;
   }
   .input {
-    width: 250px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .label-design {
-    margin-left: 90px;
-  }
-  .input {
-    width: 300px;
+    max-width: 700px;
   }
 }
