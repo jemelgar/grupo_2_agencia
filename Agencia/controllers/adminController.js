@@ -32,6 +32,7 @@ const controlador = {
         element.nombre = req.body.nombre;
         element.rating = req.body.rating;
         element.descripcion = req.body.descripcion;
+        element.img = '/img/' + req.file.filename;
       }
     });
 
@@ -73,6 +74,18 @@ const controlador = {
 
     res.redirect("admin");
   },
+  destroy: (req, res) => {
+    
+		//  let newData = fs.readFileSync("database/data.json", "utf-8");
+    // let newDataJson = JSON.parse(newData);
+		// let newDeleteJson =  destinodata.filter((newProducts) => {
+    //   console.log(newDeleteJson)
+		// 	return newProducts.id != req.params.id 
+		// }); 
+		// fs.writeFileSync(destinodata,JSON.stringify(newDeleteJson, null, 2)) 
+
+		res.send('Hola'); 
+	}
 };
 
 module.exports = controlador;

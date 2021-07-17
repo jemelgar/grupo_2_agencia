@@ -24,7 +24,7 @@
           <!-- Descripcion producto -->
 
           <div class="paquete">
-            <form action="/admin/edit/<%=tag%>?_method=PUT" method="POST">
+            <form action="/admin/edit/<%=tag%>?_method=PUT" method="POST" enctype="multipart/form-data">
               <img src="<%=img%>" class="paquete-imagen" alt="" width="320px" />
               <div class="paquete-descripcion-botones">
                 <div class="destino-nombre">
@@ -54,9 +54,17 @@
                <%= descripcion %></textarea
                 >
 
+                <div>
+                  <label for="image"> Imagen del producto </label>
+                  <input type="file"  id= "imagen" name="imagen">
+                </div>
+
                 <div class="division-boton">
                   <input type="submit" />
                   <input type="reset" />
+                  <form action="/admin/edit/<%=tag%>?_method=DELETE" method="POST" style="display: inline-flex">
+                    <button type="submit" class="action-button delete">Eliminar</button>
+                  </form>
                 </div>
               </div>
             </form>
