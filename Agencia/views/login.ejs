@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ingresa</title>
-     <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
-     <link rel="icon" href="/img/Logo.ico" type="image/ico" />
+    <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
+    <link rel="icon" href="/img/Logo.ico" type="image/ico" />
     <link rel="stylesheet" href="/css/styles_index.css" />
     <link rel="stylesheet" href="/css/styles_login.css" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
       rel="stylesheet"
@@ -28,36 +29,37 @@
           <!-- </div> -->
 
           <section class="contenedor01">
-            <h1 class="welcome-title">Bienvenido</h1>
+            <h1 class="welcome-title">¡Gusto en verte de nuevo!</h1>
             <div class="login-icon">
               <i class="fas fa-user"></i>
             </div>
-            <h5 class="email-title">¿Cuál es tu email?</h5>
+            <!-- <h5 class="email-title">¡Gusto en verte de nuevo!</h5> -->
             <form action="/login" method="POST">
               <p>
-                <label class="label-design" for="email"> Email </label>
+                <!-- <label class="label-design" for="email"> Email </label> -->
                 <input
                   class="input"
                   type="text"
                   name="usuario"
                   id="email"
-                  placeholder="email@ejemplo.com"
+                  placeholder="Correo"
+                  autocomplete="off"
                 />
               </p>
               <p>
-                <label class="label-design" for="contraseña">
-                  Contraseña
-                </label>
                 <input
                   class="input"
                   type="text"
                   name="email"
                   id="contraseña"
-                  placeholder="ejemplo123"
+                  placeholder="Contraseña"
+                  autocomplete="off"
                 />
               </p>
               <p>
-                <button class="button" type="submit">Iniciar sesión</button>
+                <button class="btn button" type="submit" id="btn--fill">
+                  Iniciar sesión
+                </button>
               </p>
               <h6 class="forgot-password">¿Olvidaste tu contraseña?</h6>
             </form>

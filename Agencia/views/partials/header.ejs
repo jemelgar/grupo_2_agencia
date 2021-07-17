@@ -1,12 +1,22 @@
 <header class="header">
-  <div class="header__hamburger">
-    <svg class="header__hamburger-icon">
-      <use xlink:href="img/sprite.svg#icon-menu"></use>
-    </svg>
-  </div>
+  <!-- <div class="header__hamburger">
+    <a class="header__nav-bar__icon" id="hamburguer">
+      <svg class="header__hamburger-icon" id="hamburguer">
+        <use xlink:href="img/sprite.svg#icon-menu"></use>
+      </svg>
+    </button>
+  </div> -->
+  <button class="hamburger">
+    <div class="bar"></div>
+  </button>
+  <!-- <nav class="mobile-nav1">
+      <a href="/"> Inicio</a>
+      <a href="/login"> Ingresa</a>
+      <a href="/signup">Registrate</a>
+    </nav> -->
   <div class="header__brand">
     <a href="/">
-      <img src="../img/Logo.png" alt="logo" class="header__brand-logo"
+      <img src="/img/Logo.png" alt="logo" class="header__brand-logo"
     /></a>
     <a href="/"> <p class="header__brand-name">Focus Travel</p></a>
   </div>
@@ -40,7 +50,7 @@
       </a>
     </div>
   </div>
-  <div class="nav-left">
+  <div class="nav-left" id="nav-ul">
     <div class="header__user">
       <p class="header__user-inicio"><a href="/"> Inicio</a></p>
       <p class="header__user-login"><a href="/login"> Ingresa</a></p>
@@ -56,3 +66,10 @@
     </div>
   </div>
 </header>
+<main class="mobilemain">
+  <nav class="mobile-nav">
+    <a href="/"> Inicio</a>
+    <a href="/login"> Ingresa</a>
+    <a href="/signup">Registrate</a>
+  </nav>
+</main>

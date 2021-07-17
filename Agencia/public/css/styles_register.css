@@ -1,6 +1,6 @@
 .container-destination {
   margin-top: 2rem;
-  margin-bottom: 14rem;
+  margin-bottom: 4rem;
 }
 .create-account {
   font-family: "Lato";
@@ -8,15 +8,15 @@
   margin-bottom: 5px;
   color: var(--color-secondary);
   font-size: 3rem;
+  padding: 10px;
 }
 
 .contenedor01 {
   background-color: white;
-  /* border: solid 2px rgb(206, 201, 201); */
   border-radius: 15px;
   height: 360px;
   margin: auto;
-  width: 50%;
+  width: 90%;
   text-align: center;
 }
 
@@ -33,70 +33,38 @@
   font-size: 20px;
 }
 form p {
+  font-family: "Lato";
   padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 
 .label-design {
-  font-family: "Lato";
-  display: flex;
-  margin-left: 40px;
-  margin-right: 40px;
-}
-
-.input {
-  border-radius: 15px;
-  height: 30px;
-  width: 200px;
   text-align: center;
+  width: 100%;
+  font-size: 1.2rem;
+  margin: 2px auto 2rem auto;
+  color: var(--color-primary-dark);
 }
 
-.button {
-  margin: 2rem auto 1rem auto;
-  font-size: 1.2rem;
-  font-weight: 700;
-  background-color: #ff449f;
-  border: #ff449f;
-  color: white;
-  border-radius: 15px;
-  height: 35px;
-  width: 130px;
-  font-family: "Lato";
-  box-shadow: var(--shadow-dark);
+.btn {
   transition: all 0.2s;
 }
-.button:hover {
-  box-shadow: var(--shadow-light);
-  transform: scale(1.05, 1.05);
-  cursor: pointer;
+
+.terms-use {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .terms-use label {
   color: #ff449f;
+  margin-left: 2px;
   font-family: "Lato";
+  font-size: 1.1rem;
   margin-top: 0px;
-}
-
-@media (min-width: 576px) {
-  .contenedor01 {
-    display: block;
-    width: 40%;
-    text-align: center;
-  }
-  .label-design {
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-  .input {
-    width: 200px;
-  }
-}
-
-@media (min-width: 680px) {
-  .label-design {
-    margin-left: 20px;
-  }
-  .input {
-    width: 225px;
-  }
 }
 
 @media (min-width: 769px) {
@@ -104,15 +72,6 @@ form p {
     margin-left: 30px;
   }
   .input {
-    width: 250px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .label-design {
-    margin-left: 90px;
-  }
-  .input {
-    width: 300px;
+    max-width: 700px;
   }
 }
