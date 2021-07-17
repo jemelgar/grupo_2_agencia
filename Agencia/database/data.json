@@ -5,9 +5,9 @@
       "nombre": "Popocatépetl, Mex.",
       "precio": 500,
       "fecha": "05 Enero 2022",
-      "img": "/img/dest-1.jpg",
+      "img": "/img/group-1626486575461.png",
       "tag": "PopMe",
-      "rating": "⭐⭐⭐⭐⭐",
+      "rating": "⭐⭐⭐⭐",
       "descripcion": "El Popocatépetl es un volcán activo localizado en el centro de México. Se encuentra en los límites territoriales de los estados de Morelos, Puebla y el estado de México. Se localiza unos 72 km al sureste de la Ciudad de México, a 43 km de Puebla, a 63 km de Cuernavaca, y a 53 km de Tlaxcala.​"
     },
     {
@@ -60,11 +60,25 @@
       "descripcion": "Excelente destino.",
       "img": "/img/dest-0.jpg"
     },
-    { "img": "/img/dest-0.jpg" },
-    { "img": "/img/dest-0.jpg" },
-    { "img": "/img/dest-0.jpg" },
-    { "img": "/img/dest-0.jpg" },
-    { "nombre": "Mariana Elizabeth ", "img": "/img/dest-0.jpg" },
-    { "nombre": "Mariana Elizabeth ", "img": "/img/dest-0.jpg" }
+    {
+      "img": "/img/dest-0.jpg"
+    },
+    {
+      "img": "/img/dest-0.jpg"
+    },
+    {
+      "img": "/img/dest-0.jpg"
+    },
+    {
+      "img": "/img/dest-0.jpg"
+    },
+    {
+      "nombre": "Mariana Elizabeth ",
+      "img": "/img/dest-0.jpg"
+    },
+    {
+      "nombre": "Mariana Elizabeth ",
+      "img": "/img/dest-0.jpg"
+    }
   ]
 }
