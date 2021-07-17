@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const destinodata = require('./database/data.json');
+const destinodata = require('./database/db-ignored.json');
 const methodOverride = require('method-override');
 const port = 3000;
 

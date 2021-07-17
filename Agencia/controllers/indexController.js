@@ -1,4 +1,4 @@
-const destinodata = require('../database/data.json');
+const destinodata = require('../database/db-ignored.json');
 
 const controlador = {
 	index: (req, res) => {
