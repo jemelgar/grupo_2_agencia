@@ -36,7 +36,9 @@ const controlador = {
       }
     });
 
-    fs.writeFileSync("database/data.json", JSON.stringify(newDataJson));
+    // Identar con dos espacion
+    let prettifyDatabase  = JSON.stringify(newDataJson, null, 2)
+    fs.writeFileSync("database/data.json", prettifyDatabase);
     res.redirect("/admin");
   },
 
