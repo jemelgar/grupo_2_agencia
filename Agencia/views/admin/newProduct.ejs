@@ -25,115 +25,11 @@
 		<div class="container">
 			<%- include('../partials/header') %>
 
-<<<<<<< HEAD
-      <main class="main main-new">
-        <!-- <div class="container-destination"> -->
-        <!-- Inicio del cuerpo de la vista -->
-        <!-- Inicio del formulario -->
-        <h1>Registro de nuevo destino</h1>
-        <form class="form-container-new" action="/admin" method="POST">
-          <!-- Agregar nombre -->
-          <section class="element-container">
-            <input
-              autocomplete="off"
-              class="find-place"
-              type="text"
-              name="nombre"
-              placeholder="Nombre del destino"
-              required
-              pattern="[a-zA-Z ]{2,254}"
-            />
-          </section>
-          <!-- Agregar Precio -->
-          <section class="element-container">
-            <input
-              autocomplete="off"
-              class="find-place"
-              type="text"
-              name="precio"
-              placeholder="Precio"
-              required
-            />
-          </section>
-          <!-- Agregar Fecha -->
-          <section class="element-container">
-            <input
-              class="find-place"
-              type="date"
-              name="fecha"
-              placeholder="Fecha de reservación"
-              required
-            />
-          </section>
-          <!-- Agregar Imagen -->
-          <!-- <label for="imgDestino">Subir Imagen del Destino</label>
-          <input type="file" name="img" id="imgDestino" required>
-          <br> -->
-          <!-- Agregar Tag quitar esto
-            <input
-              type="text"
-              name="tag"
-              placeholder="Agregar Identificador"
-              required
-              pattern="[a-zA-Z ]{2,5}"
-            /> -->
-
-          <!-- Seleccionar tipo de destino -->
-          <section class="element-container">
-            <label for="tipoDestino">Selecciona el tipo de destino</label>
-            <select name="tipo" id="tipoDestino">
-              <option value="normal">Normal</option>
-              <option value="destacado">Destacado</option>
-            </select>
-          </section>
-          <!-- Agregar rating -->
-          <section class="element-container">
-            <label for="ratingDestino">Calificación del Destino</label>
-            <select name="rating" id="ratingDestino">
-              <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
-              <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
-              <option value="⭐⭐⭐">⭐⭐⭐</option>
-              <option value="⭐⭐">⭐⭐</option>
-              <option value="⭐">⭐</option>
-            </select>
-          </section>
-          <!-- Agregar Descripcion -->
-          <section class="element-container">
-            <textarea
-              autocomplete="off"
-              name="descripcion"
-              id=""
-              cols="30"
-              rows="10"
-              placeholder="Descripción del Destino"
-              required
-            ></textarea>
-          </section>
-          <!-- BTN Guardar en JSON -->
-          <section class="btnform">
-            <button class="btn button" type="submit" id="btn--fill">
-              Enviar
-            </button>
-            <!-- BTN Limpiar Campos -->
-            <button class="btn button" type="reset" id="btn--fill">
-              Cancelar
-            </button>
-          </section>
-          <!-- FIN del Formulario -->
-        </form>
-
-        <!-- Fin cuerpo vista -->
-        <!-- </div> -->
-      </main>
-    </div>
-    <%- include('../partials/footer') %>
-  </body>
-=======
 			<main class="main">
 				<div class="container-destination">
 					<!-- Inicio del cuerpo de la vista -->
 					<!-- Inicio del formulario -->
-					<form action="/admin" method="POST">
+					<form action="/admin" method="POST" enctype="multipart/form-data">
 						<!-- Seleccionar tipo de destino -->
 						<label for="tipoDestino">Selecciona el tipo de destino</label>
 						<select name="tipo" id="tipoDestino">
@@ -195,18 +91,23 @@
 							required
 						></textarea>
 						<br />
+						<br>
+						<div>
+							<label for="imagen"> Imagen del producto </label>
+							<input type="file"  id= "imagen" name="imagen">
+						  </div>
+						  <br />
 						<!-- BTN Guardar en JSON -->
-						<input type="submit" />
+						<button type="submit" > Enviar</button> 
 						<!-- BTN Limpiar Campos -->
-						<input type="reset" />
+						<button type="reset" > Cancelar</button> 
 						<!-- FIN del Formulario -->
 					</form>
-
+	
 					<!-- Fin cuerpo vista -->
 				</div>
 			</main>
 		</div>
 		<%- include('../partials/footer') %>
 	</body>
->>>>>>> usuarios
 </html>

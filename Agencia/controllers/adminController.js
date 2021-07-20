@@ -56,8 +56,8 @@ const controlador = {
       tag,
       rating,
       descripcion,
-      img = "/img/dest-0.jpg",
     } = req.body;
+    const img = '/img/' +  req.file.filename
     let newData = fs.readFileSync("database/data.json", "utf-8");
     let newDataJson = JSON.parse(newData);
     newDataJson.destinos.push({
@@ -71,7 +71,7 @@ const controlador = {
       img,
     });
     // res.send(newDataJson.destinos)
-    let newDataconv = JSON.stringify(newDataJson);
+    let newDataconv = JSON.stringify(newDataJson, null, 2);
     fs.writeFileSync("database/data.json", newDataconv);
 
     res.redirect("admin");
