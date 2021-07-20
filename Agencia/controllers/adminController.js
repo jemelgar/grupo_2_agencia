@@ -1,5 +1,5 @@
 const fs = require("fs");
-const destinodata = require("../database/data.json");
+const destinodata = require("../database/db-ignored.json");
 
 const controlador = {
   index: (req, res) => {
@@ -22,7 +22,7 @@ const controlador = {
   },
   saveEdit: (req, res) => {
     const { nombre, rating, descripcion } = req.body;
-    let newData = fs.readFileSync("database/data.json", "utf-8");
+    let newData = fs.readFileSync("database/db-ignored.json", "utf-8");
     let newDataJson = JSON.parse(newData);
     // res.send(req.params.id);
 
@@ -38,7 +38,7 @@ const controlador = {
 
     // Identar con dos espacion
     let prettifyDatabase  = JSON.stringify(newDataJson, null, 2)
-    fs.writeFileSync("database/data.json", prettifyDatabase);
+    fs.writeFileSync("database/db-ignored.json", prettifyDatabase);
     res.redirect("/admin");
   },
 
@@ -58,7 +58,7 @@ const controlador = {
       descripcion,
       img = "/img/dest-0.jpg",
     } = req.body;
-    let newData = fs.readFileSync("database/data.json", "utf-8");
+    let newData = fs.readFileSync("database/db-ignored.json", "utf-8");
     let newDataJson = JSON.parse(newData);
     newDataJson.destinos.push({
       tipo,
@@ -72,13 +72,13 @@ const controlador = {
     });
     // res.send(newDataJson.destinos)
     let newDataconv = JSON.stringify(newDataJson);
-    fs.writeFileSync("database/data.json", newDataconv);
+    fs.writeFileSync("database/db-ignored.json", newDataconv);
 
     res.redirect("admin");
   },
   destroy: (req, res) => {
     
-		//  let newData = fs.readFileSync("database/data.json", "utf-8");
+		//  let newData = fs.readFileSync("database/db-ignored.json", "utf-8");
     // let newDataJson = JSON.parse(newData);
 		// let newDeleteJson =  destinodata.filter((newProducts) => {
     //   console.log(newDeleteJson)
