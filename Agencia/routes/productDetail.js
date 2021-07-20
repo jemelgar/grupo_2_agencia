@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const destinodata = require('../database/data.json');
+const destinodata = require('../database/db-ignored.json');
 const productDetailController = require('../controllers/productDetailController');
 
 router.get('/', productDetailController.productDetail);
