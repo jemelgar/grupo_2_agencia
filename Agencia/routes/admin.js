@@ -25,8 +25,9 @@ router.get("/", adminController.index);
 router.get("/edit/:id", adminController.edit);
 router.put("/edit/:id",upload.single('imagen'), adminController.saveEdit);
 
-router.post("/", adminController.addProducto);
-router.get("/new", adminController.newProduct);
+router.get("/newProduct",adminController.newProduct);
+router.post("/",upload.single('imagen'),adminController.addProducto);
+
 
 router.delete('/edit/:id', adminController.destroy); 
 

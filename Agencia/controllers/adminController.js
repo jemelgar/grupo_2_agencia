@@ -56,9 +56,10 @@ const controlador = {
       tag,
       rating,
       descripcion,
-      img = "/img/dest-0.jpg",
     } = req.body;
-    let newData = fs.readFileSync("database/db-ignored.json", "utf-8");
+    const img = '/img/' +  req.file.filename
+    let newData = fs.readFileSync("database/data.json", "utf-8");
+
     let newDataJson = JSON.parse(newData);
     newDataJson.destinos.push({
       tipo,
@@ -71,8 +72,9 @@ const controlador = {
       img,
     });
     // res.send(newDataJson.destinos)
-    let newDataconv = JSON.stringify(newDataJson);
-    fs.writeFileSync("database/db-ignored.json", newDataconv);
+    let newDataconv = JSON.stringify(newDataJson, null, 2);
+    fs.writeFileSync("database/data.json", newDataconv);
+
 
     res.redirect("admin");
   },
