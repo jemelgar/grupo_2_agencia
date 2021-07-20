@@ -1,3 +1,4 @@
 Agencia/node_modules/
 .DS_Store
 Agencia/database/db-ignored.json
+Agencia/database/db-user-ignored.json

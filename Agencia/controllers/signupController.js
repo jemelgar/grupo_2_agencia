@@ -4,7 +4,7 @@ const { v4: obtencionID } = require('uuid');
 const { newProduct } = require('./adminController');
 obtencionID(); // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
 
-const usersFilePath = path.join(__dirname, '../database/users.json');
+const usersFilePath = path.join(__dirname, '../database/db-user-ignored.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const controlador = {
