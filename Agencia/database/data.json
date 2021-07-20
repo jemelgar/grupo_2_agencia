@@ -3,11 +3,11 @@
     {
       "tipo": "destacado",
       "nombre": "Popocatépetl, Mex.",
-      "precio": 500,
+      "precio": 500.0,
       "fecha": "05 Enero 2022",
-      "img": "/img/group-1626486575461.png",
+      "img": "/img/dest-1.jpg",
       "tag": "PopMe",
-      "rating": "⭐⭐⭐⭐",
+      "rating": "⭐⭐⭐⭐⭐",
       "descripcion": "El Popocatépetl es un volcán activo localizado en el centro de México. Se encuentra en los límites territoriales de los estados de Morelos, Puebla y el estado de México. Se localiza unos 72 km al sureste de la Ciudad de México, a 43 km de Puebla, a 63 km de Cuernavaca, y a 53 km de Tlaxcala.​"
     },
     {
@@ -49,16 +49,6 @@
       "tag": "CdMx",
       "rating": "⭐⭐⭐",
       "descripcion": "Ciudad de México es la densamente poblada capital de México que se encuentra a gran altura. Es famosa por su Templo Mayor (un templo azteca del siglo XIII), la Catedral Metropolitana de México, de estilo barroco, de los conquistadores españoles y el Palacio Nacional."
-    },
-    {
-      "tipo": "normal",
-      "nombre": "Puerto Vallarta",
-      "precio": "200",
-      "fecha": "400",
-      "tag": "Pup",
-      "rating": "⭐⭐⭐",
-      "descripcion": "Excelente destino.",
-      "img": "/img/dest-0.jpg"
     }
   ]
 }
