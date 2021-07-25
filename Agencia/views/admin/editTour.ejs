@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles_index.css" />
+    <link rel="stylesheet" href="/css/styles_edittour.css" />
+    <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
+    <link rel="icon" href="/img/Logo.ico" type="image/ico" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Edición de tour</title>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('../partials/header') %>
+
+      <main class="main">
+        <div class="container-destination">
+          <!-- Descripcion producto -->
+
+          <div class="paquete">
+            <form             action="/admin/edit/<%=tag%>?_method=PUT"
+              method="POST"
+              enctype="multipart/form-data"       >
+              <img src="<%=img%>" class="paquete-imagen" alt="" width="320px" />
+              <div class="paquete-descripcion-botones">
+                <div class="destino-nombre">
+                  <label for="nombrePaquete">Nombre del Destino</label>
+                  <input
+                    type="text"
+                    id="nombrePaquete"
+                    value="<%= nombre %>"
+                    name="nombre"
+                  />
+                  <br />
+                  <!-- <label for="rating">Cambiar valoración</label>
+                  <input
+                    type="text"
+                    value="<%=//rating%>"
+                    id="rating"
+                    name="rating"
+                  /> -->
+                </div>
+                <label for="descripcion">Descripción</label>
+                <textarea
+                  name="descripcion"
+                  id="descripcion"
+                  cols="30"
+                  rows="8"</textarea>
+                
+                <%= descripcion %></textarea
+                >
+
+
+                <div class="change-image">
+                  <input type="file" id="imagen" name="imagen" />
+                  <label for="imagen"> Cambiar imagen... </label>
+                </div>
+
+                <div class="division-boton">
+                  <button type="submit" class="btn" id="btn--fill">Guardar</button>
+                  <button type="reset" class="btn" id="btn--fill">Cancelar</button>
+                  
+                  
+                </div>
+             </div>
+          
+           </form>
+           
+          </div>
+          <form
+                    action="/admin/edit/<%=tag%>?_method=DELETE"
+                    method="POST"
+                    style="display: inline-flex"
+                    onsubmit="return confirm('¿Eliminar <%=tag%> ?');"
+                  >
+                    <button class="action-button delete btn" id="btn--fill">
+                      Eliminar
+                    </button>
+                  
+                  </form>
+        </div>
+      </main>
+      <%- include('../partials/footer') %>
+    </div>
+  </body>
+</html>

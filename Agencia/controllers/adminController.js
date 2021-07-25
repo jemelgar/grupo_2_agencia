@@ -2,9 +2,12 @@ const fs = require("fs");
 const destinodata = require("../database/db-ignored.json");
 
 const controlador = {
+  cpanel: (req, res) => {
+    res.render("admin/controlPanel");
+  },
   index: (req, res) => {
     // const{tipo,nombre, precio, fecha, tag, rating, descripcion} =req.body
-    res.render("admin/listOfProductsToMod", { ...destinodata });
+    res.render("admin/listOfTours", { ...destinodata });
     // res.redirect("/admin");
   },
   edit: (req, res) => {
@@ -16,7 +19,7 @@ const controlador = {
       //Si lo que se escriba en la dirección coincide con el tag de algún destino...
       if (destino.tag === productbyid) {
         //Mandamos la información de ese objeto a la vista renderizada para su uso
-        res.render("admin/modProductId", { ...destino });
+        res.render("admin/editTour", { ...destino });
       }
     }
   },
@@ -32,12 +35,12 @@ const controlador = {
         element.nombre = req.body.nombre;
         element.rating = req.body.rating;
         element.descripcion = req.body.descripcion;
-        element.img = '/img/' + req.file.filename;
+        element.img = "/img/" + req.file.filename;
       }
     });
 
     // Identar con dos espacion
-    let prettifyDatabase  = JSON.stringify(newDataJson, null, 2)
+    let prettifyDatabase = JSON.stringify(newDataJson, null, 2);
     fs.writeFileSync("database/db-ignored.json", prettifyDatabase);
     res.redirect("/admin");
   },
@@ -48,16 +51,8 @@ const controlador = {
     // res.redirect("/admin");
   },
   addProducto: (req, res) => {
-    const {
-      tipo,
-      nombre,
-      precio,
-      fecha,
-      tag,
-      rating,
-      descripcion,
-    } = req.body;
-    const img = '/img/' +  req.file.filename
+    const { tipo, nombre, precio, fecha, tag, rating, descripcion } = req.body;
+    const img = "/img/" + req.file.filename;
     let newData = fs.readFileSync("database/db-ignored.json", "utf-8");
 
     let newDataJson = JSON.parse(newData);
@@ -75,21 +70,26 @@ const controlador = {
     let newDataconv = JSON.stringify(newDataJson, null, 2);
     fs.writeFileSync("database/db-ignored.json", newDataconv);
 
-
     res.redirect("admin");
   },
   destroy: (req, res) => {
-    
-		//  let newData = fs.readFileSync("database/db-ignored.json", "utf-8");
-    // let newDataJson = JSON.parse(newData);
-		// let newDeleteJson =  destinodata.filter((newProducts) => {
-    //   console.log(newDeleteJson)
-		// 	return newProducts.id != req.params.id 
-		// }); 
-		// fs.writeFileSync(destinodata,JSON.stringify(newDeleteJson, null, 2)) 
+    let newData = JSON.parse(
+      fs.readFileSync("database/db-ignored.json", "utf-8")
+    );
+    newData = newData.destinos;
 
-		res.send('Hola'); 
-	}
+    let newDeleteJson = newData.filter((newProducts) => {
+      //   console.log(newDeleteJson)
+      return newProducts.tag != req.params.id;
+    });
+    newdatabase = { destinos: newDeleteJson };
+    fs.writeFileSync(
+      "database/db-ignored.json",
+      JSON.stringify(newdatabase, null, 2)
+    );
+
+    res.redirect("/");
+  },
 };
 
 module.exports = controlador;

@@ -1,9 +1,9 @@
 const destinodata = require("../database/db-ignored.json");
 
 const controlador = {
-  productDetail: (req, res) => {
-    res.render("productDetail", { ...destinodata });
-  },
+  // productDetail: (req, res) => {
+  //   res.render("listOfTours", { ...destinodata });
+  // },
   productDetailID: (req, res) => {
     //guardamos la dirección del navegador en una variable para compararla con la propiedad tag de cada destino
     const productbyid = req.params.id;
@@ -13,7 +13,7 @@ const controlador = {
       //Si lo que se escriba en la dirección coincide con el tag de algún destino...
       if (destino.tag === productbyid) {
         //Mandamos la información de ese objeto a la vista renderizada para su uso
-        res.render("productid", { ...destino });
+        res.render("tour", { ...destino });
       }
     }
   },
