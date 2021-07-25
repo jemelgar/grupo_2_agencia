@@ -46,14 +46,7 @@
                     name="rating"
                   /> -->
                 </div>
-                <label for="descripcion">Descripción</label>
-                <textarea
-                  name="descripcion"
-                  id="descripcion"
-                  cols="30"
-                  rows="8"</textarea>
-                
-                <%= descripcion %></textarea
+                <label for="descripcion">Descripción</label><textarea name="descripcion" id="descripcion" cols="30" rows="8"</textarea><%= descripcion %></textarea
                 >
 
 
@@ -64,7 +57,7 @@
 
                 <div class="division-boton">
                   <button type="submit" class="btn" id="btn--fill">Guardar</button>
-                  <button type="reset" class="btn" id="btn--fill">Cancelar</button>
+                  <button type="reset"  class="btn" id="btn--fill">Resetear</button>
                   
                   
                 </div>
@@ -73,7 +66,7 @@
            </form>
            
           </div>
-          <form
+          <!-- <form
                     action="/admin/edit/<%=tag%>?_method=DELETE"
                     method="POST"
                     style="display: inline-flex"
@@ -83,7 +76,7 @@
                       Eliminar
                     </button>
                   
-                  </form>
+                  </form> -->
         </div>
       </main>
       <%- include('../partials/footer') %>

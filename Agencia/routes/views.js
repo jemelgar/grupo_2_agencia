@@ -25,6 +25,7 @@ const uploadFile = multer({ storage });
 
 //home
 router.get("/", indexController.index);
+router.get("/home", indexController.index);
 
 /********************CLIENTE************************** */
 //login
