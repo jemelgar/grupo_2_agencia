@@ -10,7 +10,8 @@ const controlador = {
     res.render("admin/controlPanel");
   },
   index: (req, res) => {
-    res.render("admin/listOfTours", { ...tours });
+    const toursList = JSON.parse(fs.readFileSync(toursFilePath, "utf-8"));
+    res.render("admin/listOfTours", { ...toursList });
   },
   edit: (req, res) => {
     const productbyid = req.params.id;
@@ -35,7 +36,7 @@ const controlador = {
 
     let prettifyDatabase = JSON.stringify(newDataJson, null, 2);
     fs.writeFileSync(toursFilePath, prettifyDatabase);
-    res.redirect("/admin/tours" + "?" + Date.now());
+    res.redirect("/admin/tours");
   },
 
   newProduct: (req, res) => {
@@ -72,7 +73,7 @@ const controlador = {
 
     fs.writeFileSync(toursFilePath, JSON.stringify(newdatabase, null, 2));
 
-    res.redirect("/admin");
+    res.redirect("/admin/tours");
   },
 };
 

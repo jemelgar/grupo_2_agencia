@@ -56,7 +56,69 @@ div.division-boton {
   /* justify-content: center; */
   margin-top: 1%;
 }
-
+.infopedido {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+.orderform {
+  border: solid 1px var(--color-secondary);
+  border-radius: 3px;
+  padding: 1rem;
+  font-size: 2rem;
+  color: #000;
+  width: 100%;
+  /*  align-self: flex-start; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-start;
+}
+.orderform label {
+  width: 60%;
+  margin-bottom: 1.2rem;
+}
+.orderform input {
+  font-family: inherit;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+}
+.orderform input:hover {
+  box-shadow: var(--shadow-light);
+}
+.costounitario {
+  margin: 0 auto 2rem;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+.division-boton {
+  width: 100%;
+}
+.orderform {
+  width: 80%;
+}
+.division {
+  width: 100%;
+  height: 10px;
+  /* background-color: lawngreen; */
+  border-bottom: solid 1px var(--color-primary);
+  margin: 0;
+}
+#preciofinal {
+  width: 60%;
+}
+#cantidad {
+  padding-left: 1rem;
+  width: 50px;
+}
+#total {
+  display: block;
+  font-weight: 700;
+  color: var(--color-alert);
+}
 /* Media Queries */
 @media (min-width: 768px) {
   div.paquete {
@@ -79,7 +141,7 @@ div.division-boton {
   div.division-boton {
     flex-direction: row;
     justify-content: center;
-    width: 70%;
+    width: 100%;
   }
 }
 

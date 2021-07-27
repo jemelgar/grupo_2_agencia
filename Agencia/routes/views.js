@@ -32,6 +32,7 @@ router.get("/home", indexController.index);
 router.get("/login", loginController.login);
 //Mi carrito
 router.get("/mycart", productCartController.productCar);
+router.post("/mycart/:id", productCartController.productCarById);
 //detalle de producto
 // router.get("/tours", productDetailController.productDetail); //la ruta simplemente muestra todos los paquetes para un cliente
 router.get("/tour/:id", productDetailController.productDetailID);

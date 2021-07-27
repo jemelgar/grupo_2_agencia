@@ -61,15 +61,17 @@
                   alt=""
                   class="destination-picture"
                 />
-                <ul class="destination-description">
-                  <li class="destination-name"><%= elemento.nombre %></li>
-                  <li class="destination-price">
-                    Desde: $<%= elemento.precio%> p/persona
-                  </li>
-                  <li class="destination-date">
-                    Reserva antes del <%= elemento.fecha %>
-                  </li>
-                </ul>
+                <a href="/tour/<%=elemento.tag%>">
+                  <ul class="destination-description">
+                    <li class="destination-name"><%= elemento.nombre %></li>
+                    <li class="destination-price">
+                      Desde: $<%= elemento.precio%> p/persona
+                    </li>
+                    <li class="destination-date">
+                      Reserva antes del <%= elemento.fecha %>
+                    </li>
+                  </ul></a
+                >
               </div>
               <a
                 href="/tour/<%=elemento.tag%>"
