@@ -1,6 +1,6 @@
 .container-destination {
   margin-top: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 30rem;
 }
 .create-account {
   font-family: "Lato";
@@ -34,7 +34,7 @@
 }
 form p {
   font-family: "Lato";
-  padding: 10px;
+  padding: 2.5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -45,7 +45,7 @@ form p {
   text-align: center;
   width: 100%;
   font-size: 1.2rem;
-  margin: 2px auto 2rem auto;
+  margin: 0 auto 1rem auto;
   color: var(--color-primary-dark);
 }
 

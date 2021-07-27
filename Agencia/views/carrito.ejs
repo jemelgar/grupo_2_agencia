@@ -11,7 +11,7 @@
 		 <link rel="icon" href="/img/Logo.ico" type="image/ico" />
 
 		<link
-			href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700;900&display=swap"
 			rel="stylesheet"
 		/>
 		<script
@@ -42,6 +42,54 @@
 					<h3>Mis Viajes</h3>
 				</div>
 				<!-- fin de icono carro -->
+					<!--Inicio Div Union pago y compras -->
+					<div class="contenedor-detalle-pago-compra">
+						<!-- Inicio Detalle pago -->
+					
+						<div class="detalle-pago">
+							<div>
+								<h3>Detalle del pago</h3>
+							</div>
+	
+							
+							<table>
+								<tr>
+								<th scope="row">Alojamiento <%= locals.formInfo && tourSelected ? formInfo.cantidadPersonas:'' %>  personas</th>
+								<!-- <td>$2000</td> -->
+													
+							</tr>
+							<!-- <tr>
+								<th scope="row">IVA</th>
+								<td>$140</td>
+													
+							</tr> -->
+	
+							<tr>
+								<th scope="row">Total</th>
+								<td>$<%=locals.formInfo && tourSelected ? tourSelected.precio * formInfo.cantidadPersonas:'' %>  </td>
+													
+							</tr>
+	
+	
+	
+							</table>
+									
+				
+									
+							
+								
+						</div>
+						
+						<!-- Fin detalle pago -->
+	
+	
+						<!-- Incio detalle compra -->
+						<div class="detalle-compra">
+							<h3>Detalle Compra</h3>
+							<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti alias soluta placeat vel officiis molestiae ab, nemo blanditiis aspernatur iusto, </p>
+						</div>
+						<!-- Fin detalle compra -->
+					</div>
 				<!-- Inico Union Div con como deseas pagar y tarjeta de credito -->
 				<div class="contenedor-formaPago-detallesTarjeta">
 				<!-- Forma de pago -->
@@ -114,55 +162,10 @@
 			</div>
 				<!-- fin Union Div con como deseas pagar y tarjeta de credito -->
 				
-				<!--Inicio Div Union pago y compras -->
-				<div class="contenedor-detalle-pago-compra">
-					<!-- Inicio Detalle pago -->
-				
-					<div class="detalle-pago">
-						<div>
-							<h3>Detalle del pago</h3>
-						</div>
-
-						
-						<table>
-							<tr>
-							<th scope="row">Alojamiento 2 personas</th>
-							<td>$2000</td>
-												
-						</tr>
-						<tr>
-							<th scope="row">IVA</th>
-							<td>$140</td>
-												
-						</tr>
-
-						<tr>
-							<th scope="row">Total</th>
-							<td>$2140</td>
-												
-						</tr>
-
-
-
-						</table>
-								
 			
-								
-						
-							
-					</div>
-					
-					<!-- Fin detalle pago -->
 
 
 
-					<!-- Incio detalle compra -->
-					<div class="detalle-compra">
-						<h3>Detalle Compra</h3>
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti alias soluta placeat vel officiis molestiae ab, nemo blanditiis aspernatur iusto, </p>
-					</div>
-					<!-- Fin detalle compra -->
-				</div>
 				<!--Fin Div Union pago y compras -->
 
 				<!-- Fin bloque padre -->
@@ -170,6 +173,7 @@
 		</div>
 		</main>
 		<%- include('partials/footer') %> 
+		<%- include('partials/mobilebar') %>
 		</div>
 	</body>
 </html>

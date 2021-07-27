@@ -1,14 +1,48 @@
+label {
+  display: block;
+  font-size: 2rem;
+  color: var(--color-alert);
+  width: 30%;
+  font-weight: 700;
+}
+input {
+  width: 60%;
+  height: 4rem;
+  font-family: inherit;
+  font-size: 1.8rem;
+  margin: 1rem 0;
+  border: none;
+  outline: none;
+  background-color: var(--color-primary);
+  border-radius: 3px;
+  padding-left: 1rem;
+  /* border: none;
+  border-bottom: solid 1px var(--color-primary-dark); */
+}
+input:focus {
+  box-shadow: var(--shadow-dark);
+}
 h1 {
   color: var(--color-grey-dark);
   font-size: 2rem;
 }
 textarea {
-  width: 80%;
-  border: solid 1px var(--color-primary-dark);
+  width: 60%;
+  border: none;
+  border-radius: 3px;
+  padding-left: 1rem;
+  /* border: solid 1px var(--color-primary-dark); */
+  background-color: var(--color-primary);
   outline: none;
   resize: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+}
+textarea:focus {
+  box-shadow: var(--shadow-dark);
 }
 select {
+  width: 60%;
   border: none;
   outline: 0;
   background: transparent;
@@ -17,6 +51,43 @@ select {
   border-color: transparent;
   outline-color: transparent;
   box-shadow: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+}
+option {
+  font-family: inherit;
+  font-size: 1.8rem;
+}
+button {
+  border: none;
+  transition: all 0.2s;
+  margin: 0 1rem;
+}
+form {
+  padding-top: 2rem;
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0.5rem 2rem;
+}
+section:not(:last-child) {
+  border-bottom: solid 1px var(--color-primary);
+}
+.botones {
+  justify-content: center;
+}
+.btn {
+  font-weight: 500;
+  background-color: #fff;
+  cursor: pointer;
+}
+.container-destination {
+  width: 100%;
 }
 .main-new {
   display: flex;
@@ -38,10 +109,13 @@ select {
   margin: 1rem auto;
   width: 100%;
 }
-/* #btn--fill {
-  text-decoration: none;
+#btn--fill {
+  font-size: 2rem;
   text-transform: uppercase;
-  transition: all 0.2s;
-  border: none;
-  padding: 1rem 1.5rem;
-} */
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+}
+#new-product {
+  width: 100%;
+  margin: 0 auto;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles_index.css" />
+    <link rel="stylesheet" href="/css/styles_productDetail.css" />
+    <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
+    <link rel="icon" href="/img/Logo.ico" type="image/ico" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Detalle de producto</title>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('partials/header') %>
+
+      <main class="main">
+        <div class="container-destination">
+          <!-- Descripcion producto -->
+
+          <div class="paquete">
+            <img src="<%=img%>" class="paquete-imagen" alt="" width="320px" />
+            <div class="paquete-descripcion-botones">
+              <div class="destino-nombre">
+                <%= nombre %>
+                <p class="rating"><%=rating%></p>
+              </div>
+              <p class="descripcion-paquete"><%= descripcion %></p>
+              <div class="infopedido">
+                <form
+                  action="/mycart/<%=tag%> "
+                  method="POST"
+                  class="orderform"
+                >
+                  <span class="costounitario"
+                    >Costo por persona $<%=precio%></span
+                  >
+
+                  <div class="division"></div>
+                  <label for="cantidad">Numero de personas</label>
+                  <input
+                    type="number"
+                    id="cantidad"
+                    onchange="calculaTotal()"
+                    value="1"
+                    min="0"
+                    name="cantidadPersonas"
+                  />
+
+                  <div class="division"></div>
+                  <label for="fechareservacion">Fecha a Reservar</label>
+                  <input type="date" />
+
+                  <div class="division"></div>
+
+                  <p id="preciofinal">Precio Final</p>
+                  <span id="total"></span>
+                  <div class="division"></div>
+
+                  <div class="division-boton">
+                    <button type="submit" class="btn" id="btn--fill">
+                      Reservar
+                    </button>
+                    <!-- <a href="/mycart" type="submit" class="btn" id="btn--fill"
+                      >Reservar</a
+                    > -->
+
+                    <a href="/" class="btn">Cancelar</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <%- include('partials/footer') %> <%- include('partials/mobilebar') %>
+      <script>
+        function calculaTotal (){
+
+          let finalPrice = <%=precio%>;
+          let numPersonas = parseInt(document.querySelector("#cantidad").value);
+          document.querySelector('#total').innerText = '$' + finalPrice*numPersonas
+          }
+          calculaTotal();
+      </script>
+    </div>
+  </body>
+</html>

@@ -289,7 +289,7 @@
   }
   & a {
     display: block;
-    max-width: 60%;
+    // max-width: 200px;
     &:link {
       text-align: center;
     }
@@ -346,6 +346,26 @@
   color: var(--color-primary-dark);
   padding: 2rem;
   margin: 2rem 0;
+}
+.mobile-nav-bar {
+  position: sticky;
+  z-index: 101;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  background-color: var(--color-secondary);
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.mobile-icon {
+  display: inline-block;
+  fill: #fff;
+  height: 3.5rem;
+  margin: 0.5rem 1.6rem 0rem 1.6rem;
+  width: 2.5rem;
 }
 
 .input {

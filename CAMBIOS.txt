@@ -1,0 +1,13 @@
+//Re-estructuración de rutas
+Vistas:
+        home
+        tour/:id /*detalle/
+        signup
+        login
+        mycart
+
+Rutas de Usuario:
+    post    /signup
+    post    /login
+    post    /loguot
+    post    /forgotPassword
