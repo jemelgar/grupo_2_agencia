@@ -12,6 +12,9 @@ Practicar para la escribir mejor código
 Mejorar vistas con diseño responsivo
 Resolver Conflictos en GIT para hacer merges.
 
+> Hacer vista "Acerca de nosotros"
+> Aviso Legal & privacidad
+
 Qué hicimos
 bien: CRUD de productos completo
 Buena organización del equipo
