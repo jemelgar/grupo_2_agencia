@@ -259,6 +259,12 @@
         display: flex;
         margin: 0 1rem;
       }
+      a > p {
+        height: 100%;
+        align-items: center;
+        align-self: stretch;
+        display: flex;
+      }
     }
   }
   .socialnet {
