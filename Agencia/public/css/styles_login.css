@@ -1,3 +1,11 @@
+.text-danger {
+  color:var(--color-alert);
+  text-align: left;
+  margin: 2px auto 2rem auto;
+  font-size: 1.2rem;
+  width: 85%; 
+}
+
 .container-destination {
   margin-top: 2rem;
   margin-bottom: 4rem;
@@ -55,6 +63,18 @@ form p {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+}
+
+.form-check{
+  display: flex;
+  color:var(  --color-grey-dark);
+  margin: 3px auto 2rem auto;
+  margin-top: 2%;
+  font-size: 1.2rem;
+  width: 83%; 
+}
+.checkbox{
+  margin-right: 0.5%;
 }
 
 .forgot-password {

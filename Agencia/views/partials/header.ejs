@@ -52,9 +52,14 @@
   </div>
   <div class="nav-left" id="nav-ul">
     <div class="header__user">
+     
       <a href="/"> <p class="header__user-inicio">Inicio</p></a>
-      <a href="/login"><p class="header__user-login">Ingresa</p></a>
-      <a href="/signup"> <p class="header__user-signup">Registrate</p></a>
+      <% if (locals.isLogged) { %>
+      <a href='/login/profile'> <p class="header__user-inicio"> Perfil <%= userLogged.name %> </p></a>
+      <% } else { %>
+      <a href="/login"><p class="header__user-login">Login</p></a>
+      <a href="/signup"> <p class="header__user-signup">Sign Up</p></a>
+      <% } %>
     </div>
     <div class="header__cart">
       <a href="/mycart">
@@ -69,7 +74,7 @@
 <main class="mobilemain">
   <nav class="mobile-nav">
     <a href="/"> Inicio</a>
-    <a href="/login"> Ingresa</a>
-    <a href="/signup">Registrate</a>
+    <a href="/login"> Login </a>
+    <a href="/signup"> Sign Up</a>
   </nav>
 </main>

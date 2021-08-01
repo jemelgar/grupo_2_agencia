@@ -35,28 +35,46 @@
             </div>
             <!-- <h5 class="email-title">¡Gusto en verte de nuevo!</h5> -->
             <form action="/login" method="POST">
-              <p>
+              <div>
                 <!-- <label class="label-design" for="email"> Email </label> -->
                 <input
                   class="input"
                   type="text"
-                  name="usuario"
+                  name="email"
                   id="email"
                   placeholder="Correo"
                   autocomplete="off"
-                />
-              </p>
-              <p>
+                  value="<%= locals.oldData ? oldData.email : null %>"/>
+                <% if (locals.errors && errors.email){ %>
+                <div class = "text-danger">
+                  <%= errors.email.msg %>
+                </div>
+                <% } %>
+              </div>
+              <div>
+                <br>
                 <input
                   class="input"
-                  type="text"
-                  name="email"
-                  id="contraseña"
+                  type="password"
+                  name="password"
+                  id="password"
                   placeholder="Contraseña"
                   autocomplete="off"
                 />
-              </p>
-              <p>
+                <% if (locals.errors && errors.password){ %>
+                  <div class = "text-danger">
+                    <%= errors.password.msg %>
+                  </div>
+                  <% } %>
+                </div>
+                <label class = "form-check">
+                  <input  class = "checkbox" type="checkbox" name="remember_user"> Recordar mi usuario
+
+                </label>
+
+
+              <div>
+                <br>
                 <button class="btn button" type="submit" id="btn--fill">
                   Iniciar sesión
                 </button>
