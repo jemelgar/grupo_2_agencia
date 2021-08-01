@@ -7,11 +7,13 @@ const loginController = require("../controllers/loginController");
 const indexController = require("../controllers/indexController");
 const userController = require("../controllers/newUserController");
 const signupController = require("../controllers/signupController");
-const registerController = require("../controllers/registerController");
 const productCartController = require("../controllers/productCartController");
 const productDetailController = require("../controllers/productDetailController");
+const validateLoginMiddleware = require("../middlewares/validateLoginMiddleware");
+const guestMiddleware = require("../middlewares/guestMiddleware")
+const authMiddleware = require("../middlewares/authMiddleware")
 
-// ** Almacenar archivos con multer
+// Almacenar archivos con multer
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     // cb(null, './public/img');
@@ -28,25 +30,33 @@ router.get("/", indexController.index);
 router.get("/home", indexController.index);
 
 /********************CLIENTE************************** */
-//login
-router.get("/login", loginController.login);
-//Mi carrito
+// Formulario de Login
+router.get("/login",guestMiddleware, loginController.login);
+
+// Procesar el Login
+router.post("/login", validateLoginMiddleware , loginController.loginProcess)
+
+// Perfil de Usuario
+router.get("/login/profile",authMiddleware, loginController.profile)
+
+// Logout
+//router.get("/logout" ,authMiddleware, loginController.logout)
+
+// Mi carrito
 router.get("/mycart", productCartController.productCar);
 router.post("/mycart/:id", productCartController.productCarById);
-//detalle de producto
+
+// Detalle de producto
 // router.get("/tours", productDetailController.productDetail); //la ruta simplemente muestra todos los paquetes para un cliente
 router.get("/tour/:id", productDetailController.productDetailID);
-//vista registro
-router.get("/register", registerController.register);
 
-// Vista de registro
+
+// Formulario de registro
 router.get("/signup", signupController.signup);
-// envío de datos de registro
-router.post(
-  "/newUser",
-  uploadFile.single("imagen"),
-  signupController.storeUser
-);
+
+// Proceso de registro
+router.post("/newUser",uploadFile.single("imagen"),signupController.storeUser);
+
 //mensaje de bienvenida al nuevo usuario (?)
 router.get("/newUser", userController.newUser);
 module.exports = router;
