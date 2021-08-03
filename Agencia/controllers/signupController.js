@@ -44,22 +44,6 @@ const controlador = {
 		let userCreated = User.create(userToCreate);
 		return res.redirect('/login');
 	},
-
-	// storeUser: (req, res) => {
-	// 	let newUser = {
-	// 		id: obtencionID(),
-	// 		nombre: req.body.nombre,
-	// 		apellido: req.body.apellido,
-	// 		correo: req.body.correo,
-	// 		contrasena: req.body.contrasena,
-	// 		image: req.file.filename,
-	// 	};
-
-	// 	users.push(newUser);
-	// 	fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
-	// 	// res.redirect('/signup');
-	// 	res.redirect('/newUser');
-	// },
 };
 
 module.exports = controlador;
