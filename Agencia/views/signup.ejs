@@ -24,17 +24,23 @@
 					<section class="contenedor01">
 						<h1 class="create-account">Crea tu cuenta</h1>
 						<!-- <form action="/login" method="POST">  	action="/signup/newUser"-->
-						<form action="/login" method="POST" enctype="multipart/form-data">
+						<form action="/signup" method="POST" enctype="multipart/form-data">
 							<!-- Nombre -->
 							<p>
-								<label class="label-design" for="last_name
+								<label class="label-design" for="first_name"> Nombre </label>
 								<input
 									class="input"
 									type="text"
 									name="first_name"
-									id="first_name"
 									placeholder="Primer nombre"
+									id="first_name"
+									value="<%= locals.oldData ? oldData.first_name : null %>"
 								/>
+								<% if (locals.errors && errors.first_name) { %>
+									<div class="text-danger">
+										<%= errors.first_name.msg %>
+									</div>
+								<% } %>
 							</p>
 							<!-- Apellido -->
 							<p>
@@ -43,9 +49,15 @@
 									class="input"
 									type="text"
 									name="last_name"
-									id="last_name"
 									placeholder="Apellido"
+									id="last_name"
+									value="<%= locals.oldData ? oldData.last_name : null %>"
 								/>
+								<% if (locals.errors && errors.last_name) { %>
+									<div class="text-danger">
+										<%= errors.last_name.msg %>
+									</div>
+								<% } %>
 							</p>
 							<!-- Email -->
 							<p>
@@ -54,26 +66,43 @@
 									class="input"
 									type="text"
 									name="email"
-									id="email"
 									placeholder="email@ejemplo.com"
+									id="email"
+									value="<%= locals.oldData ? oldData.email : null %>"
 								/>
+								<% if (locals.errors && errors.email) { %>
+									<div class="text-danger">
+										<%= errors.email.msg %>
+									</div>
+								<% } %>
 							</p>
 							<!-- Contraseña -->
 							<p>
 								<label class="label-design" for="password"> Contraseña </label>
 								<input
 									class="input"
-									type="text"
+									type="password"
 									name="password"
-									id="password"
 									placeholder="ejemplo123"
+									id="password"
+									value="<%= locals.oldData ? oldData.password : null %>"
 								/>
+								<% if (locals.errors && errors.password) { %>
+									<div class="text-danger">
+										<%= errors.password.msg %>
+									</div>
+								<% } %>
 							</p>
 
 							<!-- Imagen -->
 							<p>
 								<label class="label-design" for="image">Imagen</label>
-								<input class="input" type="file" name="image" id="image" placeholder="ejemplo123" />
+								<input class="input" type="file" name="image" id="image" />
+								<% if (locals.errors && errors.image) { %>
+									<div class="text-danger">
+										<%= errors.image.msg %>
+									</div>
+								<% } %>
 							</p>
 							<div class="terms-use">
 								<input type="checkbox" name="terminosYCondiciones" />

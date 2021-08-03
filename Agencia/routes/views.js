@@ -1,18 +1,24 @@
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
+// const { body } = require('express-validator');
 const router = express.Router();
+
+// Requiriendo controladores
 const destinodata = require('../database/db-ignored.json');
 const loginController = require('../controllers/loginController');
 const indexController = require('../controllers/indexController');
 const signupController = require('../controllers/signupController');
 const productCartController = require('../controllers/productCartController');
 const productDetailController = require('../controllers/productDetailController');
+
+// Requiriendo Midlewares
 const validateLoginMiddleware = require('../middlewares/validateLoginMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const validateRegisterMiddleware = require('../middlewares/validateRegisterMiddleware');
 
-// Almacenar archivos con multer
+// Almacenar archivos con multer para la vista de register
 const storage = multer.diskStorage({
 	destination: function (req, file, cb) {
 		// cb(null, './public/img');
@@ -49,12 +55,21 @@ router.post('/mycart/:id', productCartController.productCarById);
 // router.get("/tours", productDetailController.productDetail); //la ruta simplemente muestra todos los paquetes para un cliente
 router.get('/tour/:id', productDetailController.productDetailID);
 
-// Formulario de registro
+// ! FORMULARIO DE REGISTRO
+
+// Muestra el formulario de registro
 router.get('/signup', signupController.signup);
 
 // Proceso de registro
-router.post('/newUser', uploadFile.single('imagen'), signupController.storeUser);
+router.post('/signup', uploadFile.single('image'), validateRegisterMiddleware, signupController.processRegister);
+// router.post(
+// 	'/signup',
+// 	uploadFile.single('image'),
+// 	validateRegisterMiddleware,
 
-//mensaje de bienvenida al nuevo usuario (?)
-router.get('/newUser', userController.newUser);
+// 	signupController.processRegister
+// );
+
+// //mensaje de bienvenida al nuevo usuario (?)
+// router.get('/newUser', userController.newUser);
 module.exports = router;
