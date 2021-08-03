@@ -2,7 +2,7 @@
 const path = require('path');
 const { body } = require('express-validator');
 
-const validations = [
+module.exports = [
 	body('first_name').notEmpty().withMessage('Escribe tu nombre'),
 	body('last_name').notEmpty().withMessage('Escribe tu apellido'),
 	body('email')
@@ -30,5 +30,3 @@ const validations = [
 		return true;
 	}),
 ];
-
-module.exports = validations;

@@ -17,18 +17,19 @@ const validateLoginMiddleware = require('../middlewares/validateLoginMiddleware'
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const validateRegisterMiddleware = require('../middlewares/validateRegisterMiddleware');
+const uploadFile = require('../middlewares/multerMiddleware');
 
 // Almacenar archivos con multer para la vista de register
-const storage = multer.diskStorage({
-	destination: function (req, file, cb) {
-		// cb(null, './public/img');
-		cb(null, './public/img/usersImages');
-	},
-	filename: function (req, file, cb) {
-		cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`);
-	},
-});
-const uploadFile = multer({ storage });
+// const storage = multer.diskStorage({
+// 	destination: function (req, file, cb) {
+// 		// cb(null, './public/img');
+// 		cb(null, './public/img/usersImages');
+// 	},
+// 	filename: function (req, file, cb) {
+// 		cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`);
+// 	},
+// });
+// const uploadFile = multer({ storage });
 
 //home
 router.get('/', indexController.index);
@@ -61,14 +62,12 @@ router.get('/tour/:id', productDetailController.productDetailID);
 router.get('/signup', signupController.signup);
 
 // Proceso de registro
-router.post('/signup', uploadFile.single('image'), validateRegisterMiddleware, signupController.processRegister);
-// router.post(
-// 	'/signup',
-// 	uploadFile.single('image'),
-// 	validateRegisterMiddleware,
-
-// 	signupController.processRegister
-// );
+router.post(
+	'/signup',
+	uploadFile.single('image'),
+	validateRegisterMiddleware,
+	signupController.processRegister
+);
 
 // //mensaje de bienvenida al nuevo usuario (?)
 // router.get('/newUser', userController.newUser);
