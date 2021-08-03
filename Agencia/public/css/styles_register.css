@@ -1,77 +1,85 @@
+.text-danger {
+	color: var(--color-alert);
+	text-align: center;
+	width: 100%;
+	font-size: 1.2rem;
+	margin: 0 auto 1rem auto;
+}
+
 .container-destination {
-  margin-top: 2rem;
-  margin-bottom: 30rem;
+	margin-top: 2rem;
+	margin-bottom: 30rem;
 }
 .create-account {
-  font-family: "Lato";
-  text-align: center;
-  margin-bottom: 5px;
-  color: var(--color-secondary);
-  font-size: 3rem;
-  padding: 10px;
+	font-family: 'Lato';
+	text-align: center;
+	margin-bottom: 5px;
+	color: var(--color-secondary);
+	font-size: 3rem;
+	padding: 10px;
 }
 
 .contenedor01 {
-  background-color: white;
-  border-radius: 15px;
-  height: 360px;
-  margin: auto;
-  width: 90%;
-  text-align: center;
+	background-color: white;
+	border-radius: 15px;
+	height: 360px;
+	margin: auto;
+	width: 90%;
+	text-align: center;
 }
 
 .login-icon {
-  border: solid 1px rgb(180, 175, 175);
-  background-color: rgb(180, 175, 175);
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  display: block;
-  padding: 10px 0;
-  text-align: center;
-  margin: auto;
-  font-size: 20px;
+	border: solid 1px rgb(180, 175, 175);
+	background-color: rgb(180, 175, 175);
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+	display: block;
+	padding: 10px 0;
+	text-align: center;
+	margin: auto;
+	font-size: 20px;
 }
 form p {
-  font-family: "Lato";
-  padding: 2.5px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
+	font-family: 'Lato';
+	padding: 2.5px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
 }
 
 .label-design {
-  text-align: center;
-  width: 100%;
-  font-size: 1.2rem;
-  margin: 0 auto 1rem auto;
-  color: var(--color-primary-dark);
+	text-align: center;
+	width: 100%;
+	font-size: 1.2rem;
+	margin: 0 auto 1rem auto;
+	color: var(--color-primary-dark);
 }
 
 .btn {
-  transition: all 0.2s;
+	transition: all 0.2s;
 }
 
 .terms-use {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
 }
 .terms-use label {
-  color: #ff449f;
-  margin-left: 2px;
-  font-family: "Lato";
-  font-size: 1.1rem;
-  margin-top: 0px;
+	color: #ff449f;
+	margin-left: 2px;
+	font-family: 'Lato';
+	font-size: 1.1rem;
+	margin-top: 0px;
 }
 
 @media (min-width: 769px) {
-  .label-design {
-    margin-left: 30px;
-  }
-  .input {
-    max-width: 700px;
-  }
+	.label-design {
+		margin-left: 30px;
+	}
+	.input {
+		max-width: 700px;
+	}
 }
