@@ -1,6 +1,6 @@
 .text-danger {
   color:var(--color-alert);
-  text-align: left;
+  text-align: center;
   margin: 2px auto 2rem auto;
   font-size: 1.2rem;
   width: 85%; 
@@ -71,7 +71,7 @@ form p {
   margin: 3px auto 2rem auto;
   margin-top: 2%;
   font-size: 1.2rem;
-  width: 83%; 
+  width: 68%; 
 }
 .checkbox{
   margin-right: 0.5%;
