@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Perfil de usuario </title>
-		<link rel="stylesheet" href="/css/styles_index.css" />
-		<link rel="stylesheet" href="/css/styles_register.css" />
-		<!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
-		<link rel="icon" href="/img/Logo.ico" type="image/ico" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700;900&display=swap"
-			rel="stylesheet"
-		/>
-		<script
-			src="https://kit.fontawesome.com/165b3be4bf.js"
-			crossorigin="anonymous"
-		></script>
-	</head>
-	<body>
-		<div class="container">
-			<%- include('partials/header') %>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil de usuario</title>
+    <link rel="stylesheet" href="/css/styles_index.css" />
+    <link rel="stylesheet" href="/css/styles_register.css" />
+    <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
+    <link rel="icon" href="/img/Logo.ico" type="image/ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/165b3be4bf.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('partials/header') %>
 
-			<main class="main">
-				<div class="container-destination">
-					<section class="contenedor01">
-						<h1 class="create-account"> Usuario: <%= user.first_name  %> </h1>
-						<img src="/img/usersImages/<%= user.image %>" width="40" style="border-radius:100%;">
-						<br>
-						<br>
-						<div class="create-account"> Email: <%= user.email %>
-						</div>
-					</section>	
-				</div>		
-			</main>
-			<%- include('partials/footer') %>
-			<%- include('partials/mobilebar') %>
-		</div>
-	</body>
+      <main class="main">
+        <div class="container-destination">
+          <section class="contenedor01">
+            <h1 class="create-account">!Hola! <%= user.first_name %></h1>
+            <img
+              src="/img/usersImages/<%= user.image %>"
+              style="border-radius: 100%; max-width: 80%"
+            />
+            <br />
+            <br />
+            <div class="create-account">Email: <%= user.email %></div>
+          </section>
+        </div>
+      </main>
+      <%- include('partials/footer') %> <%- include('partials/mobilebar') %>
+    </div>
+  </body>
 </html>
