@@ -46,7 +46,7 @@ router.post('/login', validateLoginMiddleware, loginController.loginProcess);
 router.get('/login/profile', authMiddleware, loginController.profile);
 
 // Logout
-//router.get("/logout" ,authMiddleware, loginController.logout)
+router.get("/logout" ,authMiddleware, loginController.logout)
 
 // Mi carrito
 router.get('/mycart', productCartController.productCar);
@@ -56,12 +56,12 @@ router.post('/mycart/:id', productCartController.productCarById);
 // router.get("/tours", productDetailController.productDetail); //la ruta simplemente muestra todos los paquetes para un cliente
 router.get('/tour/:id', productDetailController.productDetailID);
 
-// ! FORMULARIO DE REGISTRO
+// FORMULARIO DE REGISTRO
 
-// Muestra el formulario de registro
-router.get('/signup', signupController.signup);
+// Formulario de registro
+router.get('/signup',guestMiddleware, signupController.signup);
 
-// Proceso de registro
+// Procesar registro
 router.post(
 	'/signup',
 	uploadFile.single('image'),

@@ -55,7 +55,10 @@
      
       <a href="/"> <p class="header__user-inicio">Inicio</p></a>
       <% if (locals.isLogged) { %>
-      <a href='/login/profile'> <p class="header__user-inicio"> Perfil <%= userLogged.name %> </p></a>
+      <a href='/login/profile'> 
+        <img src="../img/usersImages/<%= userLogged.image%>" width="40" style="border-radius:100%;">
+        <p class="header__user-inicio"> ¡Hola <%= userLogged.first_name %>!</p></a>
+      <a href="/logout"><p class="header__user-login">Log out</p></a>
       <% } else { %>
       <a href="/login"><p class="header__user-login">Login</p></a>
       <a href="/signup"> <p class="header__user-signup">Sign Up</p></a>
