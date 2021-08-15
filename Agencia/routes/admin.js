@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require("path");
 const adminController = require("../controllers/adminController");
 const multer = require("multer");
+const adminMiddleware = require("../middlewares/adminMiddleware");
 
 // ********* Multer ********
 const storage = multer.diskStorage({
@@ -20,14 +21,24 @@ const storage = multer.diskStorage({
 // ejecucion de multer
 const upload = multer({ storage });
 
-router.get("/", adminController.cpanel);
-router.get("/tours", adminController.index);
-router.get("/edit/:id", adminController.edit);
-router.put("/edit/:id", upload.single("imagen"), adminController.saveEdit);
+router.get("/", adminMiddleware, adminController.cpanel);
+router.get("/tours", adminMiddleware, adminController.index);
+router.get("/edit/:id", adminMiddleware, adminController.edit);
+router.put(
+  "/edit/:id",
+  adminMiddleware,
+  upload.single("imagen"),
+  adminController.saveEdit
+);
 
-router.get("/newProduct", adminController.newProduct);
-router.post("/", upload.single("imagen"), adminController.addProducto);
+router.get("/newProduct", adminMiddleware, adminController.newProduct);
+router.post(
+  "/",
+  adminMiddleware,
+  upload.single("imagen"),
+  adminController.addProducto
+);
 
-router.delete("/edit/:id", adminController.destroy);
+router.delete("/edit/:id", adminMiddleware, adminController.destroy);
 
 module.exports = router;
