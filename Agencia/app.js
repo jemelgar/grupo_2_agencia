@@ -11,6 +11,7 @@ const port = 3000;
 // Rutas
 const vistasRouter = require("./routes/views");
 const adminRouter = require("./routes/admin");
+const pruebaCRUD = require("./routes/pruebaCRUD");
 const exp = require("constants");
 
 /////////////////////////////////////
@@ -39,6 +40,7 @@ app.use(userLoggedMiddleware);
 /*Ruteo */
 app.use("/", vistasRouter);
 app.use("/admin", adminRouter);
+app.use("/crud", pruebaCRUD);
 
 /* SOCIAL Y ERROR */
 

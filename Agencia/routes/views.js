@@ -46,7 +46,7 @@ router.post('/login', validateLoginMiddleware, loginController.loginProcess);
 router.get('/login/profile', authMiddleware, loginController.profile);
 
 // Logout
-router.get("/logout" ,authMiddleware, loginController.logout)
+router.get('/logout', authMiddleware, loginController.logout);
 
 // Mi carrito
 router.get('/mycart', productCartController.productCar);
@@ -59,16 +59,14 @@ router.get('/tour/:id', productDetailController.productDetailID);
 // FORMULARIO DE REGISTRO
 
 // Formulario de registro
-router.get('/signup',guestMiddleware, signupController.signup);
+router.get('/signup', guestMiddleware, signupController.signup);
 
 // Procesar registro
-router.post(
-	'/signup',
-	uploadFile.single('image'),
-	validateRegisterMiddleware,
-	signupController.processRegister
-);
+router.post('/signup', uploadFile.single('image'), validateRegisterMiddleware, signupController.processRegister);
 
-// //mensaje de bienvenida al nuevo usuario (?)
-// router.get('/newUser', userController.newUser);
+router.get('/usuarios', signupController.list);
+router.get('/usuarios/:id', signupController.detail);
+router.delete('/usuarios/:id', signupController.delete);
+router.put('/usuarios/:id', signupController.update);
+
 module.exports = router;
