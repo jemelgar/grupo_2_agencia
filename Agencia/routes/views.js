@@ -66,7 +66,6 @@ router.post('/signup', uploadFile.single('image'), validateRegisterMiddleware, s
 
 router.get('/usuarios', signupController.list);
 router.get('/usuarios/:id', signupController.detail);
-router.get('/correo', signupController.exist);
 router.delete('/usuarios/:id', signupController.delete);
 router.put('/usuarios/:id', signupController.update);
 
