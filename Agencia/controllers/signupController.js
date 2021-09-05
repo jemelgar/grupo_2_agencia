@@ -4,8 +4,7 @@ const path = require('path');
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
 
-const User = require('../models/Users');
-// const prueba = require('../models/prueba');
+// const User = require('../models/Users');
 
 const usersFilePath = path.join(__dirname, '../database/db-user-ignored.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
