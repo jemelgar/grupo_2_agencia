@@ -5,7 +5,7 @@ const { validationResult } = require('express-validator');
 const db = require('../database/models');
 
 const User = require('../models/Users');
-const prueba = require('../models/prueba');
+// const prueba = require('../models/prueba');
 
 const usersFilePath = path.join(__dirname, '../database/db-user-ignored.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -33,34 +33,6 @@ const controlador = {
 		});
 	},
 
-	// ** Añadiendo funcion buscar
-
-	// ** Funcion correo
-	// correo: (req, res) => {
-	// 	db.Usuario.findAll({
-	// 		where: {
-	// 			email: req.params.email,
-	// 		},
-	// 		// 		// attributes: ['firs_name'],
-	// 	}).then((email) => {
-	// 		console.log(JSON.stringify(email, null, 2));
-	// 	});
-	// },
-
-	// **Esta es la buena
-	exist: async (req, res) => {
-		db.Usuario.findOne({
-			where: {
-				email: req.body.email,
-			},
-		})
-			.then(function (user) {
-				res.json(`User Exist: ${user}`);
-				// signupController.processRegister(req, res);
-			})
-			.catch((error) => res.send(error));
-	},
-
 	processRegister: (req, res) => {
 		// !*Validaciones de middleware
 		const resultValidation = validationResult(req);
@@ -71,9 +43,6 @@ const controlador = {
 				oldData: req.body,
 			});
 		}
-
-		// let existe  = this.exist;
-		// db.Usuario.findOne({ email: req.body.email });
 
 		// **Creando al usuario tanto para postman como vista
 		db.Usuario.create({
