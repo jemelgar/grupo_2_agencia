@@ -46,7 +46,9 @@ const controlador = {
 	// 		console.log(JSON.stringify(email, null, 2));
 	// 	});
 	// },
-	exist: (req, res) => {
+
+	// **Esta es la buena
+	exist: async (req, res) => {
 		db.Usuario.findOne({
 			where: {
 				email: req.body.email,
@@ -54,11 +56,13 @@ const controlador = {
 		})
 			.then(function (user) {
 				res.json(`User Exist: ${user}`);
+				// signupController.processRegister(req, res);
 			})
 			.catch((error) => res.send(error));
 	},
 
 	processRegister: (req, res) => {
+		// !*Validaciones de middleware
 		const resultValidation = validationResult(req);
 
 		if (resultValidation.errors.length > 0) {
@@ -68,6 +72,10 @@ const controlador = {
 			});
 		}
 
+		// let existe  = this.exist;
+		// db.Usuario.findOne({ email: req.body.email });
+
+		// **Creando al usuario tanto para postman como vista
 		db.Usuario.create({
 			first_name: req.body.first_name,
 			last_name: req.body.last_name,
@@ -114,5 +122,3 @@ const controlador = {
 };
 
 module.exports = controlador;
-
-// console.log(controlador.correo());
