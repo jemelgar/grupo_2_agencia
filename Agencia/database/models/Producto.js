@@ -26,6 +26,10 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.INTEGER,
       allowNull: false,
     },
+    price: {
+      type: dataTypes.DECIMAL,
+      allowNull: false,
+    },
   };
   let config = {
     tableName: "productos",

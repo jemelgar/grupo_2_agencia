@@ -48,33 +48,35 @@
               <a href="" class="btn find-btn" id="find-btn">Buscar</a>
             </form>
           </div>
-          <% for (let elemento of destinos) { %>
+          <% for (let elemento of resultados) { %>
 
-          <section class="destination destination__<%=elemento.tipo%>">
+          <section
+            class="destination destination__<%=elemento.destination_promoted%>"
+          >
             <article class="destination__promoted">
               <div class="destination__info-container">
-                <p class="destination-<%=elemento.tipo%>">
-                  Destino <%= elemento.tipo %>
+                <p class="destination-<%=elemento.destination_promoted%>">
+                  Destino <%= elemento.destination_promoted %>
                 </p>
                 <img
-                  src="<%= elemento.img%> "
+                  src="<%= elemento.img_destination%> "
                   alt=""
                   class="destination-picture"
                 />
-                <a href="/tour/<%=elemento.tag%>">
+                <a href="/tour/<%=elemento.id%>">
                   <ul class="destination-description">
-                    <li class="destination-name"><%= elemento.nombre %></li>
+                    <li class="destination-name"><%= elemento.name %></li>
                     <li class="destination-price">
-                      Desde: $<%= elemento.precio%> p/persona
+                      Desde: $<%= elemento.price%> p/persona
                     </li>
                     <li class="destination-date">
-                      Reserva antes del <%= elemento.fecha %>
+                      Reserva antes del <%= elemento.date %>
                     </li>
                   </ul></a
                 >
               </div>
               <a
-                href="/tour/<%=elemento.tag%>"
+                href="/tour/<%=elemento.id%>"
                 class="btn btn-reservar"
                 id="btn--<%= elemento.tipo %>"
                 >ver más...</a
