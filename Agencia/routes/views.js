@@ -34,7 +34,7 @@ const uploadFile = require('../middlewares/multerMiddleware');
 //home
 router.get('/', indexController.index);
 router.get('/home', indexController.index);
-
+router.get('/search', indexController.search);
 /********************CLIENTE************************** */
 // Formulario de Login
 router.get('/login', guestMiddleware, loginController.login);
