@@ -18,6 +18,7 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const validateRegisterMiddleware = require('../middlewares/validateRegisterMiddleware');
 const uploadFile = require('../middlewares/multerMiddleware');
+const { index } = require('../controllers/indexController');
 
 // Almacenar archivos con multer para la vista de register
 // const storage = multer.diskStorage({
@@ -35,6 +36,8 @@ const uploadFile = require('../middlewares/multerMiddleware');
 router.get('/', indexController.index);
 router.get('/home', indexController.index);
 router.get('/search', indexController.search);
+router.get('/tour/:id', indexController.detail);
+router.delete('/tour/:id', indexController.delete);
 /********************CLIENTE************************** */
 // Formulario de Login
 router.get('/login', guestMiddleware, loginController.login);
@@ -54,7 +57,7 @@ router.post('/mycart/:id', productCartController.productCarById);
 
 // Detalle de producto
 // router.get("/tours", productDetailController.productDetail); //la ruta simplemente muestra todos los paquetes para un cliente
-router.get('/tour/:id', productDetailController.productDetailID);
+//router.get('/tour/:id', indexController.detail);
 
 // FORMULARIO DE REGISTRO
 
