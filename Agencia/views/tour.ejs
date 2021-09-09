@@ -24,21 +24,21 @@
           <!-- Descripcion producto -->
 
           <div class="paquete">
-            <img src="<%=img%>" class="paquete-imagen" alt="" width="320px" />
+            <img src="<%=tour.img_destination%>" class="paquete-imagen" alt="" width="320px" />
             <div class="paquete-descripcion-botones">
               <div class="destino-nombre">
-                <%= nombre %>
-                <p class="rating"><%=rating%></p>
+                <%= tour.name %>
+                <p class="rating"> Rating: <%=tour.rating%></p> 
               </div>
-              <p class="descripcion-paquete"><%= descripcion %></p>
+              <p class="descripcion-paquete"><%= tour.description %></p>
               <div class="infopedido">
                 <form
-                  action="/mycart/<%=tag%> "
+                  action="/mycart/"
                   method="POST"
                   class="orderform"
                 >
                   <span class="costounitario"
-                    >Costo por persona $<%=precio%></span
+                    >Costo por persona $<%=tour.price%></span
                   >
 
                   <div class="division"></div>
@@ -66,10 +66,7 @@
                     <button type="submit" class="btn" id="btn--fill">
                       Reservar
                     </button>
-                    <!-- <a href="/mycart" type="submit" class="btn" id="btn--fill"
-                      >Reservar</a
-                    > -->
-
+                    <!-- <a href="/mycart" type="submit" class="btn" id="btn--fill"> Reservar</a> -->
                     <a href="/" class="btn">Cancelar</a>
                   </div>
                 </form>
@@ -80,9 +77,9 @@
       </main>
       <%- include('partials/footer') %> <%- include('partials/mobilebar') %>
       <script>
+       
         function calculaTotal (){
-
-          let finalPrice = <%=precio%>;
+          let finalPrice =tour.price;
           let numPersonas = parseInt(document.querySelector("#cantidad").value);
           document.querySelector('#total').innerText = '$' + finalPrice*numPersonas
           }

@@ -50,7 +50,7 @@ const controlador = {
 			password: bcryptjs.hashSync(req.body.password, 10),
 			image: req.file.filename,
 			// id: 2,
-			id_tipo_usuario: 2,
+			id_tipo_usuario: 2, 
 		}).then((usuario) => {
 			return res.redirect('/login');
 		});

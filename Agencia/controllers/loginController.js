@@ -24,7 +24,7 @@ const controladorLogin = {
           if (req.body.remember_user) {
             res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 4 });
           }
-          if (req.session.userLogged.tipoUsuario != "Administrador") {
+          if (req.session.userLogged.tipoUsuario != 1) {
             return res.redirect("/login/profile");
           } else {
             return res.redirect("/admin");

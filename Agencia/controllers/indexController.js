@@ -34,12 +34,30 @@ const controlador = {
 			where: {
 				name: { [Op.like]: '%' + paquete + '%' },
 			},
-		}).then((tours) => {
+		}).then((resultados) => {
 			// let search = req.query.search;
-			res.render('productos', { tours });
+			res.render('tourResults', {resultados});
 			// return res.json(tours);
 		});
 	},
+  detail: (req, res) =>{
+    db.Producto.findByPk(req.params.id)
+    .then((tour) => {
+        res.render('tour', {tour})
+        //return res.json(tours);
+    })
+  },
+  delete: (req, res) => {
+		db.Producto.destroy({
+			where: {
+				id: req.params.id,
+			},
+		})
+			.then((response) => {
+				return res.json(response);
+			})
+			.catch((error) => res.send(error));
+    }
 };
 
 module.exports = controlador;
