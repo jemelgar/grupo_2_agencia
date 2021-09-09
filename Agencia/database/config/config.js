@@ -1,8 +1,8 @@
 module.exports = {
 	development: {
-		username: 'root',
-		password: 'rootandrea',
-		database: 'agencia2',
+		username: 'Mariana',
+		password: 'Hola123',
+		database: 'agencia',
 		host: '127.0.0.1',
 		dialect: 'mysql',
 		// port: 3307,
