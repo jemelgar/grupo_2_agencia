@@ -1,10 +1,10 @@
 function guestMiddleware(req, res, next) {
-  if (req.session.userLogged.tipoUsuario != "Administrador") {
-    console.log("Acceso denegado");
-    return res.redirect("/");
-  }
+	if (req.session.userLogged.id_tipo_usuario != 1) {
+		console.log('Acceso denegado');
+		return res.redirect('/');
+	}
 
-  next();
+	next();
 }
 
 module.exports = guestMiddleware;
