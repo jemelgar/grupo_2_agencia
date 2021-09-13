@@ -63,17 +63,17 @@ const controlador = {
       res.redirect("admin/tours" + "?" + Date.now());
     });
   },
-  destroy: (req, res) => {
-    let newData = tours.destinos;
-    let newDeleteJson = newData.filter((newProducts) => {
-      return newProducts.tag != req.params.id;
-    });
-    newdatabase = { destinos: newDeleteJson };
-
-    fs.writeFileSync(toursFilePath, JSON.stringify(newdatabase, null, 2));
-
-    res.redirect("/admin/tours");
-  },
+  delete: (req, res) => {
+		db.Producto.destroy({
+			where: {
+				id: req.params.id,
+			},
+		})
+			.then(() => {
+				res.redirect("/admin");
+			})
+			.catch((error) => res.send(error));
+    }
 };
 
 module.exports = controlador;

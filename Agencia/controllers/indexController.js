@@ -4,7 +4,7 @@ const fs = require('fs');
 const db = require('../database/models');
 const Op = db.Sequelize.Op;
 // Añadiendo requerimmientos de sequelize
-const sequelize = db.sequelize;
+// const sequelize = db.sequelize;
 // const { Op } = require('sequelize');
 
 const controlador = {
@@ -29,36 +29,35 @@ const controlador = {
 
 	// }
 	search: (req, res) => {
-		let paquete = req.query.destino.toLowerCase();
+		let paquete = req.query.destino;
 		db.Producto.findAll({
 			where: {
-				name: sequelize.where(sequelize.fn('LOWER', sequelize.col('name')), 'LIKE', '%' + paquete + '%'),
+				name: { [Op.like]: '%' + paquete + '%' },
 			},
-		})
-			.then((resultados) => {
-				res.render('tourResults', { resultados });
-				// res.json(resultados);
-			})
-			.catch((error) => res.send(error));
-	},
-
-	detail: (req, res) => {
-		db.Producto.findByPk(req.params.id).then((tour) => {
-			res.render('tour', { tour });
-			//return res.json(tours);
+		}).then((resultados) => {
+			// let search = req.query.search;
+			res.render('tourResults', {resultados});
+			// return res.json(tours);
 		});
 	},
-	delete: (req, res) => {
-		db.Producto.destroy({
-			where: {
-				id: req.params.id,
-			},
-		})
-			.then((response) => {
-				return res.json(response);
-			})
-			.catch((error) => res.send(error));
-	},
+  detail: (req, res) =>{
+    db.Producto.findByPk(req.params.id)
+    .then((tour) => {
+        res.render('tour', {tour})
+        //return res.json(tours);
+    })
+  },
+//   delete: (req, res) => {
+// 		db.Producto.destroy({
+// 			where: {
+// 				id: req.params.id,
+// 			},
+// 		})
+// 			.then((response) => {
+// 				return res.json(response);
+// 			})
+// 			.catch((error) => res.send(error));
+//     }
 };
 
 module.exports = controlador;
