@@ -37,7 +37,7 @@ router.get('/', indexController.index);
 router.get('/home', indexController.index);
 router.get('/search', indexController.search);
 router.get('/tour/:id', indexController.detail);
-router.delete('/tour/:id', indexController.delete);
+//router.delete('/tour/:id', indexController.delete);
 /********************CLIENTE************************** */
 // Formulario de Login
 router.get('/login', guestMiddleware, loginController.login);

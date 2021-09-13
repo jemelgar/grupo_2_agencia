@@ -47,17 +47,17 @@ const controlador = {
         //return res.json(tours);
     })
   },
-  delete: (req, res) => {
-		db.Producto.destroy({
-			where: {
-				id: req.params.id,
-			},
-		})
-			.then((response) => {
-				return res.json(response);
-			})
-			.catch((error) => res.send(error));
-    }
+//   delete: (req, res) => {
+// 		db.Producto.destroy({
+// 			where: {
+// 				id: req.params.id,
+// 			},
+// 		})
+// 			.then((response) => {
+// 				return res.json(response);
+// 			})
+// 			.catch((error) => res.send(error));
+//     }
 };
 
 module.exports = controlador;

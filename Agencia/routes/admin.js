@@ -39,6 +39,6 @@ router.post(
   adminController.addProducto
 );
 
-router.delete("/edit/:id", adminMiddleware, adminController.destroy);
+router.delete("/delete/:id", adminMiddleware,  adminController.delete);
 
 module.exports = router;

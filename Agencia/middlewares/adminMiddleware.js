@@ -1,4 +1,4 @@
-function guestMiddleware(req, res, next) {
+function adminMiddleware(req, res, next) {
 	if (req.session.userLogged.id_tipo_usuario != 1) {
 		console.log('Acceso denegado');
 		return res.redirect('/');
@@ -7,4 +7,4 @@ function guestMiddleware(req, res, next) {
 	next();
 }
 
-module.exports = guestMiddleware;
+module.exports = adminMiddleware;
