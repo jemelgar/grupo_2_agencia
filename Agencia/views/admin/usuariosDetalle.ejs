@@ -43,7 +43,11 @@
 
 						<section>
 							<label>Tipo de usuario</label>
-							<p><%= usuario.id_tipo_usuario %></p>
+							<% if (usuario.id_tipo_usuario !=1) {%>
+							<p>Cliente</p>
+							<% } else { %>
+							<p>Administrador</p>
+							<% } %>
 						</section>
 
 						<section class="botones">
