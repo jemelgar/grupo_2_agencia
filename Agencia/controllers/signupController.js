@@ -15,22 +15,6 @@ const controlador = {
 		res.render('signup');
 	},
 
-	// Proceso del registro
-	list: (req, res) => {
-		db.Usuario.findAll({
-			include: ['tipoUsuario'],
-		}).then((usuarios) => {
-			res.render('usuariosList.ejs', { usuarios });
-		});
-	},
-
-	detail: (req, res) => {
-		db.Usuario.findByPk(req.params.id, {
-			include: ['tipoUsuario'],
-		}).then((usuario) => {
-			res.json(usuario);
-		});
-	},
 	processRegister: (req, res) => {
 		// !*Validaciones de middleware
 		const resultValidation = validationResult(req);
@@ -50,7 +34,7 @@ const controlador = {
 			password: bcryptjs.hashSync(req.body.password, 10),
 			image: req.file.filename,
 			// id: 2,
-			id_tipo_usuario: 2, 
+			id_tipo_usuario: 2,
 		}).then((usuario) => {
 			return res.redirect('/login');
 		});
