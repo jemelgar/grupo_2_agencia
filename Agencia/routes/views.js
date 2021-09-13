@@ -67,8 +67,6 @@ router.get('/signup', guestMiddleware, signupController.signup);
 // Procesar registro
 router.post('/signup', uploadFile.single('image'), validateRegisterMiddleware, signupController.processRegister);
 
-router.get('/usuarios', signupController.list);
-router.get('/usuarios/:id', signupController.detail);
 router.delete('/usuarios/:id', signupController.delete);
 router.put('/usuarios/:id', signupController.update);
 
