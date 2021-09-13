@@ -24,17 +24,17 @@
           <!-- Descripcion producto -->
 
           <div class="paquete">
-            <form             action="/admin/edit/<%=tag%>?_method=PUT"
+            <form             action="/admin/edit/<%=destino.id%>?_method=PUT"
               method="POST"
               enctype="multipart/form-data"       >
-              <img src="<%=img%>" class="paquete-imagen" alt="" width="320px" />
+              <img src="<%=destino.img_destination%>" class="paquete-imagen" alt="" width="320px" />
               <div class="paquete-descripcion-botones">
                 <div class="destino-nombre">
                   <label for="nombrePaquete">Nombre del Destino</label>
                   <input
                     type="text"
                     id="nombrePaquete"
-                    value="<%= nombre %>"
+                    value="<%= destino.name %>"
                     name="nombre"
                   />
                   <br />
@@ -46,7 +46,7 @@
                     name="rating"
                   /> -->
                 </div>
-                <label for="descripcion">Descripción</label><textarea name="descripcion" id="descripcion" cols="30" rows="8"</textarea><%= descripcion %></textarea
+                <label for="descripcion">Descripción</label><textarea name="descripcion" id="descripcion" cols="30" rows="8"</textarea><%= destino.description %></textarea
                 >
 
 
@@ -67,10 +67,10 @@
            
           </div>
           <!-- <form
-                    action="/admin/edit/<%=tag%>?_method=DELETE"
+                    action="/admin/edit/<%=destino.id%>?_method=DELETE"
                     method="POST"
                     style="display: inline-flex"
-                    onsubmit="return confirm('¿Eliminar <%=tag%> ?');"
+                    onsubmit="return confirm('¿Eliminar <%=destino.id%> ?');"
                   >
                     <button class="action-button delete btn" id="btn--fill">
                       Eliminar

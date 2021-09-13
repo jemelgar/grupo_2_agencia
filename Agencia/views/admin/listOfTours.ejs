@@ -22,33 +22,33 @@
       <main class="main">
         <div class="container-destination">
           <!-- Descripcion producto -->
-          <% for (let elemento of destinos){ %>
+          <% for (let elemento of toursList){ %>
 
           <div class="paquete">
             <img
-              src="<%=elemento.img%>"
+              src="<%=elemento.img_destination%>"
               class="paquete-imagen"
               alt=""
               width="320px"
             />
             <div class="paquete-descripcion-botones">
               <div class="destino-nombre">
-                <%= elemento.nombre %>
+                <%= elemento.name %>
                 <p class="rating"><%=elemento.rating%></p>
               </div>
-              <p class="descripcion-paquete"><%= elemento.descripcion %></p>
+              <p class="descripcion-paquete"><%= elemento.description %></p>
 
               <div class="division-boton">
                 <a
-                  href="/admin/edit/<%= elemento.tag %> "
+                  href="/admin/edit/<%= elemento.id %> "
                   class="btn"
                   id="btn--fill"
                   >Editar</a
                 >
                 <form
-                  action="/admin/edit/<%=elemento.tag%>?_method=DELETE"
+                  action="/admin/edit/<%=elemento.id%>?_method=DELETE"
                   method="POST"
-                  onsubmit="return confirm('¿Eliminar <%=elemento.nombre%> ?');"
+                  onsubmit="return confirm('¿Eliminar <%=elemento.name%> ?');"
                 >
                   <button class="btn">Eliminar</button>
                 </form>
