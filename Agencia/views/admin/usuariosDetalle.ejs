@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/styles_index.css" />
+		<link rel="stylesheet" href="/css/styles_newproduct.css" />
+		<link rel="icon" href="/img/Logo.ico" type="image/ico" />
+
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
+		<title>Detalle de usuarios</title>
+	</head>
+	<body>
+		<div class="container">
+			<%- include('../partials/header') %>
+			<main class="main">
+				<div class="container-destination">
+					<div id="new-product">
+						<section>
+							<label>ID</label>
+							<p><%= usuario.id %></p>
+						</section>
+						<section>
+							<label>Nombre</label>
+							<p><%= usuario.first_name %> <%= usuario.last_name %></p>
+						</section>
+
+						<section>
+							<label>Email</label>
+							<p><%= usuario.email %></p>
+						</section>
+						<section>
+							<label>Contraseña</label>
+							<p><%= usuario.password %></p>
+						</section>
+						<section>
+							<label>Image</label>
+							<p><%= usuario.image %></p>
+						</section>
+
+						<section>
+							<label>Tipo de usuario</label>
+							<% if (usuario.id_tipo_usuario !=1) {%>
+							<p>Cliente</p>
+							<% } else { %>
+							<p>Administrador</p>
+							<% } %>
+						</section>
+
+						<section class="botones">
+							<a href="/admin/usuarios" class="btn btn-reservar">Regresar</a>
+						</section>
+					</div>
+				</div>
+			</main>
+		</div>
+		<%- include('../partials/footer') %>
+	</body>
+</html>

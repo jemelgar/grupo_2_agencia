@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/styles_index.css" />
-    <link rel="stylesheet" href="/css/styles_controlPanel.css" />
-    <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
-    <link rel="icon" href="/img/Logo.ico" type="image/ico" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/styles_index.css" />
+		<link rel="stylesheet" href="/css/styles_controlPanel.css" />
+		<!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
+		<link rel="icon" href="/img/Logo.ico" type="image/ico" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Panel de control</title>
-  </head>
-  <body>
-    <div class="container">
-      <%- include('../partials/header') %>
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+		<title>Panel de control</title>
+	</head>
+	<body>
+		<div class="container">
+			<%- include('../partials/header') %>
 
-      <main class="main">
-        <div class="container-destination">
-          <a href="/admin/tours">
-            <div class="edit-product admin-option">
-              <p>Editar productos</p>
-            </div></a
-          >
-          <a href="/admin/newProduct">
-            <div class="create-product admin-option">
-              <p>Crear productos</p>
-            </div></a
-          >
-        </div>
-      </main>
-      <%- include('../partials/footer') %>
-    </div>
-  </body>
+			<main class="main">
+				<div class="container-destination">
+					<a href="/admin/tours">
+						<div class="edit-product admin-option">
+							<p>Editar productos</p>
+						</div></a
+					>
+					<a href="/admin/newProduct">
+						<div class="create-product admin-option">
+							<p>Crear productos</p>
+						</div></a
+					>
+
+					<a href="/admin/usuarios">
+						<div class="create-product admin-option">
+							<p>Usuarios</p>
+						</div></a
+					>
+				</div>
+			</main>
+			<%- include('../partials/footer') %>
+		</div>
+	</body>
 </html>
