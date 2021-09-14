@@ -50,8 +50,9 @@ const controlador = {
 			})
 			.catch((error) => res.send(error));
 	},
+
 	update: function (req, res) {
-		let movieId = req.params.id;
+		let user = req.params.id;
 		db.Usuario.update(
 			{
 				first_name: req.body.first_name,
@@ -62,7 +63,7 @@ const controlador = {
 				// id_tipo_usuario: 2,
 			},
 			{
-				where: { id: movieId },
+				where: { id: user },
 			}
 		)
 			.then(() => {
