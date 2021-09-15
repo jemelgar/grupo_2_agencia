@@ -48,7 +48,8 @@ const controladorLogin = {
 	},
 	profile: (req, res) => {
 		// console.log(req.cookies.userEmail);
-		// console.log(req.session.userLogged);
+		console.log(req.session.userLogged);
+
 		return res.render('profile', {
 			user: req.session.userLogged,
 		});

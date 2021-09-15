@@ -25,11 +25,13 @@
 						<br />
 						<div class="create-account">Email: <%= user.email %></div>
 						<br />
-						<a href="/usuarioEdit"><button class="btn button" type="submit" id="btn--fill">Editar cuenta</button></a>
+						<a href="/usuarioEdit/<%= user.id %> "
+							><button class="btn button" type="submit" id="btn--fill">Editar cuenta</button></a
+						>
 					</section>
 				</div>
 			</main>
-			<%- include('partials/footer') %> <%- include('partials/mobilebar') %>
+			<!-- <#%- include('partials/footer') %> <#%- include('partials/mobilebar') %> -->
 		</div>
 	</body>
 </html>
