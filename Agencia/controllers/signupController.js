@@ -53,43 +53,55 @@ const controlador = {
 	},
 
 	edit: (req, res) => {
-		res.render('usuarioEdit', { user: req.session.userLogged });
+		let user = req.session.userLogged;
+
+		imgTemp = user.image;
+		console.log(imgTemp);
+		res.render('usuarioEdit', { user: user });
+		console.log(user);
 	},
 
-	update: (req, res) => {
-		let user = req.session.userLogged.id;
-		db.Usuario.update(
-			{
-				first_name: req.body.first_name,
-				last_name: req.body.last_name,
-				email: req.body.email,
-				password: req.body.password,
-				image: req.files[0].filename,
-			},
-			{ where: { id: user } }
-		).then(() => {
-			res.redirect('/login');
-		});
-	},
 	// update: (req, res) => {
-	// 	db.Usuario.findbyPk(req.session.userLogged.id)
-	// 		.then((user) => {
-	// 			user.update({
-	// 				first_name: req.body.first_name,
-	// 				last_name: req.body.last_name,
-	// 				email: req.body.email,
-	// 				password: req.body.password,
-	// 				image: req.files[0].filename,
-	// 			});
-	// 		})
-	// 		.then((user) => {
-	// 			req.session.userLogged = user;
-	// 			res.redirect('login/profile');
-	// 		})
-	// 		.catch((err) => {
-	// 			console.log(err);
-	// 		});
+	// 	let user = req.session.userLogged;
+	// 	console.log('--------------------------');
+	// 	console.log(user);
+	// 	req.file ? (img = req.file.filename) : (img = imgTemp);
+	// 	db.Usuario.update(
+	// 		{
+	// 			first_name: req.body.first_name,
+	// 			last_name: req.body.last_name,
+	// 			email: req.body.email,
+	// 			password: req.body.password,
+	// 			image: img,
+	// 		},
+	// 		{ where: { id: user.id } }
+	// 	).then((elemento) => {
+	// 		console.log(elemento);
+	// 		res.redirect('/login');
+	// 	});
 	// },
+
+	update: (req, res) => {
+		// let user = req.session.userLogged;
+		req.file ? (img = req.file.filename) : (img = imgTemp);
+		db.Usuario.findByPk(req.session.userLogged.id)
+			.then((user) => {
+				user.update({
+					first_name: req.body.first_name,
+					last_name: req.body.last_name,
+					email: req.body.email,
+					password: req.body.password,
+					image: img,
+				});
+			})
+			.then((user) => {
+				req.session.userLogged = user;
+				res.redirect('/login');
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	},
 
 	// update: function (req, res) {
 	// 	let user = req.params.id;

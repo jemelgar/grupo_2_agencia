@@ -68,7 +68,7 @@ router.get('/signup', guestMiddleware, signupController.signup);
 router.post('/signup', uploadFile.single('image'), validateRegisterMiddleware, signupController.processRegister);
 
 router.delete('/usuarios/:id', signupController.delete);
-router.get('/usuarioEdit', validateRegisterMiddleware, signupController.edit);
-router.put('/usuarioEdit', uploadFile.single('image'), validateRegisterMiddleware, signupController.update);
+router.get('/usuarioEdit/:id', validateRegisterMiddleware, signupController.edit);
+router.put('/usuarioEdit/:id', uploadFile.single('image'), validateRegisterMiddleware, signupController.update);
 
 module.exports = router;

@@ -24,7 +24,7 @@
 					<section class="contenedor01">
 						<h1 class="create-account">Editar cuenta</h1>
 						<!-- <form action="/login" method="POST">  	action="/signup/newUser"-->
-						<form action="/usuarioEdit?method_PUT" enctype="multipart/form-data">
+						<form action="/usuarioEdit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 							<!-- Nombre -->
 							<p>
 								<label class="label-design" for="first_name">Cambiar Nombre </label>
@@ -34,8 +34,8 @@
 									name="first_name"
 									
 									id="first_name"
-									value="<%= locals.oldData ? oldData.first_name : null %>"
-                                    placeholder="<%= user.first_name %>" 
+									value="<%= user.first_name %> <%= locals.oldData ? oldData.first_name : null %>"
+                                    
 								/>
 								<% if (locals.errors && errors.first_name) { %>
 									<div class="text-danger">
@@ -50,9 +50,9 @@
 									class="input"
 									type="text"
 									name="last_name"
-                                    placeholder="<%= user.last_name %>"
+                                   
 									id="last_name"
-									value="<%= locals.oldData ? oldData.last_name : null %>"
+									value="<%= user.last_name %> <%= locals.oldData ? oldData.last_name : null %>"
 								/>
 								<% if (locals.errors && errors.last_name) { %>
 									<div class="text-danger">
@@ -67,9 +67,9 @@
 									class="input"
 									type="text"
 									name="email"
-									placeholder="<%= user.email %>"
+									
 									id="email"
-									value="<%= locals.oldData ? oldData.email : null %>"
+									value="<%= user.email %> <%= locals.oldData ? oldData.email : null %>"
 								/>
 								<% if (locals.errors && errors.email) { %>
 									<div class="text-danger">
@@ -78,7 +78,7 @@
 								<% } %>
 							</p>
 							<!-- Contraseña -->
-							<p>
+							<!-- <p>
 								<label class="label-design" for="password">Cambiar  Contraseña </label>
 								<input
 									class="input"
@@ -86,14 +86,14 @@
 									name="password"
 									placeholder="Contraseña"
 									id="password"
-									value="<%= locals.oldData ? oldData.password : null %>"
+									value="<%#= locals.oldData ? oldData.password : null %>"
 								/>
-								<% if (locals.errors && errors.password) { %>
+								<%# if (locals.errors && errors.password) { %>
 									<div class="text-danger">
-										<%= errors.password.msg %>
+										<%#= errors.password.msg %>
 									</div>
-								<% } %>
-							</p>
+								<#% } %>
+							</p> -->
 
 							<!-- Imagen -->
 							<p>
@@ -113,7 +113,7 @@
 					</section>
 				</div>
 			</main>
-			<%- include('partials/footer') %> <%- include('partials/mobilebar') %>
+			<!-- <#%- include('partials/footer') %> <%#- include('partials/mobilebar') %> -->
 		</div>
 	</body>
 </html>
