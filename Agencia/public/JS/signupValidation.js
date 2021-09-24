@@ -15,6 +15,7 @@ window.onload = function () {
 		let last_name = document.querySelector('#last_name');
 		let email = document.querySelector('#email');
 		let password = document.querySelector('#password');
+		let image = document.querySelector('#image');
 
 		// Validación
 		if (first_name.value == '') {
@@ -62,6 +63,32 @@ window.onload = function () {
 		} else {
 			password.classList.add('is-valid');
 			password.classList.remove('is-invalid');
+			form.image.focus();
+		}
+
+		// if (image.file == null) {
+		// 	errores.push('Adjunte una imagen');
+		// 	image.classList.add('is-invalid');
+		// }
+		//   else {
+		// 	image.classList.add('is-valid');
+		// 	image.classList.remove('is-invalid');
+		// }
+
+		image.addEventListener('change', validandoImagen);
+
+		function validandoImagen() {
+			const formatos = ['jpg', 'jpeg', 'png', 'gif'];
+			const { name: fileName } = this.files[0];
+			const fileExtension = fileName.split('.').pop();
+
+			if (!formatos.includes(fileExtension)) {
+				alert('Formato no válido');
+				this.value = null;
+			} else {
+				image.classList.add('is-valid');
+				image.classList.remove('is-invalid');
+			}
 		}
 
 		// errores
