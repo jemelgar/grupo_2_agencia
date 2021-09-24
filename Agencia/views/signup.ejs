@@ -24,6 +24,10 @@
 					<section class="contenedor01">
 						<h1 class="create-account">Crea tu cuenta</h1>
 						<!-- <form action="/login" method="POST">  	action="/signup/newUser"-->
+						
+						<ul class="errores"></ul>
+											
+						
 						<form action="/signup" method="POST" enctype="multipart/form-data">
 							<!-- Nombre -->
 							<p>
@@ -111,11 +115,13 @@
 							<p>
 								<button class="btn button" type="submit" id="btn--fill">Crear cuenta</button>
 							</p>
+
 						</form>
 					</section>
 				</div>
 			</main>
 			<%- include('partials/footer') %> <%- include('partials/mobilebar') %>
 		</div>
+		<script src="/js/signupValidation.js"></script>
 	</body>
 </html>
