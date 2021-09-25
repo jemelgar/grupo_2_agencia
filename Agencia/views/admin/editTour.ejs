@@ -30,6 +30,8 @@
               <img src="<%=destino.img_destination%>" class="paquete-imagen" alt="" width="320px" />
               <div class="paquete-descripcion-botones">
                 <div class="destino-nombre">
+                  <ul class="errores">
+</ul>
                   <label for="nombrePaquete">Nombre del Destino</label>
                   <input
                     type="text"
@@ -51,8 +53,8 @@
 
 
                 <div class="change-image">
-                  <input type="file" id="imagen" name="imagen" />
                   <label for="imagen"> Cambiar imagen... </label>
+                  <input type="file" id="imagen" name="imagen" />
                 </div>
 
                 <div class="division-boton">
@@ -81,5 +83,6 @@
       </main>
       <%- include('../partials/footer') %>
     </div>
+    <script src = '/js/productsValidation.js'></script>
   </body>
 </html>
