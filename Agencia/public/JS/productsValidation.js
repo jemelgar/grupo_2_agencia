@@ -26,7 +26,7 @@ form.addEventListener('submit', (e) => {
 		errores.push('Debe de ingresar una descripción');
 		descripcion.classList.add('is-invalid');
 	} else if (descripcion.value.length < 20) {
-		errores.push('El apellido debe tener mínimo veinte caracteres');
+		errores.push('La descripción debe tener mínimo veinte caracteres');
 		descripcion.classList.add('is-invalid');
 	} else {
 		descripcion.classList.add('is-valid');
