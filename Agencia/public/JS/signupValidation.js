@@ -60,20 +60,24 @@ window.onload = function () {
 		} else if (password.value.length < 8) {
 			errores.push('La contraseña debe tener mínimo 8 caracteres');
 			password.classList.add('is-invalid');
+		}
+		// Más validaciones de Contraseña
+		// Contener al menos un dígito
+		else if (!/\d/.test(password.value)) {
+			errores.push('La contraseña debe contener al menos un dígito');
+			password.classList.add('is-invalid');
+			// Contener al menos una minúscula
+		} else if (!/[a-z]/.test(password.value)) {
+			errores.push('La contraseña debe contener al menos una mínuscula');
+			password.classList.add('is-invalid');
+		} else if (!/[A-Z]/.test(password.value)) {
+			errores.push('La contraseña debe contener al menos una mayúscula');
+			password.classList.add('is-invalid');
 		} else {
 			password.classList.add('is-valid');
 			password.classList.remove('is-invalid');
 			form.image.focus();
 		}
-
-		// if (image.file == null) {
-		// 	errores.push('Adjunte una imagen');
-		// 	image.classList.add('is-invalid');
-		// }
-		//   else {
-		// 	image.classList.add('is-valid');
-		// 	image.classList.remove('is-invalid');
-		// }
 
 		image.addEventListener('change', validandoImagen);
 
