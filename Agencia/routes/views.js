@@ -9,6 +9,7 @@ const destinodata = require('../database/db-ignored.json');
 const loginController = require('../controllers/loginController');
 const indexController = require('../controllers/indexController');
 const signupController = require('../controllers/signupController');
+const signupAdminController = require('../controllers/signupAdminController');
 const productCartController = require('../controllers/productCartController');
 const productDetailController = require('../controllers/productDetailController');
 
@@ -64,8 +65,17 @@ router.post('/mycart/:id', productCartController.productCarById);
 // Formulario de registro
 router.get('/signup', guestMiddleware, signupController.signup);
 
+// Registro de administradores
+router.get('/signupAdmin', guestMiddleware, signupAdminController.signup);
 // Procesar registro
 router.post('/signup', uploadFile.single('image'), validateRegisterMiddleware, signupController.processRegister);
+// Procesar registro administradores
+router.post(
+	'/signupAdmin',
+	uploadFile.single('image'),
+	validateRegisterMiddleware,
+	signupAdminController.processRegister
+);
 
 router.delete('/usuarios/:id', signupController.delete);
 router.get('/usuarioEdit/:id', validateRegisterMiddleware, signupController.edit);
