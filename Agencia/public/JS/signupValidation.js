@@ -79,15 +79,6 @@ window.onload = function () {
 			form.image.focus();
 		}
 
-		// if (image.file == null) {
-		// 	errores.push('Adjunte una imagen');
-		// 	image.classList.add('is-invalid');
-		// }
-		//   else {
-		// 	image.classList.add('is-valid');
-		// 	image.classList.remove('is-invalid');
-		// }
-
 		image.addEventListener('change', validandoImagen);
 
 		function validandoImagen() {
