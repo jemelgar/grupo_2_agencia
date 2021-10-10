@@ -74,23 +74,24 @@ const controlador = {
 			})
 			.catch((error) => res.send(error));
 	},
-	// Listado de usuarios
-	list: (req, res) => {
-		db.Usuario.findAll({
-			include: ['tipoUsuario'],
-		}).then((usuarios) => {
-			res.render('admin/usuarios', { usuarios });
-		});
-	},
-	// Detalle de usuario por id
-	detail: (req, res) => {
-		db.Usuario.findByPk(req.params.id, {
-			include: ['tipoUsuario'],
-		}).then((usuario) => {
-			// res.json(usuarios);
-			res.render('admin/usuariosDetalle', { usuario });
-		});
-	},
+	// // Listado de usuarios
+	// list: (req, res) => {
+	// 	db.Usuario.findAll({
+	// 		include: ['tipoUsuario'],
+	// 	}).then((usuarios) => {
+	// 		// res.render('admin/usuarios', { usuarios });
+	// 		res.json(usuarios);
+	// 	});
+	// },
+	// // Detalle de usuario por id
+	// detail: (req, res) => {
+	// 	db.Usuario.findByPk(req.params.id, {
+	// 		include: ['tipoUsuario'],
+	// 	}).then((usuario) => {
+	// 		// res.json(usuarios);
+	// 		res.render('admin/usuariosDetalle', { usuario });
+	// 	});
+	// },
 };
 
 module.exports = controlador;
