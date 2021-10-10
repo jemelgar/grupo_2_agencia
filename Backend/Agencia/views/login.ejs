@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingresa</title>
+    <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
+    <link rel="icon" href="/img/Logo.ico" type="image/ico" />
+    <link rel="stylesheet" href="/css/styles_index.css" />
+    <link rel="stylesheet" href="/css/styles_login.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/165b3be4bf.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- <div class="container"> -->
+    <div class="container">
+      <%- include('partials/header') %>
+
+      <main class="main">
+        <div class="container-destination">
+          <!-- </div> -->
+
+          <section class="contenedor01">
+            <h1 class="welcome-title">¡Gusto en verte de nuevo!</h1>
+            <div class="login-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <!-- <h5 class="email-title">¡Gusto en verte de nuevo!</h5> -->
+            <ul class="errores"></ul>
+            <form action="/login" method="POST">
+              <div>
+                <!-- <label class="label-design" for="email"> Email </label> -->
+                <input
+                  class="input"
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder="Correo"
+                  autocomplete="off"
+                  value="<%= locals.oldData ? oldData.email : null %>"/>
+                <% if (locals.errors && errors.email){ %>
+                <div class = "text-danger">
+                  <%= errors.email.msg %>
+                </div>
+                <% } %>
+              </div>
+              <div>
+                <br>
+                <input
+                  class="input"
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Contraseña"
+                  autocomplete="off"
+                />
+                <% if (locals.errors && errors.password){ %>
+                  <div class = "text-danger">
+                    <%= errors.password.msg %>
+                  </div>
+                  <% } %>
+                </div>
+                <label class = "form-check">
+                  <input  class = "checkbox" type="checkbox" name="remember_user"> Recordar mi usuario
+
+                </label>
+
+
+              <div>
+                <br>
+                <button class="btn button" type="submit" id="btn--fill">
+                  Iniciar sesión
+                </button>
+              </p>
+              <h6 class="forgot-password">¿Olvidaste tu contraseña?</h6>
+            </form>
+          </section>
+        </div>
+      </main>
+      <%- include('partials/footer') %><%- include('partials/mobilebar') %>
+    </div>
+    <script src="/js/loginValidation.js"></script>
+  </body>
+</html>

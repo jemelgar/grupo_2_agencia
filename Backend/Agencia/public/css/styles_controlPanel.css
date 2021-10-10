@@ -1,0 +1,20 @@
+.admin-option {
+	border-radius: 5px;
+	margin: 3rem auto;
+	width: 300px;
+	height: 100px;
+	background: var(--color-alert);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	font-size: 3rem;
+	cursor: pointer;
+	flex-wrap: wrap;
+}
+
+li {
+	text-align: center;
+	justify-content: align-center;
+	font-size: 2rem;
+}

@@ -1,0 +1,90 @@
+<header class="header">
+  <!-- <div class="header__hamburger">
+    <a class="header__nav-bar__icon" id="hamburguer">
+      <svg class="header__hamburger-icon" id="hamburguer">
+        <use xlink:href="img/sprite.svg#icon-menu"></use>
+      </svg>
+    </button>
+  </div> -->
+  <button class="hamburger">
+    <div class="bar"></div>
+  </button>
+  <!-- <nav class="mobile-nav1">
+      <a href="/"> Inicio</a>
+      <a href="/login"> Ingresa</a>
+      <a href="/signup">Registrate</a>
+    </nav> -->
+  <div class="header__brand">
+    <a href="/">
+      <img src="/img/Logo.png" alt="logo" class="header__brand-logo"
+    /></a>
+    <a href="/"> <p class="header__brand-name">Focus Travel</p></a>
+  </div>
+  <div class="socialnet">
+    <div class="header__social">
+      <a href="/fb">
+        <svg class="header__social-icon">
+          <use xlink:href="../img/sprite.svg#icon-facebook"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="header__social">
+      <a href="/twi">
+        <svg class="header__social-icon">
+          <use xlink:href="../img/sprite.svg#icon-twitter"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="header__social">
+      <a href="/ins">
+        <svg class="header__social-icon">
+          <use xlink:href="../img/sprite.svg#icon-instagram"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="header__social">
+      <a href="/you">
+        <svg class="header__social-icon">
+          <use xlink:href="../img/sprite.svg#icon-youtube"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="nav-left" id="nav-ul">
+    <div class="header__user">
+      <a href="/"> <p class="header__user-inicio">Inicio</p></a>
+      <% if (locals.isLogged) { %>
+      <a href="/login/profile">
+        <img
+          src="/img/usersImages/<%= userLogged.image%>"
+          width="40"
+          height="40"
+          style="border-radius: 100%"
+        />
+        <p class="header__user-inicio">
+          ¡Hola <%= userLogged.first_name %>!
+        </p></a
+      >
+      <a href="/logout"><p class="header__user-login">Log out</p></a>
+      <% } else { %>
+      <a href="/login"><p class="header__user-login">Login</p></a>
+      <a href="/signup"> <p class="header__user-signup">Sign Up</p></a>
+      <% } %>
+    </div>
+    <div class="header__cart">
+      <a href="/mycart">
+        <svg class="header__cart-icon">
+          <use xlink:href="/img/sprite.svg#icon-shopping-cart"></use>
+        </svg>
+      </a>
+      <span class="header__cart-notification">2</span>
+    </div>
+  </div>
+</header>
+<main class="mobilemain">
+  <nav class="mobile-nav">
+    <a href="/"> Inicio</a>
+    <a href="/login"> Login </a>
+    <a href="/signup"> Sign Up</a>
+  </nav>
+</main>

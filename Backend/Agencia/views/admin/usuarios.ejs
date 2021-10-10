@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/styles_index.css" />
+		<link rel="stylesheet" href="/css/styles_newproduct.css" />
+
+		<!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
+		<link rel="icon" href="/img/Logo.ico" type="image/ico" />
+
+		<!-- <link rel="icon" href="imagenes/favicon.png" type="image/png" /> -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
+		<title>Lista de usuarios</title>
+	</head>
+	<body>
+		<div class="container">
+			<%- include('../partials/header') %>
+
+			<main class="main">
+				<div class="container-destination">
+					<!-- Inicio del cuerpo de la vista -->
+					<!-- Inicio del formulario -->
+					<div  id="new-product">
+						<!-- Seleccionar tipo de destino -->
+
+						<!-- Agregar nombre -->
+
+						<% for( let usuario of usuarios ) { %>
+						<li>
+							<section>
+								<label>Usuario <%= usuario.id %></label>
+								
+								<p><%= usuario.first_name %> <%= usuario.last_name %></p>
+								<!-- <button type="submit" class="btn" id="btn--normal">Detalle</button> -->
+								<!-- <a href="/admin/usuariosDetalle" class="btn btn-reservar">Regresar</a> -->
+								<a
+								href="/admin/usuariosDetalle/<%= usuario.id %> "
+								class="btn"
+								id="btn--normal"
+								>Detalle</a
+							  ></a>
+							</section>
+						</li>
+
+						<% } %>
+
+						
+
+						
+						<section class="botones">
+							
+							<a href="/admin" class="btn btn-reservar">Regresar</a>
+							
+						</section>
+					</div>
+
+					
+				</div>
+			</main>
+		</div>
+		<%- include('../partials/footer') %>
+	</body>
+</html>
