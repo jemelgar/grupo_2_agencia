@@ -1,4 +1,3 @@
-// window.onload = function () {
 console.log('Conexión validación imagenes');
 let image = document.getElementById('imagen');
 let errImage = 'Formato de imagen no valido';

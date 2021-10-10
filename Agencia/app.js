@@ -6,6 +6,7 @@ const app = express();
 const destinodata = require('./database/db-ignored.json');
 const methodOverride = require('method-override');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+
 const port = 3000;
 
 // Rutas
@@ -39,6 +40,7 @@ app.use(userLoggedMiddleware);
 app.use('/', vistasRouter);
 app.use('/admin', adminRouter);
 
+
 /* SOCIAL Y ERROR */
 
 app.get('/fb', (req, res) => {
@@ -56,3 +58,6 @@ app.get('/you', (req, res) => {
 app.get('*', (req, res) => {
 	res.render('error');
 });
+
+
+
