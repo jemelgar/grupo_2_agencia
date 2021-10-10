@@ -5,8 +5,9 @@ const adminController = require("../controllers/adminController");
 const multer = require("multer");
 const adminMiddleware = require("../middlewares/adminMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
-const usersApiController = require('../controllers/api/usersApiController')
-const productsApiController = require('../controllers/api/productsApiController')
+const usersApiController = require("../controllers/api/usersApiController");
+const productsApiController = require("../controllers/api/productsApiController");
+const validateCreateProductMiddleware = require("../middlewares/validateCreateProductMiddleware");
 
 // ********* Multer ********
 const storage = multer.diskStorage({
@@ -45,6 +46,7 @@ router.post(
   "/",
   adminMiddleware,
   upload.single("imagen"),
+  validateCreateProductMiddleware,
   adminController.addProducto
 );
 
@@ -56,17 +58,32 @@ router.delete(
 );
 
 // Endpoint Api usuarios
-router.get('/usuariosApi', authMiddleware, adminMiddleware, usersApiController.list);
-router.get('/usuariosApi/:id', authMiddleware, adminMiddleware, usersApiController.detail);
+router.get(
+  "/usuariosApi",
+  authMiddleware,
+  adminMiddleware,
+  usersApiController.list
+);
+router.get(
+  "/usuariosApi/:id",
+  authMiddleware,
+  adminMiddleware,
+  usersApiController.detail
+);
 
 //Endpoint Api productos
-router.get('/productosApi', authMiddleware, adminMiddleware, productsApiController.list);
-router.get('/productosApi/:id', authMiddleware, adminMiddleware, productsApiController.detail);
-
-
-
-
-
+router.get(
+  "/productosApi",
+  authMiddleware,
+  adminMiddleware,
+  productsApiController.list
+);
+router.get(
+  "/productosApi/:id",
+  authMiddleware,
+  adminMiddleware,
+  productsApiController.detail
+);
 
 //------------------------------ ANTIGUAS RUTAS DE USUARIO CON RES.RENDER -------------------------- NO APIS
 // router.get("/usuarios", authMiddleware, adminMiddleware, adminController.list);
@@ -76,6 +93,5 @@ router.get('/productosApi/:id', authMiddleware, adminMiddleware, productsApiCont
 //   adminMiddleware,
 //   adminController.detail
 // );
-
 
 module.exports = router;
