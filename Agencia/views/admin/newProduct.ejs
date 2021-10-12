@@ -1,65 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="/css/styles_index.css" />
-		<link rel="stylesheet" href="/css/styles_newproduct.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles_index.css" />
+    <link rel="stylesheet" href="/css/styles_newproduct.css" />
 
-		<!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
-		<link rel="icon" href="/img/Logo.ico" type="image/ico" />
+    <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
+    <link rel="icon" href="/img/Logo.ico" type="image/ico" />
 
-		<!-- <link rel="icon" href="imagenes/favicon.png" type="image/png" /> -->
-		<link rel="preconnect" href="https://fonts.gstatic.com" />
-		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
-		<title>Focus Travel</title>
-	</head>
-	<body>
-		<div class="container">
-			<%- include('../partials/header') %>
-			<ul class="errores"></ul>
-			<main class="main">
-				<div class="container-destination">
-					<!-- Inicio del cuerpo de la vista -->
+    <!-- <link rel="icon" href="imagenes/favicon.png" type="image/png" /> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Focus Travel</title>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('../partials/header') %>
+      <ul class="errores"></ul>
+      <main class="main">
+        <div class="container-destination">
+          <!-- Inicio del cuerpo de la vista -->
 
-					<!-- Inicio del formulario -->
-					<form action="/admin" method="POST" enctype="multipart/form-data" id="new-product">
-						<!-- Seleccionar tipo de destino -->
-						<section>
-							<label for="tipoDestino">Selecciona el tipo de destino</label>
-							<select name="tipo" id="tipoDestino">
-								<option value="0">Normal</option>
-								<option value="1">Destacado</option>
-							</select>
-							<br />
-						</section>
+          <!-- Inicio del formulario -->
+          <form
+            action="/admin"
+            method="POST"
+            enctype="multipart/form-data"
+            id="new-product"
+          >
+            <!-- Seleccionar tipo de destino -->
+            <section>
+              <label for="tipoDestino">Selecciona el tipo de destino</label>
+              <select name="tipo" id="tipoDestino">
+                <option value="0">Normal</option>
+                <option value="1">Destacado</option>
+              </select>
+              <br />
+            </section>
 
-						<!-- Agregar nombre -->
-						<section>
-							<label for="nombre">Nombre</label>
-							<input type="text" name="nombre" placeholder="Nombre del destino" autocomplete="off" id="nombre" />
-							<br />
-						</section>
-						<!-- Agregar Precio -->
-						<section>
-							<label for="precio">Precio</label>
-							<input type="number" name="precio" placeholder="Precio" autocomplete="off" id="precio" />
-							<br />
-						</section>
-						<!-- Agregar Fecha -->
-						<section>
-							<label for="fecha">Fecha</label>
-							<input type="text" name="fecha" placeholder="YYYY-MM-DD" id="fecha" />
-							<br />
-						</section>
-						<!-- Agregar Imagen -->
-						<!-- <label for="imgDestino">Subir Imagen del Destino</label>
+            <!-- Agregar nombre -->
+            <section>
+              <label for="nombre">Nombre</label>
+              <input
+                type="text"
+                name="nombre"
+                placeholder="Nombre del destino"
+                autocomplete="off"
+                id="nombre"
+              />
+              <% if (locals.errors && errors.nombre) { %>
+              <div class="text-danger"><%= errors.nombre.msg %></div>
+              <% } %>
+              <br />
+            </section>
+            <!-- Agregar Precio -->
+            <section>
+              <label for="precio">Precio</label>
+              <input
+                type="number"
+                name="precio"
+                placeholder="Precio"
+                autocomplete="off"
+                id="precio"
+              />
+
+              <br /><% if (locals.errors && errors.precio) { %>
+              <div class="text-danger"><%= errors.precio.msg %></div>
+              <% } %>
+            </section>
+            <!-- Agregar Fecha -->
+            <section>
+              <label for="fecha">Fecha</label>
+              <input
+                type="text"
+                name="fecha"
+                placeholder="YYYY-MM-DD"
+                id="fecha"
+              />
+              <% if (locals.errors && errors.fecha) { %>
+              <div class="text-danger"><%= errors.fecha.msg %></div>
+              <% } %>
+              <br />
+            </section>
+            <!-- Agregar Imagen -->
+            <!-- <label for="imgDestino">Subir Imagen del Destino</label>
           <input type="file" name="img" id="imgDestino" required>
           <br> -->
-						<!-- Agregar Tag -->
-						<!-- <section>
+            <!-- Agregar Tag -->
+            <!-- <section>
               <label for="tag">Identificador</label>
               <input
                 type="text"
@@ -71,8 +108,8 @@
               />
               <br />
             </section> -->
-						<!-- Agregar rating -->
-						<!-- <section>
+            <!-- Agregar rating -->
+            <!-- <section>
               <label for="ratingDestino">Calificación del Destino</label>
               <select name="rating" id="ratingDestino">
                 <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
@@ -83,40 +120,46 @@
               </select>
               <br />
             </section> -->
-						<!-- Agregar Descripcion -->
-						<section>
-							<label for="descripcion">Descripción</label>
-							<textarea
-								name="descripcion"
-								id="descripcion"
-								cols="30"
-								rows="10"
-								placeholder="Descripción del Destino"
-							></textarea>
-							<br />
-						</section>
-						<br />
-						<section>
-							<label for="imagen"> Imagen del producto </label>
-							<input type="file" id="imagen" name="imagen" />
+            <!-- Agregar Descripcion -->
+            <section>
+              <label for="descripcion">Descripción</label>
+              <textarea
+                name="descripcion"
+                id="descripcion"
+                cols="30"
+                rows="10"
+                placeholder="Descripción del Destino"
+              ></textarea>
+              <% if (locals.errors && errors.descripcion) { %>
+              <div class="text-danger"><%= errors.descripcion.msg %></div>
+              <% } %>
+              <br />
+            </section>
+            <br />
+            <section>
+              <label for="imagen"> Imagen del producto </label>
+              <input type="file" id="imagen" name="imagen" />
+              <% if (locals.errors && errors.imagen) { %>
+              <div class="text-danger"><%= errors.imagen.msg %></div>
+              <% } %>
 
-							<br />
-						</section>
-						<!-- BTN Guardar en JSON -->
-						<section class="botones">
-							<button type="submit" class="btn" id="btn--normal">Enviar</button>
-							<!-- BTN Limpiar Campos -->
-							<button type="reset" class="btn">Resetear</button>
-							<!-- FIN del Formulario -->
-							<a href="/admin" class="btn" id="btn--normal">Regresar</a>
-						</section>
-					</form>
+              <br />
+            </section>
+            <!-- BTN Guardar en JSON -->
+            <section class="botones">
+              <button type="submit" class="btn" id="btn--normal">Enviar</button>
+              <!-- BTN Limpiar Campos -->
+              <button type="reset" class="btn">Resetear</button>
+              <!-- FIN del Formulario -->
+              <a href="/admin" class="btn" id="btn--normal">Regresar</a>
+            </section>
+          </form>
 
-					<!-- Fin cuerpo vista -->
-				</div>
-			</main>
-		</div>
-		<%- include('../partials/footer') %>
-		<script src="/js/newProductValidation.js"></script>
-	</body>
+          <!-- Fin cuerpo vista -->
+        </div>
+      </main>
+    </div>
+    <%- include('../partials/footer') %>
+    <script src="/js/newProductValidation.js"></script>
+  </body>
 </html>
