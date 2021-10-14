@@ -10,8 +10,15 @@ const productsApiController = {
 					url: '/productosApi',
 				},
 				data: products.map((product) => {
+					let destino = product.destination_promoted;
+					if (destino == 0) {
+						destino = 'Normal';
+					} else {
+						destino = 'Destacado';
+					}
 					return {
 						id: product.id,
+						destination: destino,
 						// agregar destino con un if ????
 						name: product.name,
 						date: product.date,
@@ -24,6 +31,7 @@ const productsApiController = {
 					};
 				}),
 			};
+
 			res.json(datos);
 		});
 	},
