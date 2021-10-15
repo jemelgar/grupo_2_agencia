@@ -86,12 +86,12 @@ router.get(
 );
 
 //------------------------------ ANTIGUAS RUTAS DE USUARIO CON RES.RENDER -------------------------- NO APIS
-// router.get("/usuarios", authMiddleware, adminMiddleware, adminController.list);
-// router.get(
-//   "/usuariosDetalle/:id",
-//   authMiddleware,
-//   adminMiddleware,
-//   adminController.detail
-// );
+router.get("/usuarios", authMiddleware, adminMiddleware, adminController.list);
+router.get(
+  "/usuariosDetalle/:id",
+  authMiddleware,
+  adminMiddleware,
+  adminController.detail
+);
 
 module.exports = router;
