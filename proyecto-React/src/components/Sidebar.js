@@ -1,7 +1,6 @@
 import React from 'react';
 // import image from '../assets/img/Logo.png';
 import { Link } from 'react-router-dom';
-
 function SideBar() {
 	return (
 		<React.Fragment>
@@ -10,8 +9,6 @@ function SideBar() {
 				{/*<!-- Sidebar - Brand -->*/}
 				<a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
 					<div className="sidebar-brand-icon">
-						{/* <i className="fas fa-globe-americas" /> */}
-
 						<img className="w-100" alt="Focus Travel" />
 					</div>
 				</a>
@@ -21,10 +18,10 @@ function SideBar() {
 
 				{/*<!-- Nav Item - Dashboard -->*/}
 				<li className="nav-item active">
-					<a className="nav-link" href="/">
+					<Link className="nav-link" to="/">
 						<i className="fas fa-fw fa-tachometer-alt"></i>
 						<span>Dashboard Administrador</span>
-					</a>
+					</Link>
 				</li>
 
 				{/*<!-- Divider -->*/}
@@ -33,28 +30,31 @@ function SideBar() {
 				{/*<!-- Heading -->*/}
 				<div className="sidebar-heading">Actions</div>
 
-				{/*<!-- Nav Item - Pages -->*/}
+				{/*<!-- Generos -->*/}
 				<li className="nav-item">
-					<a className="nav-link collapsed" href="/">
-						<i className="fas fa-fw fa-folder"></i>
-						<span>Listado de usuarios</span>
-					</a>
+					<Link className="nav-link" to="/usuariosApi">
+						<i className="fas fa-fw fa-users"></i>
+
+						<span>Listado de Usuarios</span>
+					</Link>
 				</li>
 
-				{/*<!-- Nav Item - Charts -->*/}
+				{/*<!-- Generos -->*/}
 				<li className="nav-item">
-					<a className="nav-link" href="/">
-						<i className="fas fa-fw fa-chart-area"></i>
+					<Link className="nav-link" to="/productosApi">
+						<i className="fas fa-fw fa-list"></i>
+
 						<span>Listado de Productos</span>
-					</a>
+					</Link>
 				</li>
 
-				{/*<!-- Nav Item - Tables -->*/}
+				{/*<!-- Last Movie -->*/}
 				<li className="nav-item">
-					<a className="nav-link" href="/">
-						<i className="fas fa-fw fa-table"></i>
+					<Link className="nav-link" to="/categorias">
+						<i className="fas fa-fw fa-list"></i>
+
 						<span>Categorias</span>
-					</a>
+					</Link>
 				</li>
 
 				{/*<!-- Divider -->*/}

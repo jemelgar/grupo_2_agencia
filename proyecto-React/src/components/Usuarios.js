@@ -14,10 +14,11 @@ useEffect(()=> {
 },[])
 
   return (
-    <div className="App">
+   
+    <div >
      <h2> Soy el componente usuarios!!!! </h2>
     </div>
-  );
+  )
 }
 
 export default Usuarios;
