@@ -19,7 +19,6 @@ const productsApiController = {
 					return {
 						id: product.id,
 						destination: destino,
-						// agregar destino con un if ????
 						name: product.name,
 						date: product.date,
 						img_destination: product.img_destination,
