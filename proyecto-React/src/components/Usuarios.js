@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Usuarios() {
 	const [usuarios, setUsuarios] = useState([]);
@@ -6,6 +7,7 @@ function Usuarios() {
 		const url = 'admin/usuariosApi';
 		const success = await fetch(url);
 		const successJson = await success.json();
+		console.log(successJson);
 		setUsuarios(successJson.data);
 	};
 	useEffect(() => {
@@ -14,53 +16,46 @@ function Usuarios() {
 	}, []);
 
 	return (
-		<div>
-			<h2>Usuarios</h2>
-			<ul>
-				{/* {usuarios.lenght === 0 && <h2>Cargando</h2>} */}
-				{usuarios.map((usuario, i) => {
-					return (
-						<li key={i}>
-							<h3>{usuario.first_name + ' ' + usuario.last_name}</h3>
-						</li>
-					);
-				})}
-			</ul>
+		<div className="col-lg-6 mb-4">
+			<div className="card shadow mb-4">
+				<div className="card-header py-3">
+					<h5 className="m-0 font-weight-bold text-gray-800">Usuarios en la base de datos</h5>
+				</div>
+				<div className="card-body">
+					<div className="table-responsive">
+						<table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Nombre</th>
+									<th>Detalle</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr></tr>
+							</tfoot>
+							<tbody>
+								{usuarios.map((usuario, i) => {
+									// return <li key={i}>{usuario.first_name + ' ' + usuario.last_name}</li>;
+									let detail = usuario.detail;
+									return (
+										<tr key={i}>
+											<td>{usuario.id}</td>
+											<td>{usuario.first_name + ' ' + usuario.last_name}</td>
+
+											<td>
+												<Link to={detail}>{detail}</Link>
+											</td>
+										</tr>
+									);
+								})}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
-
-	// **-----------------------------------------
-	// ! No mover //
-	// const [usuarios, setUsuarios] = useState([]);
-	// useEffect(() => {
-	// 	fetch('admin/usuariosApi')
-	// 		.then((res) => {
-	// 			return res.json();
-	// 		})
-	// 		.then((user) => {
-	// 			setUsuarios(user.data);
-	// 		})
-	// 		.catch((error) => {
-	// 			console.log(error);
-	// 		});
-	// }, []);
-	// return (
-	// 	<div>
-	// 		<h2>Usuarios</h2>
-	// 		<ul>
-	// 			{/* {usuarios.lenght === 0 && <h2>Cargando</h2>} */}
-	// 			{usuarios.map((usuario, i) => {
-	// 				return (
-	// 					<li key={i}>
-	// 						<h3>{usuario.first_name}</h3>
-	// 					</li>
-	// 				);
-	// 			})}
-	// 		</ul>
-	// 	</div>
-	// );
-	// * ------------------------------------------------//
-	// !No mover //
 }
 
 export default Usuarios;
