@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 
 function Productos() {
-  let arrayUsuarios = [];
+  let arrayProductos = [];
 
   const productosApi = async () => {
     const url = "admin/productosApi";
     const success = await fetch(url);
-    arrayUsuarios = await success.json();
-    console.log(arrayUsuarios);
+    arrayProductos = await success.json();
+    console.log(arrayProductos);
   };
   useEffect(() => {
     console.log("inicializando!!!!");
@@ -17,8 +17,8 @@ function Productos() {
   return (
     <div>
       <h2> Soy el componente Productosss!!!! </h2>
-      {arrayUsuarios.map((usuario, i) => {
-        return <li key = {i}>{usuario}</li>;
+      {arrayProductos.map((producto, i) => {
+        return <li key = {i}>{producto}</li>;
       })}
     </div>
   );
