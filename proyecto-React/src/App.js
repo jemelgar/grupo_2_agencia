@@ -4,6 +4,8 @@ import Usuarios from "./components/Usuarios";
 // import NotFound from './NotFound';
 import { Route, Switch } from "react-router-dom";
 import React from "react";
+import DetalleUsuarios from "./components/DetalleUsuarios";
+import DetalleProductos from "./components/DetalleProductos";
 
 function App() {
   return (
@@ -20,8 +22,11 @@ function App() {
 						</div>
 					</Route> */}
           {/* <Route path="/informacion" component={ContentRowMovies} /> */}
-          <Route path="/usuariosApi" component={Usuarios} />
-          <Route path="/productosApi" component={Productos} />
+          <Route path="/usuariosApi" exact= {true} component={Usuarios} />
+          <Route path="/productosApi" exact= {true} component={Productos} />
+          <Route path="/usuariosApi/:id" component={DetalleUsuarios} />
+          <Route path="/productosApi/:id"  component={DetalleProductos} />
+
           {/* <Route component={NotFound} /> */}
         </Switch>
       </div>

@@ -5,7 +5,7 @@ function Productos() {
 	const [productos, setProductos] = useState([]);
 
 	const productosApi = async () => {
-		const url = 'admin/productosApi';
+		const url = 'http://localhost:3001/admin/productosApi';
 		const success = await fetch(url);
 		const successJson = await success.json();
 		console.log(successJson);
@@ -28,10 +28,6 @@ function Productos() {
 							<tr>
 								<th>ID</th>
 								<th>Nombre</th>
-								<th>Fecha</th>
-								<th>Rating</th>
-								<th>Descripción</th>
-								<th>Precio</th>
 								<th>Detalle</th>
 							</tr>
 						</thead>
@@ -45,13 +41,9 @@ function Productos() {
 								return (
 									<tr key={i}>
 										<td>{producto.id}</td>
-										<td>{producto.name}</td>
-										<td>{producto.date}</td>
-										<td>{producto.rating}</td>
-										<td>{producto.description}</td>
-										<td>{producto.price}</td>
+										<td>{producto.name}</td>	
 										<td>
-											<Link to={detail}>{detail}</Link>
+										<Link to={`/productosApi/${producto.id}`}>{detail}</Link>
 										</td>
 									</tr>
 								);
