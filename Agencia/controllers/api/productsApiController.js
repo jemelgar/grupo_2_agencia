@@ -8,6 +8,7 @@ const productsApiController = {
 					status: 200,
 					total: products.length,
 					url: '/productosApi',
+					// cantidadDestino: products.destination_promoted.length,
 				},
 				data: products.map((product) => {
 					let destino = product.destination_promoted;
@@ -54,6 +55,7 @@ const productsApiController = {
 					name: product.name,
 					date: product.date,
 					destination: destino,
+
 					img_destination: product.img_destination,
 					rating: product.rating,
 					description: product.description,
