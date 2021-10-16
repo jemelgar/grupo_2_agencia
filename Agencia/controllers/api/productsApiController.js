@@ -8,6 +8,7 @@ const productsApiController = {
 					status: 200,
 					total: products.length,
 					url: '/productosApi',
+					// cantidadDestino: products.destination_promoted.length,
 				},
 				data: products.map((product) => {
 					let destino = product.destination_promoted;
@@ -36,21 +37,31 @@ const productsApiController = {
 	},
 	detail: (req, res) => {
 		db.Producto.findByPk(req.params.id).then((product) => {
+			let destino = product.destination_promoted;
+			if (destino == 0) {
+				destino = 'Normal';
+			} else {
+				destino = 'Destacado';
+			}
 			let data = {
 				meta: {
 					status: 200,
 					total: product.id.length,
 					url: '/productosApi/' + product.id,
 				},
+
 				data: {
 					id: product.id,
 					name: product.name,
 					date: product.date,
+					destination: destino,
+
 					img_destination: product.img_destination,
 					rating: product.rating,
 					description: product.description,
 					price: product.price,
 					image: '/img/' + product.image,
+					categoria: product.categoria,
 				},
 			};
 			res.json(data);

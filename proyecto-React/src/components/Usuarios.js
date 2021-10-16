@@ -5,13 +5,13 @@ function Usuarios() {
 	const usuariosApi = async () => {
 		const url = 'http://localhost:3001/admin/usuariosApi';
 		const success = await fetch(url);
-		 console.log(success)
+		console.log(success);
 		const successJson = await success.json();
-		console.log(successJson);
+		// console.log(successJson);
 		setUsuarios(successJson.data);
 	};
 	useEffect(() => {
-		console.log('Usuarios');
+		// console.log('Usuarios');
 		usuariosApi();
 	}, []);
 
@@ -35,19 +35,19 @@ function Usuarios() {
 								<tr></tr>
 							</tfoot>
 							<tbody>
-							{usuarios.map((usuario) => {
-                                    // return <li key={i}>{usuario.first_name + ' ' + usuario.last_name}</li>;
-                                    let detail = usuario.detail;
-                                    return (
-                                        <tr key={usuario.id}>
-                                            <td>{usuario.id}</td>
-                                            <td>{usuario.first_name + ' ' + usuario.last_name}</td>
-                                            <td>
-                                                <Link to={`/usuariosApi/${usuario.id}`}>{detail}</Link>
-                                            </td>
-                                        </tr>
-                                    );
-                                })}
+								{usuarios.map((usuario) => {
+									// return <li key={i}>{usuario.first_name + ' ' + usuario.last_name}</li>;
+									let detail = usuario.detail;
+									return (
+										<tr key={usuario.id}>
+											<td>{usuario.id}</td>
+											<td>{usuario.first_name + ' ' + usuario.last_name}</td>
+											<td>
+												<Link to={`/usuariosApi/${usuario.id}`}>{detail}</Link>
+											</td>
+										</tr>
+									);
+								})}
 							</tbody>
 						</table>
 					</div>

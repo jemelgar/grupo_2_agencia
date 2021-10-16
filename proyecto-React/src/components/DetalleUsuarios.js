@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from 'react';
 
-
 function DetalleUsuarios(props) {
 	const [usuarios, setUsuarios] = useState([]);
 
 	useEffect(() => {
 		console.log('Usuarios');
-	const usuariosApi = async () => {
-    console.log('llamando usuariosAPI')
-		const url = `http://localhost:3001/admin/usuariosApi/${props.match.params.id}`; 
-		const success = await fetch(url);
-        console.log(success)
-		const successJson = await success.json();
-		console.log(successJson);
-		setUsuarios(successJson.data);
-	};
-
+		const usuariosApi = async () => {
+			console.log('llamando usuariosAPI');
+			const url = `http://localhost:3001/admin/usuariosApi/${props.match.params.id}`;
+			const success = await fetch(url);
+			console.log(success);
+			const successJson = await success.json();
+			console.log(successJson);
+			setUsuarios(successJson.data);
+		};
 
 		usuariosApi();
 	}, [props.match.params.id]);
@@ -33,22 +31,22 @@ function DetalleUsuarios(props) {
 								<tr>
 									<th>ID</th>
 									<th>Nombre</th>
-                                    <th>Email</th>
-                                    <th>Image</th>
-                                    <th>Tipo Usuario</th>
+									<th>Email</th>
+									<th>Image</th>
+									<th>Tipo Usuario</th>
 								</tr>
 							</thead>
 							<tfoot>
 								<tr></tr>
 							</tfoot>
 							<tbody>
-										<tr>
-											<td>{usuarios.id}</td>
-											<td>{usuarios.first_name + ' ' + usuarios.last_name}</td>
-                                            <td>{usuarios.email}</td>
-                                            <td>{usuarios.image}</td>
-                                            <td>{usuarios.tipo_usuario}</td>
-										</tr>
+								<tr>
+									<td>{usuarios.id}</td>
+									<td>{usuarios.first_name + ' ' + usuarios.last_name}</td>
+									<td>{usuarios.email}</td>
+									<td>{usuarios.image}</td>
+									<td>{usuarios.tipoUsuario}</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
