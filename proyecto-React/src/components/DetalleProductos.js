@@ -7,7 +7,8 @@ function DetalleProductos(props) {
 		console.log('Productos');
 		const productosApi = async () => {
 			console.log('llamando productosAPI');
-			const url = `http://192.168.1.37:3001/admin/productosApi/${props.match.params.id}`; //aqui no sale
+			// const url = `http://192.168.1.37:3001/admin/productosApi/${props.match.params.id}`; //aqui no sale
+			const url = `http://localhost:3001/admin/productosApi/${props.match.params.id}`; //aqui no sale
 			const success = await fetch(url);
 			console.log(success);
 			const successJson = await success.json();
@@ -49,7 +50,11 @@ function DetalleProductos(props) {
 								<td>{productos.destination}</td>
 								<td>{productos.name}</td>
 								<td>{productos.date}</td>
-								<td> <img src={`http://192.168.1.37:3000${productos.img_destination}` } /></td>
+								<td>
+									{' '}
+									{/* <img src={`http://192.168.1.37:3000${productos.img_destination}`} /> */}
+									<img src={`http://localhost:3000${productos.img_destination}`} />
+								</td>
 								<td>{productos.rating}</td>
 								<td>{productos.description}</td>
 								<td>{productos.price}</td>
