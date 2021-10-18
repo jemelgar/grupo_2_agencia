@@ -9,6 +9,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
+  --color-secondary: #1A98AC;
   --blue: #4e73df;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -4026,7 +4027,7 @@ input[type="submit"].btn-block {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
   background-color: #f8f9fc;
-  border-bottom: 1px solid #e3e6f0;
+  border-bottom: 1px solid #1A98AC;
 }
 .card-header:first-child {
   border-radius: calc(0.35rem - 1px) calc(0.35rem - 1px) 0 0;
@@ -5719,7 +5720,7 @@ button.bg-dark:hover {
   background-color: #42444e !important;
 }
 .bg-white {
-  background-color: #fff !important;
+  background-color: #1A98AC !important;
 }
 .bg-transparent {
   background-color: transparent !important;
@@ -8832,8 +8833,8 @@ a:focus {
   background-size: cover;
 }
 .bg-gradient-secondary {
-  background-color: #858796;
-  background-image: linear-gradient(180deg, #858796 10%, #60616f 100%);
+  background-color: #FFDB85;
+  background-image: linear-gradient(180deg, #FFDB85 10%);
   background-size: cover;
 }
 .bg-gradient-success {
@@ -8918,13 +8919,13 @@ a:focus {
   color: #b7b9cc !important;
 }
 .text-gray-600 {
-  color: #858796 !important;
+  color: #eaecf4 !important;
 }
 .text-gray-700 {
   color: #6e707e !important;
 }
 .text-gray-800 {
-  color: #5a5c69 !important;
+  color: #1A98AC !important;
 }
 .text-gray-900 {
   color: #3a3b45 !important;
@@ -9447,38 +9448,38 @@ a:focus {
   background-color: #dddfeb;
 }
 .sidebar-dark .sidebar-brand {
-  color: #fff;
+  color: #FF449F;
 }
 .sidebar-dark hr.sidebar-divider {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 .sidebar-dark .sidebar-heading {
-  color: rgba(255, 255, 255, 0.4);
+  color: #1A98AC;
 }
 .sidebar-dark .nav-item .nav-link {
-  color: rgba(255, 255, 255, 0.8);
+  color: #FF449F;
 }
 .sidebar-dark .nav-item .nav-link i {
-  color: rgba(255, 255, 255, 0.3);
+  color: #FF449F;
 }
 .sidebar-dark .nav-item .nav-link:active,
 .sidebar-dark .nav-item .nav-link:focus,
 .sidebar-dark .nav-item .nav-link:hover {
-  color: #fff;
+  color: #FF449F;
 }
 .sidebar-dark .nav-item .nav-link:active i,
 .sidebar-dark .nav-item .nav-link:focus i,
 .sidebar-dark .nav-item .nav-link:hover i {
-  color: #fff;
+  color: #FF449F;
 }
 .sidebar-dark .nav-item .nav-link[data-toggle="collapse"]::after {
   color: rgba(255, 255, 255, 0.5);
 }
 .sidebar-dark .nav-item.active .nav-link {
-  color: #fff;
+  color: #FF449F;
 }
 .sidebar-dark .nav-item.active .nav-link i {
-  color: #fff;
+  color: #FF449F;
 }
 .sidebar-dark #sidebarToggle {
   background-color: rgba(255, 255, 255, 0.2);

@@ -45,7 +45,10 @@ function DetalleUsuarios(props) {
 									<td>{usuarios.id}</td>
 									<td>{usuarios.first_name + ' ' + usuarios.last_name}</td>
 									<td>{usuarios.email}</td>
-									<td>{usuarios.image}</td>
+									<td>
+									{' '}
+									<img src={`http://localhost:3000${usuarios.image}`} width = "40%"/>
+								</td>
 									<td>{usuarios.tipoUsuario}</td>
 								</tr>
 							</tbody>
