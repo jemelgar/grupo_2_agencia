@@ -4,7 +4,7 @@ function Categorias() {
   const [productos, setProductos] = useState([]);
 
   const productosApi = async () => {
-    const url = "http://localhost:3001/admin/productosApi";
+    const url = "http://192.168.1.37:3001/admin/productosApi";
     const success = await fetch(url);
     const successJson = await success.json();
     console.log("%c PRODUCTOS", "color:yellow", successJson);
