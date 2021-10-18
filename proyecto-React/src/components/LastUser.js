@@ -28,6 +28,7 @@ function LastUser() {
 					<div className="text-center">
 						<h1>
 							<strong>{usuario.first_name + ' ' + usuario.last_name}</strong>
+							<img src={`http://localhost:3001${usuario.image}`} width="40%" />
 						</h1>
 					</div>
 
@@ -35,7 +36,7 @@ function LastUser() {
 					<p>Tipo de Usuario: {usuario.tipoUsuario}</p>
 
 					{/* <img src={`http://192.168.1.37:3000${usuario.image}`} width="40%" /> */}
-					<img src={`http://localhost:3001${usuario.image}`} width="40%" />
+
 					{/* <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">
 						View movie detail */}
 					{/* </a> */}
