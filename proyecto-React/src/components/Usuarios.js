@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 function Usuarios() {
 	const [usuarios, setUsuarios] = useState([]);
 	const usuariosApi = async () => {
-		const url = 'http://192.168.1.37:3001/admin/usuariosApi';
+		// const url = 'http://192.168.1.37:3001/admin/usuariosApi';
+		const url = 'http://localhost:3001/admin/usuariosApi';
 		const success = await fetch(url);
 		console.log(success);
 		const successJson = await success.json();
