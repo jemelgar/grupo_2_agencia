@@ -1,5 +1,5 @@
 import React from 'react';
-// import image from '../assets/img/Logo.png';
+import image from '../assets/img/Logo.png';
 import { Link } from 'react-router-dom';
 function SideBar() {
 	return (
@@ -9,7 +9,7 @@ function SideBar() {
 				{/*<!-- Sidebar - Brand -->*/}
 				<a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
 					<div className="sidebar-brand-icon">
-						<img className="w-100" alt="Focus Travel" />
+						<img className="w-100" src= {image} width= "10%" alt="Focus Travel" />
 					</div>
 				</a>
 
