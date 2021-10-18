@@ -25,6 +25,7 @@ const usersApiController = {
 						email: user.email,
 						detail: '/usuariosApi/' + user.id,
 						tipoUsuario: tipoUsuario,
+						image: '/img/usersImages/' + user.image,
 					};
 				}),
 			};
