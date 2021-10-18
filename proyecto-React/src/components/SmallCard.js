@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 function SmallCard() {
   const [usuarios, setUsuarios] = useState([]);
   const usuariosApi = async () => {
-    const url = "http://localhost:3001/admin/usuariosApi";
+    const url = "http://192.168.1.37:3001/admin/usuariosApi";
     const success = await fetch(url);
     console.log(success);
     const successJson = await success.json();
@@ -16,7 +16,7 @@ function SmallCard() {
   const [productos, setProductos] = useState([]);
 
   const productosApi = async () => {
-    const url = "http://localhost:3001/admin/productosApi";
+    const url = "http://192.168.1.37:3001/admin/productosApi";
     const success = await fetch(url);
     const successJson = await success.json();
     console.log("%c Productos", "color:orange", successJson);
