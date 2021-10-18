@@ -7,7 +7,8 @@ function DetalleUsuarios(props) {
 		console.log('Usuarios');
 		const usuariosApi = async () => {
 			console.log('llamando usuariosAPI');
-			const url = `http://192.168.1.37:3001/admin/usuariosApi/${props.match.params.id}`;
+			// const url = `http://192.168.1.37:3001/admin/usuariosApi/${props.match.params.id}`;
+			const url = `http://localhost:3001/admin/usuariosApi/${props.match.params.id}`;
 			const success = await fetch(url);
 			console.log(success);
 			const successJson = await success.json();
