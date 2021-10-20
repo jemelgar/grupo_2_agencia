@@ -1,8 +1,21 @@
 /* Paleta de colores */
+:root {
+	--color-primary: #e8e8e8;
+	--color-primary-light: #f4f4f2;
+	--color-primary-dark: #bbbfca;
+	--color-grey-dark: #495464;
+	--color-alert: #ff449f;
+	--color-green: #1dd488;
+	--color-secondary: #1a98ac;
+	--color-grey-light-2: #fbfbfb;
+	--shadow-dark: 0 0.4rem 0.6rem 0 rgba(0, 0, 0, 0.2);
+	--shadow-light: 0 0.4rem 0.6rem 0 rgba(0, 0, 0, 0.1);
+	--line: 1px solid var(--color-grey-light-3);
+}
 
 div.container-carrito {
   padding-top: 1rem;
-  background-color: var(--color-primary-light);
+  background-color: var(--color-secondary);
   display: flex;
   border-radius: 5px;
   box-shadow: var(--shadow-dark);
@@ -16,23 +29,25 @@ div.container-carrito {
 }
 
 div.icon-carrito {
-  background-color: rgba(128, 128, 128, 0.205);
+  background-color: #f8dfa6;
   padding: 30px;
   text-align: center;
   margin: 15px;
   /* margin: auto; */
   border-radius: 20px;
   font-size: 2rem;
+  color: #ff449f;
 }
 
 div.icon-carrito h3 {
   margin-top: 5px;
   justify-content: center;
+  color: #ff449f;
 }
 
 div.forma-pago {
   /* background-color: rgba(0, 128, 0, 0.205); */
-  background-color: rgba(128, 128, 128, 0.205);
+  background-color: #f8dfa6;
   padding: 30px;
   text-align: left;
   margin: 15px;
@@ -50,15 +65,17 @@ div.forma-pago h3 {
   margin-bottom: 15px;
   justify-content: center;
   font-size: 2rem;
+  color: #ff449f;
   /* font-size: 18px; */
 }
 
 div.forma-pago label {
   font-size: 16px;
+  color: #ff449f;
 }
 div.detalles-tarjeta {
   /* background-color: rgba(0, 0, 255, 0.137); */
-  background-color: rgba(128, 128, 128, 0.205);
+  background-color: #f8dfa6;
 
   padding: 30px;
   text-align: left;
@@ -74,17 +91,20 @@ div.detalles-tarjeta h3 {
   justify-content: center;
   display: flex;
   font-size: 2rem;
+  color: #ff449f;
 }
 
 div.detalles-tarjeta label {
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 16px;
+  color: #ff449f;
 }
 
 div.detalles-tarjeta input {
   margin-bottom: 3px;
   font-size: 15px;
+  color: #ff449f;
 }
 /* .label-detalles-tarjeta {
 	margin-top: 10px;
@@ -93,7 +113,7 @@ div.detalles-tarjeta input {
 div.detalle-pago {
   /* background-color: rgba(0, 0, 255, 0.137);
 	 */
-  background-color: rgba(128, 128, 128, 0.205);
+  background-color: #f8dfa6;
 
   padding: 30px;
   text-align: left;
@@ -110,12 +130,14 @@ div.detalle-pago h3 {
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
+  color: #ff449f;
 }
 
 div.detalle-pago table {
   /* display: flex; */
   table-layout: fixed;
   width: 100%;
+  color: #ff449f;
   /* justify-content: center; */
 }
 
@@ -123,32 +145,16 @@ div.detalle-pago td {
   padding: 10px;
   font-size: 16px;
   text-align: center;
+  color: #ff449f;
 }
 
 div.detalle-pago th {
   padding: 10px;
   text-align: center;
   font-size: 16px;
+  color: #ff449f;
 }
 
-div.detalle-compra {
-  /* background-color: rgba(255, 255, 0, 0.123); */
-  background-color: rgba(128, 128, 128, 0.205);
-  padding: 30px;
-  text-align: left;
-  margin: 15px;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-div.detalle-compra h3 {
-  /* display: inline-block;
-	 */
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
-}
 
 @media (min-width: 768px) {
   div.container-carrito {
