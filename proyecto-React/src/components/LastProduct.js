@@ -1,49 +1,50 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 function LastProduct() {
-	const [productos, setProductos] = useState([]);
+  const [productos, setProductos] = useState([]);
 
-	const productosApi = async () => {
-		// const url = "http://192.168.1.37:3001/admin/productosApi";
-		const url = 'http://localhost:3001/admin/productosApi';
-		const success = await fetch(url);
-		const successJson = await success.json();
-		const products = successJson.data;
-		const lastProduct = products.pop();
+  const productosApi = async () => {
+    const url = "/admin/productosApi";
+    const success = await fetch(url);
+    const successJson = await success.json();
+    const products = successJson.data;
+    const lastProduct = products.pop();
 
-		// console.log('%c ÚLTIMO PRODUCTO', 'color:green', lastProduct);
-		setProductos(lastProduct);
-	};
-	useEffect(() => {
-		productosApi();
-	}, []);
-	return (
-		<div className="col-lg-6 mb-4">
-			<div className="card shadow mb-4">
-				<div className="card-header py-3">
-					<h5 className="m-0 font-weight-bold text-gray-800">Último producto</h5>
-				</div>
-				<div className="card-body">
-					<div className="text-center">
-						<h1>
-							<strong>{productos.name}</strong>
-						</h1>
-						<img
-							className="img-fluid px-3 px-sm-4 mt-3 mb-4"
-							style={{ width: 40 + 'rem' }}
-							src={productos.img_destination}
-							alt="CDMX"
-						/>
-					</div>
+    // console.log('%c ÚLTIMO PRODUCTO', 'color:green', lastProduct);
+    setProductos(lastProduct);
+  };
+  useEffect(() => {
+    productosApi();
+  }, []);
+  return (
+    <div className="col-lg-6 mb-4">
+      <div className="card shadow mb-4">
+        <div className="card-header py-3">
+          <h5 className="m-0 font-weight-bold text-gray-800">
+            Último producto
+          </h5>
+        </div>
+        <div className="card-body">
+          <div className="text-center">
+            <h1>
+              <strong>{productos.name}</strong>
+            </h1>
+            <img
+              className="img-fluid px-3 px-sm-4 mt-3 mb-4"
+              style={{ width: 40 + "rem" }}
+              src={productos.img_destination}
+              alt="CDMX"
+            />
+          </div>
 
-					<p>{productos.description}</p>
-					{/* <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">
+          <p>{productos.description}</p>
+          {/* <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">
 						View movie detail */}
-					{/* </a> */}
-				</div>
-			</div>
-		</div>
-	);
+          {/* </a> */}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default LastProduct;
