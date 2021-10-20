@@ -1,118 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/styles_index.css" />
-    <link rel="stylesheet" href="/css/styles_newproduct.css" />
-
-    <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
-    <link rel="icon" href="/img/Logo.ico" type="image/ico" />
-
-    <!-- <link rel="icon" href="imagenes/favicon.png" type="image/png" /> -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Focus Travel</title>
-  </head>
-  <body>
-    <div class="container">
-      <%- include('./partials/header') %>
-      <ul class="errores"></ul>
-      <main class="main">
-        <div class="container-destination">
-          <!-- Inicio del cuerpo de la vista -->
-
-          <!-- Inicio del formulario -->
-          <form
-            action="/admin"
-            method="POST"
-            enctype="multipart/form-data"
-            id="new-product"
-          >
-            <!-- Seleccionar tipo de destino -->
-            <section>
-              <label for="tipoDestino">Carrito de Compras </label>
-              </select>
-              <br />
-            </section>
-
-            <!-- Agregar nombre -->
-            <section>
-              <label for="nombre">Item</label>
-              <input
-                type="text"
-                name="nombre"
-                placeholder="Nombre del destino"
-                autocomplete="off"
-                id="nombre"
-              />
-              <% if (locals.errors && errors.nombre) { %>
-              <div class="text-danger"><%= errors.nombre.msg %></div>
-              <% } %>
-              <br />
-            </section>
-            <!-- Agregar Precio -->
-            <section>
-              <label for="precio">Precio</label>
-              <input
-                type="number"
-                name="precio"
-                placeholder="Precio"
-                autocomplete="off"
-                id="precio"
-              />
-
-              <br /><% if (locals.errors && errors.precio) { %>
-              <div class="text-danger"><%= errors.precio.msg %></div>
-              <% } %>
-            </section>
-			<section>
-				<label for="precio"> Cantidad de Personas</label>
-				<input
-				  type="number"
-				  name="cantidad"
-				  placeholder="Cantidad de Personas"
-				  autocomplete="off"
-				  id="cantidad"
-				/>
-  
-				<br /><% if (locals.errors && errors.precio) { %>
-				<div class="text-danger"><%= errors.precio.msg %></div>
-				<% } %>
-			  </section>
-            <!-- Agregar Fecha -->
-            <section>
-              <label for="fecha">Fecha</label>
-              <input
-                type="text"
-                name="fecha"
-                placeholder="YYYY-MM-DD"
-                id="fecha"
-              />
-              <% if (locals.errors && errors.fecha) { %>
-              <div class="text-danger"><%= errors.fecha.msg %></div>
-              <% } %>
-              <br />
-            </section>
-         
-            <section class="botones">
-              <button type="submit" class="btn" id="btn--normal"> Pagar </button>
-
-          </form>
-
-          <!-- Fin cuerpo vista -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/styles_index.css" />
+        <link rel="stylesheet" href="/css/styles_productCart.css" />
+        <!-- <link rel="stylesheet" href="/styles_productDetail.css" /> -->
+         <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
+         <link rel="icon" href="/img/Logo.ico" type="image/ico" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/4b999df772.js"
+            crossorigin="anonymous"
+        ></script>
+        <title>Compra</title>
+    </head>
+    <body>
+        <div class="container">
+        <%- include('partials/header') %>
+        <main class="main">
+          <div class="container-destination">
+        <!-- Bloque padre -->
+            <!-- Bloque padre -->
+            <div class="container-carrito">
+                <!-- Icono carro -->
+                <div class="icon-carrito">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Mis Viajes</h3>
+                </div>
+                <!-- fin de icono carro -->
+                    <!--Inicio Div Union pago y compras -->
+                    <div class="contenedor-detalle-pago-compra">
+                        <!-- Inicio Detalle pago -->
+                        <div class="detalle-pago">
+                            <div>
+                                <h3>Detalle del pago</h3>
+                            </div>
+                            <table>
+                                <tr>
+                                <th scope="row">Alojamiento <%= locals.formInfo && tourSelected ? formInfo.cantidadPersonas:'' %>  personas</th>
+                                <!-- <td>$2000</td> -->
+                            </tr>
+                            <!-- <tr>
+                                <th scope="row">IVA</th>
+                                <td>$140</td>
+                                                   
+                            </tr> -->
+                            <tr>
+                                <th scope="row">Total</th>
+                                <td>$<%=locals.formInfo && tourSelected ? tourSelected.price * formInfo.cantidadPersonas:'' %>  </td>
+                            </tr>
+                            </table>
+                        </div>
+                        <!-- Fin detalle pago -->
+                        <!-- Incio detalle compra -->
+                        <div class="detalle-compra">
+                            <h3>Detalle Compra</h3>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti alias soluta placeat vel officiis molestiae ab, nemo blanditiis aspernatur iusto, </p>
+                        </div>
+                        <!-- Fin detalle compra -->
+                    </div>
+                <!-- Inico Union Div con como deseas pagar y tarjeta de credito -->
+                <div class="contenedor-formaPago-detallesTarjeta">
+                <!-- Forma de pago -->
+                <div class="forma-pago">
+                    <h3>¿Cómo deseas pagar?</h3>
+                    <form action="" method="POST" class="inputs-formas-pago">
+                        <p></p> <input type="checkbox" id="tarjeta-debito">
+                        <label for="tarjeta-debito">Tarjeta de Débito</label> </p>
+                        <p><input type="checkbox" id="tarjeta-credito">
+                        <label for="tarjeta-credito">Tarjeta de Crédito</label></p>
+                        <p></p><input type="checkbox" id="transferencia">
+                        <label for="transferencia">Transferencia</label></p>
+                    </form>
+                </div>
+                <!-- Fin forma de pago -->
+                <!-- Inicio Tarjeta de Crédito -->
+                <div class="detalles-tarjeta">
+                    <h3>Ingresa los datos de tu tarjeta</h3>
+                    <label for="numero-tarjeta" >Número de Tarjeta    <i class="fas fa-credit-card"></i></label>
+                    <!-- <i class="fas fa-credit-card"></i> -->
+                    <input
+                        type="text"
+                        name="numero-tarjeta"
+                        id="numero-tarjeta"
+                        placeholder="Ingresa número de tarjeta"
+                        maxlength="16"
+                    />
+                    <label for="numero-tarjeta" >Nombre del Titular</label>
+                    <input
+                        type="text"
+                        name="nombre-titular"
+                        id="nombre-titular"
+                        placeholder="Como figura en la tarjeta"
+                        maxlength="16"
+                    />
+                    <label for="vencimiento-mes">Vencimiento</label>
+                    <input
+                        type="text"
+                        name="vencimiento-mes"
+                        id="vencimiento-mes"
+                        placeholder="MM"
+                 maxlength="2"
+                                />
+                        <input
+                        type="text"
+                        name="vencimiento-year"
+                        id="vencimiento-year"
+                        placeholder="YYYY"
+                 maxlength="4"
+                                />
+                    <label for="CVV">Código de seguridad</label>
+                    <input type="text" name="CVV" id="CVV" placeholder="123"
+                    maxlength="3" />
+                </div>
+                <!-- Fin tarjeta de credito -->
+            </div>
+                <!-- fin Union Div con como deseas pagar y tarjeta de credito -->
+                <!--Fin Div Union pago y compras -->
+                <!-- Fin bloque padre -->
+            </div>
         </div>
-      </main>
-    </div>
-    <%- include('./partials/footer') %>
-    <script src="/js/newProductValidation.js"></script>
-  </body>
+        </main>
+        <%- include('partials/footer') %>
+        <%- include('partials/mobilebar') %>
+        </div>
+    </body>
 </html>
