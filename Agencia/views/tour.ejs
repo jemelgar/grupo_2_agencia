@@ -24,16 +24,21 @@
           <!-- Descripcion producto -->
 
           <div class="paquete">
-            <img src="<%=tour.img_destination%>" class="paquete-imagen" alt="" width="320px" />
+            <img
+              src="<%=tour.img_destination%>"
+              class="paquete-imagen"
+              alt=""
+              width="320px"
+            />
             <div class="paquete-descripcion-botones">
               <div class="destino-nombre">
                 <%= tour.name %>
-                <p class="rating"> Rating: <%=tour.rating%></p> 
+                <p class="rating">Rating: <%=tour.rating%></p>
               </div>
               <p class="descripcion-paquete"><%= tour.description %></p>
               <div class="infopedido">
                 <form
-                  action="/mycart/"
+                  action="/mycart/<%= tour.id %> "
                   method="POST"
                   class="orderform"
                 >
@@ -54,7 +59,7 @@
 
                   <div class="division"></div>
                   <label for="fechareservacion">Fecha a Reservar</label>
-                  <input type="date" />
+                  <input type="date" name="Fecha" />
 
                   <div class="division"></div>
 
@@ -77,13 +82,14 @@
       </main>
       <%- include('partials/footer') %> <%- include('partials/mobilebar') %>
       <script>
-       
-        function calculaTotal (){
-          let finalPrice =tour.price;
+        function calculaTotal() {
+          console.log("on change");
+          let finalPrice = <%= tour.price %>;
           let numPersonas = parseInt(document.querySelector("#cantidad").value);
-          document.querySelector('#total').innerText = '$' + finalPrice*numPersonas
-          }
-          calculaTotal();
+          document.querySelector("#total").innerText =
+            "$" + finalPrice * numPersonas;
+        }
+        calculaTotal();
       </script>
     </div>
   </body>
