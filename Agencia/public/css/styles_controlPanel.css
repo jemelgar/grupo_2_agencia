@@ -15,6 +15,10 @@
 .main {
   height: 600px;
 }
+.container-destination {
+  height: 60px;
+  background: #ffdb85;
+}
 li {
   text-align: center;
   justify-content: align-center;
